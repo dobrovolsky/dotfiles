@@ -19,13 +19,16 @@ brew cask install virtualbox
 brew cask install vlc
 brew cask install iterm2
 
-
 # ==================================
 # SHELL SETTINGS
 # ==================================
 
 # install oh my zsh 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# make zsh default shell
+sh -c "echo $(which zsh) >> /etc/shells"
+chsh -s $(which bash)
 
 # create symlinks
 ln -sfv ${PWD}/.zshrc $HOME
@@ -42,7 +45,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
 # install autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions \
  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
 
 # ==================================
 # MAC OS

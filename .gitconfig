@@ -1,10 +1,10 @@
 [user]
-  name = Dobrovolsky Bogdan
-  email = bogdan.gm24@gmail.com
+    name = Dobrovolsky Bogdan
+    email = bogdan.gm24@gmail.com
 
 [core]
-  excludesfile = ~/.gitignore
-  editor = vim
+    excludesfile = ~/.gitignore
+    editor = vim
 
 [color]
 	ui = auto
@@ -19,6 +19,6 @@
 	new = green bold
 	whitespace = red reverse
 [color "status"]
-	added = green bold
-	changed = yellow bold
-	untracked = red bold
+    added = green bold
+    changed = yellow bold
+    untracked = red bold

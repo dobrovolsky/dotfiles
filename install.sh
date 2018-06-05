@@ -34,6 +34,7 @@ chsh -s $(which bash)
 ln -sfv ${PWD}/.zshrc $HOME
 ln -sfv ${PWD}/.gitignore $HOME
 ln -sfv ${PWD}/.gitconfig $HOME
+ln -sfv ${PWD}/.vimrc $HOME
 
 # apply theme
 ln -sv ${PWD}/xxf.zsh-theme  $HOME/.oh-my-zsh/themes/xxf.zsh-theme

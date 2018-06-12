@@ -65,3 +65,8 @@ pmset -a hibernatemode 0
 pyenv install python 3.6.5
 pyenv local 3.6.5
 pip install ipython
+
+# ==================================
+# NODE
+# ==================================
+nvm install node

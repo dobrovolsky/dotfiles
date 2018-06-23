@@ -35,6 +35,11 @@ export NVM_DIR="$HOME/.nvm"
 # My IP
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print \$2}'"
 alias ll="ls -la"
+# Convert timestamp to date by UTC
+alias ts="date -u -r"
+# Get current time in timestamp
+alias tsn="date +%s"
+
 
 # Create a new directory and enter it
 function mk() {

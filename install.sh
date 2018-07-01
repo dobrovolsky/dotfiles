@@ -18,6 +18,10 @@ brew cask install sublime-text3
 brew cask install virtualbox
 brew cask install vlc
 brew cask install iterm2
+brew cask install telegram
+brew cask install pycharm
+brew cask install transmission
+brew cask install marshallofsound-google-play-music-player
 
 # ==================================
 # SHELL SETTINGS
@@ -28,7 +32,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 # make zsh default shell
 sh -c "echo $(which zsh) >> /etc/shells"
-chsh -s $(which bash)
+chsh -s $(which zsh)
 
 # create symlinks
 ln -sfv ${PWD}/.zshrc $HOME
@@ -62,11 +66,13 @@ pmset -a hibernatemode 0
 # ==================================
 # PYTHON
 # ==================================
-pyenv install python 3.6.5
+pyenv install 3.6.5
 pyenv local 3.6.5
 pip install ipython
 
 # ==================================
 # NODE
 # ==================================
-nvm install node
+git clone https://github.com/lukechilds/zsh-nvm \
+ ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-nvm
+nvm install --lts

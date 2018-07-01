@@ -34,6 +34,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 sh -c "echo $(which zsh) >> /etc/shells"
 chsh -s $(which zsh)
 
+# key bindings for fzf
+$(brew --prefix)/opt/fzf/install
+
 # create symlinks
 ln -sfv ${PWD}/.zshrc $HOME
 ln -sfv ${PWD}/.gitignore $HOME

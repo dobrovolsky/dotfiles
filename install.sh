@@ -12,6 +12,7 @@ brew install htop
 brew install pyenv
 brew install pipenv
 brew install fzf
+brew install golang
 brew cask install java
 brew cask install google-chrome
 brew cask install sublime-text3

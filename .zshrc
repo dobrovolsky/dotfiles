@@ -35,8 +35,13 @@ alias ts="date -u -r"
 # Get current time in timestamp
 alias tsn="date +%s"
 
-
 # Create a new directory and enter it
 function mk() {
   mkdir -p "$@" && cd "$@"
+}
+
+# Get length of string
+function len(){
+  string=$@
+  echo ${#string}
 }

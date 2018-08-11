@@ -5,10 +5,14 @@ ZSH_THEME="xxf"
 DISABLE_AUTO_UPDATE="true"
 
 plugins=(
-  git sublime zsh-syntax-highlighting zsh-autosuggestions zsh-nvm
+  git sublime zsh-syntax-highlighting zsh-autosuggestions zsh-nvm sublime
 )
 
 source $ZSH/oh-my-zsh.sh
+
+function command_exists () {
+  command -v "$1"  > /dev/null 2>&1;
+}
 
 # set language environment
 export LC_ALL=en_US.UTF-8
@@ -25,7 +29,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # Add go liblary to path
-export PATH="$PATH:$(go env GOPATH)/bin"
+if command_exists go ; then
+  export PATH="$PATH:$(go env GOPATH)/bin"
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

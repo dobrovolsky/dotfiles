@@ -23,6 +23,7 @@ brew cask install telegram
 brew cask install pycharm
 brew cask install transmission
 brew cask install marshallofsound-google-play-music-player
+brew cask install sublime-text
 
 # ==================================
 # SHELL SETTINGS

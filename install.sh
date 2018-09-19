@@ -8,6 +8,8 @@
 # ==================================
 brew install git
 brew install httpie
+brew install pgcli
+brew install awscli
 brew install htop
 brew install pyenv
 brew install pipenv

@@ -17,8 +17,6 @@ brew install fzf
 brew install golang
 brew cask install java
 brew cask install google-chrome
-brew cask install sublime-text3
-brew cask install virtualbox
 brew cask install vlc
 brew cask install iterm2
 brew cask install telegram

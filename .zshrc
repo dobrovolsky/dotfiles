@@ -5,8 +5,7 @@ ZSH_THEME="xxf"
 DISABLE_AUTO_UPDATE="true"
 
 plugins=(
-  git sublime zsh-syntax-highlighting zsh-autosuggestions zsh-nvm sublime
-)
+  git sublime zsh-syntax-highlighting zsh-autosuggestions zsh-nvm sublime golang docker docker-compose httpie)
 
 source $ZSH/oh-my-zsh.sh
 

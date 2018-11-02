@@ -15,6 +15,7 @@ brew install pyenv
 brew install pipenv
 brew install fzf
 brew install golang
+brew install opencv
 brew cask install java
 brew cask install google-chrome
 brew cask install iina
@@ -24,6 +25,7 @@ brew cask install pycharm
 brew cask install transmission
 brew cask install marshallofsound-google-play-music-player
 brew cask install sublime-text
+
 
 # ==================================
 # SHELL SETTINGS

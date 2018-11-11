@@ -16,6 +16,7 @@ brew install pipenv
 brew install fzf
 brew install golang
 brew install opencv
+brew install tmux
 brew cask install java
 brew cask install google-chrome
 brew cask install iina
@@ -46,6 +47,7 @@ ln -sfv ${PWD}/.zshrc $HOME
 ln -sfv ${PWD}/.gitignore $HOME
 ln -sfv ${PWD}/.gitconfig $HOME
 ln -sfv ${PWD}/.vimrc $HOME
+ln -sfv ${PWD}/.tmux.conf $HOME
 
 # apply theme
 ln -sv ${PWD}/xxf.zsh-theme  $HOME/.oh-my-zsh/themes/xxf.zsh-theme

@@ -76,8 +76,8 @@ pmset -a hibernatemode 0
 # ==================================
 # PYTHON
 # ==================================
-pyenv install 3.7.0
-pyenv local 3.7.0
+pyenv install 3.7.1
+pyenv global 3.7.1
 pip install ipython
 
 # ==================================

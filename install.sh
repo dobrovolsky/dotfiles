@@ -61,6 +61,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
 git clone https://github.com/zsh-users/zsh-autosuggestions \
  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
+# install vim plugin manager
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # ==================================
 # MAC OS
 # ==================================

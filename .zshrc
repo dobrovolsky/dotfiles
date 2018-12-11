@@ -30,7 +30,7 @@ if command_exists go ; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+export FZF_DEFAULT_COMMAND="find . -type f -not -path '*/\.git/*'"
 # ALIASES
 # My IP
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print \$2}'"

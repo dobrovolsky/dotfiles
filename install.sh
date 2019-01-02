@@ -18,7 +18,6 @@ brew install golang
 brew install opencv
 brew install tmux
 brew install vifm
-brew install tmux-mem-cpu-load
 brew cask install java
 brew cask install google-chrome
 brew cask install iina

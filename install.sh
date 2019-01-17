@@ -93,3 +93,6 @@ nvm install --lts
 
 # add litecli
 pip install litecli
+# add youtube downloader
+pip install youtube-dl
+

@@ -55,10 +55,11 @@ function! LightlineFilename()
   let g:vimshell_force_overwrite_statusline = 0
 
 " enable NEDRTRee by default
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 " how hidden files
 let NERDTreeShowHidden=1
 
+colorscheme default
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 3

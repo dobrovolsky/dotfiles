@@ -90,3 +90,6 @@ pip install ipython
 git clone https://github.com/lukechilds/zsh-nvm \
  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-nvm
 nvm install --lts
+
+# add litecli
+pip install litecli

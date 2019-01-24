@@ -43,6 +43,8 @@ let g:lightline = {
       \ },
       \ }
 
+set noshowmode
+
 function! LightlineFilename()
       return &filetype ==# 'vimfiler' ? vimfiler#get_status_string() :
               \ &filetype ==# 'unite' ? unite#get_status_string() :

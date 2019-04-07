@@ -19,6 +19,7 @@ brew install opencv
 brew install tmux
 brew install vifm
 brew install ctop
+brew install exa
 brew cask install java
 brew cask install google-chrome
 brew cask install iina
@@ -97,3 +98,4 @@ pip install litecli
 # add youtube downloader
 pip install youtube-dl
 
+go get github.com/davecheney/httpstat

@@ -34,7 +34,8 @@ fi
 # ALIASES
 # My IP
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print \$2}'"
-alias ll="ls -laFh"
+
+alias ll="exa --group-directories-first --color=always --long --git --all"
 # Convert timestamp to date by UTC
 alias ts="date -u -r"
 # Get current time in timestamp

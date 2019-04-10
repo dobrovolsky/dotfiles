@@ -9,7 +9,7 @@ ZSH_THEME="xxf"
 DISABLE_AUTO_UPDATE="true"
 
 plugins=(
-  git sublime zsh-syntax-highlighting zsh-autosuggestions zsh-nvm pyenv sublime golang docker docker-compose httpie)
+  gitfast last-working-dir zsh-syntax-highlighting zsh-autosuggestions pyenv golang docker docker-compose httpie)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -28,7 +28,6 @@ brew cask install telegram
 brew cask install pycharm
 brew cask install transmission
 brew cask install marshallofsound-google-play-music-player
-brew cask install sublime-text
 
 
 # ==================================
@@ -86,16 +85,9 @@ pyenv install 3.7.1
 pyenv global 3.7.1
 pip install ipython
 
-# ==================================
-# NODE
-# ==================================
-git clone https://github.com/lukechilds/zsh-nvm \
- ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-nvm
-nvm install --lts
-
 # add litecli
 pip install litecli
 # add youtube downloader
 pip install youtube-dl
-
+# add httpstat
 go get github.com/davecheney/httpstat

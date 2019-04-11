@@ -20,6 +20,7 @@ brew install tmux
 brew install vifm
 brew install ctop
 brew install exa
+brew install bat
 brew cask install java
 brew cask install google-chrome
 brew cask install iina

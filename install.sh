@@ -21,6 +21,8 @@ brew install vifm
 brew install ctop
 brew install exa
 brew install bat
+brew install diff-so-fancy
+brew install docker-clean
 brew cask install java
 brew cask install google-chrome
 brew cask install iina

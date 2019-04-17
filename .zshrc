@@ -9,7 +9,7 @@ ZSH_THEME="xxf"
 DISABLE_AUTO_UPDATE="true"
 
 plugins=(
-  gitfast last-working-dir zsh-syntax-highlighting zsh-autosuggestions pyenv golang docker docker-compose httpie)
+  gitfast zsh-syntax-highlighting zsh-autosuggestions pyenv golang docker docker-compose httpie)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -17,12 +17,12 @@ brew install fzf
 brew install golang
 brew install opencv
 brew install tmux
-brew install vifm
 brew install ctop
 brew install exa
 brew install bat
 brew install diff-so-fancy
 brew install docker-clean
+brew install ranger
 brew cask install java
 brew cask install google-chrome
 brew cask install iina
@@ -54,8 +54,12 @@ ln -sfv ${PWD}/.gitconfig $HOME
 ln -sfv ${PWD}/.vimrc $HOME
 ln -sfv ${PWD}/.tmux.conf $HOME
 
-# apply theme
-ln -sv ${PWD}/xxf.zsh-theme  $HOME/.oh-my-zsh/themes/xxf.zsh-theme
+# apply themes
+ln -sv ${PWD}/xxf.zsh-theme  $ZSH_CUSTOM/themes/xxf.zsh-theme
+
+# install spaceship
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 # install syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \

@@ -4,12 +4,12 @@ export PATH=$HOME/dotfiles/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
 
-ZSH_THEME="xxf"
+ZSH_THEME="spaceship"
 
 DISABLE_AUTO_UPDATE="true"
 
 plugins=(
-  gitfast zsh-syntax-highlighting zsh-autosuggestions pyenv golang docker docker-compose httpie)
+  gitfast git zsh-syntax-highlighting zsh-autosuggestions pyenv golang docker docker-compose httpie)
 
 source $ZSH/oh-my-zsh.sh
 

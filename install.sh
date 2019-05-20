@@ -23,6 +23,7 @@ brew install bat
 brew install diff-so-fancy
 brew install docker-clean
 brew install ranger
+brew install youtube-dl
 brew cask install java
 brew cask install google-chrome
 brew cask install iina
@@ -30,8 +31,6 @@ brew cask install iterm2
 brew cask install telegram
 brew cask install pycharm
 brew cask install transmission
-brew cask install marshallofsound-google-play-music-player
-
 
 # ==================================
 # SHELL SETTINGS
@@ -88,13 +87,11 @@ pmset -a hibernatemode 0
 # ==================================
 # PYTHON
 # ==================================
-pyenv install 3.7.1
-pyenv global 3.7.1
+pyenv install 3.7.3
+pyenv global 3.7.3
 pip install ipython
 
 # add litecli
 pip install litecli
-# add youtube downloader
-pip install youtube-dl
 # add httpstat
 go get github.com/davecheney/httpstat

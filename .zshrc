@@ -40,6 +40,8 @@ alias ll="exa --group-directories-first --color=always --long --git --all"
 alias ts="date -u -r"
 # Get current time in timestamp
 alias tsn="date +%s"
+# Apply theme for bat
+alias bat="bat --theme=Monokai\ Extended\ Light"
 
 # Create a new directory and enter it
 function mk() {

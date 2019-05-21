@@ -3,8 +3,9 @@ export PATH=$HOME/dotfiles/bin:$PATH
 
 export ZSH=$HOME/.oh-my-zsh
 
-
 ZSH_THEME="spaceship"
+
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 
 DISABLE_AUTO_UPDATE="true"
 

@@ -24,6 +24,7 @@ brew install diff-so-fancy
 brew install docker-clean
 brew install ranger
 brew install youtube-dl
+brew install tig
 brew cask install java
 brew cask install google-chrome
 brew cask install iina

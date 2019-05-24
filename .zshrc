@@ -43,6 +43,8 @@ alias ts="date -u -r"
 alias tsn="date +%s"
 # Apply theme for bat
 alias bat="bat --theme=Monokai\ Extended\ Light"
+# Alias for tig
+alias tg="tig"
 
 # Create a new directory and enter it
 function mk() {

@@ -6,11 +6,12 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="spaceship"
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
+ZSH_TMUX_AUTOSTART=true
 
 DISABLE_AUTO_UPDATE="true"
 
 plugins=(
-  gitfast git zsh-syntax-highlighting zsh-autosuggestions pyenv golang docker docker-compose httpie)
+  gitfast git tmux zsh-syntax-highlighting zsh-autosuggestions pyenv golang docker docker-compose httpie)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -11,7 +11,7 @@ ZSH_TMUX_AUTOSTART=true
 DISABLE_AUTO_UPDATE="true"
 
 plugins=(
-  gitfast git tmux zsh-syntax-highlighting zsh-autosuggestions pyenv golang docker docker-compose httpie)
+  gitfast git tmux zsh-syntax-highlighting zsh-autosuggestions pyenv golang docker docker-compose httpie poetry)
 
 source $ZSH/oh-my-zsh.sh
 

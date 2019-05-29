@@ -94,5 +94,12 @@ pip install ipython
 
 # add litecli
 pip install litecli
+
+# add poetry
+pip install poetry
+mkdir ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/poetry
+poetry completions zsh > .oh-my-zsh/custom/plugins/poetry/_poetry
+
 # add httpstat
 go get github.com/davecheney/httpstat
+

@@ -3,7 +3,9 @@ export PATH=$HOME/dotfiles/bin:$PATH
 
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="spaceship"
+ZSH_THEME=""
+fpath=("/Users/bogdan/.oh-my-zsh/custom/plugins/pure" $fpath )
+
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 ZSH_TMUX_AUTOSTART=true
@@ -14,6 +16,9 @@ plugins=(
   gitfast git tmux zsh-syntax-highlighting zsh-autosuggestions pyenv golang docker docker-compose httpie poetry)
 
 source $ZSH/oh-my-zsh.sh
+
+autoload -U promptinit; promptinit
+prompt pure
 
 function command_exists () {
   command -v "$1"  > /dev/null 2>&1;
@@ -43,7 +48,7 @@ alias ts="date -u -r"
 # Get current time in timestamp
 alias tsn="date +%s"
 # Apply theme for bat
-alias bat="bat --theme=Monokai\ Extended\ Light"
+# alias bat="bat --theme=Monokai\ Extended\ Light"
 # Alias for tig
 alias tg="tig"
 

@@ -57,9 +57,10 @@ ln -sfv ${PWD}/.tmux.conf $HOME
 # apply themes
 ln -sv ${PWD}/xxf.zsh-theme  $ZSH_CUSTOM/themes/xxf.zsh-theme
 
-# install spaceship
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+# isntall pure
+git clone https://github.com/sindresorhus/pure ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure
+ln -s "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure/async.zsh" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure/async"
+ln -s "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure/pure.zsh" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure/prompt_pure_setup"
 
 # install syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \

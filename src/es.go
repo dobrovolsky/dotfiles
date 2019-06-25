@@ -29,7 +29,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	_, err = fmt.Fprintf(h.w, "%s", dump)
+	_, err = fmt.Fprintf(h.w, "%s\n", dump)
 	if err != nil {
 		http.Error(w, fmt.Sprint(err), http.StatusInternalServerError)
 		return

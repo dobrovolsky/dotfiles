@@ -15,7 +15,6 @@ brew install pyenv
 brew install pipenv
 brew install fzf
 brew install golang
-brew install opencv
 brew install tmux
 brew install ctop
 brew install exa
@@ -25,13 +24,14 @@ brew install docker-clean
 brew install ranger
 brew install youtube-dl
 brew install tig
-brew cask install java
 brew cask install google-chrome
 brew cask install iina
 brew cask install iterm2
 brew cask install telegram
 brew cask install pycharm
+brew cask install goland
 brew cask install transmission
+brew cask install spotify
 
 # ==================================
 # SHELL SETTINGS
@@ -99,8 +99,15 @@ pip install litecli
 # add poetry
 pip install poetry
 mkdir ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/poetry
-poetry completions zsh > .oh-my-zsh/custom/plugins/poetry/_poetry
+poetry completions zsh > ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/poetry/_poetry
 
 # add httpstat
 go get github.com/davecheney/httpstat
+
+# install tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# isntall vim plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 

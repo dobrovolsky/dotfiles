@@ -6,7 +6,6 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=""
 fpath=("/Users/bogdan/.oh-my-zsh/custom/plugins/pure" $fpath )
 
-
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 ZSH_TMUX_AUTOSTART=true
 

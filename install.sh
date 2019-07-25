@@ -100,6 +100,7 @@ pip install litecli
 pip install poetry
 mkdir ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/poetry
 poetry completions zsh > ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/poetry/_poetry
+poetry config settings.virtualenvs.in-project true
 
 # add httpstat
 go get github.com/davecheney/httpstat
@@ -111,3 +112,5 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# https://github.com/robbyrussell/oh-my-zsh/issues/7308#issuecomment-481255255
+rm ~/.zcompdump*

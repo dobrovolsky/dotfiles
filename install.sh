@@ -45,7 +45,7 @@ sh -c "echo $(which zsh) >> /etc/shells"
 chsh -s $(which zsh)
 
 # key bindings for fzf
-$(brew --prefix)/opt/fzf/install
+$(brew --prefix)/opt/fzf/install --all
 
 # create symlinks
 ln -sfv ${PWD}/.zshrc $HOME

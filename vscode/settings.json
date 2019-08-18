@@ -1,0 +1,12 @@
+{
+    "go.goroot": "/usr/local/Cellar/go/1.12.7/libexec",
+    "go.gopath": "/Users/bogdan/go",
+    "go.useLanguageServer": true,
+
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "editor.fontFamily": "FiraCode-Retina",
+    "editor.fontWeight": "300",
+    "workbench.colorTheme": "One Dark Pro",
+    "python.jediEnabled": false,
+}

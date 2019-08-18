@@ -32,6 +32,7 @@ brew cask install pycharm
 brew cask install goland
 brew cask install transmission
 brew cask install spotify
+brew cask install vscodium
 
 # ==================================
 # SHELL SETTINGS
@@ -53,6 +54,10 @@ ln -sfv ${PWD}/.gitignore $HOME
 ln -sfv ${PWD}/.gitconfig $HOME
 ln -sfv ${PWD}/.vimrc $HOME
 ln -sfv ${PWD}/.tmux.conf $HOME
+rm -rf ~/Library/Application\ Support/VSCodium/User
+ln -sfv ${PWD}/vscode/settings.json ~/Library/Application\ Support/VSCodium/User
+ln -sfv ${PWD}/vscode/keybindings.json ~/Library/Application\ Support/VSCodium/User
+
 
 # apply themes
 ln -sv ${PWD}/xxf.zsh-theme  $ZSH_CUSTOM/themes/xxf.zsh-theme

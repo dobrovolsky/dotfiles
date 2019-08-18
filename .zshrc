@@ -47,7 +47,7 @@ alias ts="date -u -r"
 # Get current time in timestamp
 alias tsn="date +%s"
 # Apply theme for bat
-# alias bat="bat --theme=Monokai\ Extended\ Light"
+alias bat="bat --theme=base16"
 # Alias for tig
 alias tg="tig"
 

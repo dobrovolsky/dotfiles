@@ -54,9 +54,10 @@ ln -sfv ${PWD}/.gitignore $HOME
 ln -sfv ${PWD}/.gitconfig $HOME
 ln -sfv ${PWD}/.vimrc $HOME
 ln -sfv ${PWD}/.tmux.conf $HOME
+# VSCode
 rm -rf ~/Library/Application\ Support/VSCodium/User
-ln -sfv ${PWD}/vscode/settings.json ~/Library/Application\ Support/VSCodium/User
-ln -sfv ${PWD}/vscode/keybindings.json ~/Library/Application\ Support/VSCodium/User
+mkdir  ~/Library/Application\ Support/VSCodium/User
+ln -sfv ${PWD}/vscode/User/* ~/Library/Application\ Support/VSCodium/User/
 
 
 # apply themes

@@ -59,7 +59,6 @@ rm -rf ~/Library/Application\ Support/VSCodium/User
 mkdir  ~/Library/Application\ Support/VSCodium/User
 ln -sfv ${PWD}/vscode/User/* ~/Library/Application\ Support/VSCodium/User/
 
-
 # apply themes
 ln -sv ${PWD}/xxf.zsh-theme  $ZSH_CUSTOM/themes/xxf.zsh-theme
 
@@ -113,10 +112,6 @@ go get github.com/davecheney/httpstat
 
 # install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# isntall vim plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # https://github.com/robbyrussell/oh-my-zsh/issues/7308#issuecomment-481255255
 rm ~/.zcompdump*

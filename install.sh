@@ -33,6 +33,7 @@ brew cask install goland
 brew cask install transmission
 brew cask install spotify
 brew cask install vscodium
+brew cask install flux
 
 # ==================================
 # SHELL SETTINGS

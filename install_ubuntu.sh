@@ -17,7 +17,7 @@ xz-utils tk-dev libffi-dev liblzma-dev python-openssl git -y
 pyenv install 3.7.4
 pyenv global 3.7.4
 
-sudo apt-get install libpq-dev
+sudo apt install libpq-dev -y
 pip install pgcli
 pip install ipython
 pip install awscli

@@ -6,10 +6,14 @@
 ![alt](/images/preview.png)
 
 ### Install for MacOS
+Run [install.sh](https://github.com/dobrovolsky/dotfiles/blob/master/install.sh)
+Short URL to get and run script.
 ```
 curl -L https://git.io/fjADp | sh
 ```
 ### Install for Ubuntu
+Run [install_ubuntu.sh](https://github.com/dobrovolsky/dotfiles/blob/master/install_ubuntu.sh)
+Short URL to get and run script.
 ```
 curl -L https://git.io/fjAyf | sh
 ```

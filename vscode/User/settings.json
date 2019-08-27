@@ -5,7 +5,7 @@
 
     "editor.fontLigatures": true,
     "editor.fontSize": 16,
-    "editor.fontFamily": "FiraCode-Retina",
+    "editor.fontFamily": "Fira Code",
     "editor.fontWeight": "300",
     "workbench.colorTheme": "One Dark Pro",
     "python.jediEnabled": false,

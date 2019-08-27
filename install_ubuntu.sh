@@ -23,6 +23,9 @@ pip install ipython
 pip install awscli
 pip install httpie
 pip install litecli
+pip install pipenv
+pip install youtube-dl
+pip install ranger
 
 # isntall poetry
 pip install poetry
@@ -80,4 +83,61 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 # install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+cd ~/
+mkdir programs
+
+# install Pychram
+wget https://download.jetbrains.com/python/pycharm-professional-2019.2.1.tar.gz
+tar -C programs -xzf pycharm-professional-2019.2.1.tar.gz
+rm pycharm-professional-2019.2.1.tar.gz
+
+# install Goland
+wget https://download.jetbrains.com/go/goland-2019.2.1.tar.gz
+tar -C programs -xzf goland-2019.2.1.tar.gz
+rm goland-2019.2.1.tar.gz
+
+# install VSComdium
+wget https://github.com/VSCodium/vscodium/releases/download/1.37.1/codium_1.37.1-1565952268_amd64.deb
+sudo dpkg -i codium_1.37.1-1565952268_amd64.deb
+rm codium_1.37.1-1565952268_amd64.deb
+rm -rf ~/.config/VSCodium/User
+mkdir ~/.config/VSCodium/User
+ln -sfv ${PWD}/vscode/User/* ~/.config/VSCodium/User
+sudo apt install fonts-firacode
+
+# install telegram
+wget -O- https://telegram.org/dl/desktop/linux | sudo tar xJ -C /opt/
+sudo ln -s /opt/Telegram/Telegram /usr/local/bin/telegram-desktop
+telegram-desktop
+
+# install golang
+sudo add-apt-repository ppa:longsleep/golang-backports
+sudo apt update
+sudo apt install golang-go -y
+
+# install spotify
+curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update && sudo apt-get install spotify-client
+
+# install google chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+rm google-chrome-stable_current_amd64.deb
+
+# install ctop
+sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.2/ctop-0.7.2-linux-amd64 -O /usr/local/bin/ctop
+sudo chmod +x /usr/local/bin/ctop
+
+# install httpstat
+go get github.com/davecheney/httpstat
+
+# install docker-clean
+curl -s https://raw.githubusercontent.com/ZZROTDesign/docker-clean/v2.0.4/docker-clean |
+    sudo tee /usr/local/bin/docker-clean > /dev/null && \
+    sudo chmod +x /usr/local/bin/docker-clean
+
+# install tig
+sudo apt install tig -y
 

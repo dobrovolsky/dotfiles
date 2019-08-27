@@ -12,7 +12,6 @@ Short URL to get and run script.
 curl -L https://git.io/fjADp | sh
 ```
 ### Install for Ubuntu
-**Has limited set of programs.**
 Run [install_ubuntu.sh](https://github.com/dobrovolsky/dotfiles/blob/master/install_ubuntu.sh)
 Short URL to get and run script.
 ```

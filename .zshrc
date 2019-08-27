@@ -1,5 +1,6 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/dotfiles/bin:$PATH
+export PATH="$HOME/.pyenv/bin:$PATH"
 
 export ZSH=$HOME/.oh-my-zsh
 

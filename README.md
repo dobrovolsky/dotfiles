@@ -5,13 +5,22 @@
 ### My personal dotfiles.
 ![alt](/images/preview.png)
 
+### Install for MacOS
+```
+curl -L https://git.io/fjADp | sh
+```
+### Install for Ubuntu
+```
+curl -L https://git.io/fjAyf | sh
+```
+
 ### Tools
 - MacOS
 - zsh + [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [pure](https://github.com/sindresorhus/pure)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- [tmux](https://github.com/tmux/tmux)  
+- [tmux](https://github.com/tmux/tmux)
 - [fzf](https://github.com/junegunn/fzf)
 - [exa](https://github.com/ogham/exa)
 - [bat](https://github.com/sharkdp/bat)

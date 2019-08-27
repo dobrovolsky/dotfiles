@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
+git clone https://github.com/dobrovolsky/dotfiles
+cd dotfiles
+
 # install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # ==================================
 # APP INSTALL
 # ==================================
-brew install git
 brew install httpie
 brew install pgcli
 brew install awscli

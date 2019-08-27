@@ -33,6 +33,7 @@ poetry config settings.virtualenvs.in-project true
 sudo apt install tmux -y
 sudo apt install zsh -y
 sudo apt install vim -y
+sudo apt install htop -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf

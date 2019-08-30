@@ -3,9 +3,11 @@ export PATH=$HOME/dotfiles/bin:$PATH
 export PATH="$HOME/.pyenv/bin:$PATH"
 
 export ZSH=$HOME/.oh-my-zsh
-
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
-ZSH_TMUX_AUTOSTART=true
+if [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]; then 
+    ZSH_TMUX_AUTOSTART=true
+fi
+
 
 DISABLE_AUTO_UPDATE="true"
 

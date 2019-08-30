@@ -3,11 +3,12 @@ export PATH=$HOME/dotfiles/bin:$PATH
 export PATH="$HOME/.pyenv/bin:$PATH"
 
 export ZSH=$HOME/.oh-my-zsh
+
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
+
 if [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]; then 
     ZSH_TMUX_AUTOSTART=true
 fi
-
 
 DISABLE_AUTO_UPDATE="true"
 
@@ -74,6 +75,7 @@ alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print \$2}'"
 
 if command_exists exa ; then
   alias ll="exa --group-directories-first --color=always --long --git --all"
+  alias tree="ll --tree"
 else
   alias ll="ls -la"
 fi

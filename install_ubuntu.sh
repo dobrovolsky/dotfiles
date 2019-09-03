@@ -64,7 +64,7 @@ ln -sfv ${PWD}/.gitconfig $HOME
 ln -sfv ${PWD}/.vimrc $HOME
 ln -sfv ${PWD}/.tmux.conf $HOME
 
-# isntall pure
+# install pure
 git clone https://github.com/sindresorhus/pure ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure
 ln -s "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure/async.zsh" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure/async"
 ln -s "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure/pure.zsh" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure/prompt_pure_setup"
@@ -141,3 +141,5 @@ curl -s https://raw.githubusercontent.com/ZZROTDesign/docker-clean/v2.0.4/docker
 # install tig
 sudo apt install tig -y
 
+# install xclip
+sudo apt install xclip -y

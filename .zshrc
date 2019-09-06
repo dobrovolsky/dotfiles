@@ -1,6 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/dotfiles/bin:$PATH
 export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 export ZSH=$HOME/.oh-my-zsh
 
@@ -87,6 +88,14 @@ alias tsn="date +%s"
 alias bat="bat --theme=base16"
 # Alias for tig
 alias tg="tig"
+
+# Automatically list directory contents on `cd`.
+auto-ls () {
+  if [ $HOME != "$(pwd)" ]; then 
+	  ll
+  fi
+}
+chpwd_functions=( $chpwd_functions auto-ls)
 
 # Create a new directory and enter it
 function mk() {

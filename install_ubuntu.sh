@@ -143,3 +143,11 @@ sudo apt install tig -y
 
 # install xclip
 sudo apt install xclip -y
+
+# install from src
+(
+cd src
+go build -o ../bin/es es.go
+go build -o ../bin/fs fs.go
+)
+

@@ -118,3 +118,11 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # https://github.com/robbyrussell/oh-my-zsh/issues/7308#issuecomment-481255255
 rm ~/.zcompdump*
+
+# install from src
+(
+cd src
+go build -o ../bin/es es.go
+go build -o ../bin/fs fs.go
+)
+

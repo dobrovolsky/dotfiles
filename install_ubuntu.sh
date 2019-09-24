@@ -63,6 +63,7 @@ ln -sfv ${PWD}/.gitignore $HOME
 ln -sfv ${PWD}/.gitconfig $HOME
 ln -sfv ${PWD}/.vimrc $HOME
 ln -sfv ${PWD}/.tmux.conf $HOME
+ln -sfv ${PWD}/.ideavimrc $HOME
 
 # install pure
 git clone https://github.com/sindresorhus/pure ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure

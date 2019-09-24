@@ -1,0 +1,2 @@
+" https://stackoverflow.com/questions/27898407/intellij-idea-with-ideavim-cannot-copy-text-from-another-source
+set clipboard+=unnamed

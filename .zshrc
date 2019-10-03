@@ -110,8 +110,15 @@ function len(){
 
 if [[ "$(uname)" == "Darwin" ]]; then
     OS="Mac"
+
 elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
     OS="Linux"
+    # to run copy in macos and ubuntu in same way
+    alias pbcopy="xclip -selection clipboar"
+
 elif [[ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]]; then
     OS="MinGW"
 fi
+
+alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
+

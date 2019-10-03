@@ -13,6 +13,18 @@ fi
 
 DISABLE_AUTO_UPDATE="true"
 
+if [[ "$(uname)" == "Darwin" ]]; then
+    export OS="Mac"
+
+elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
+    export OS="Linux"
+    # to run copy in macos and ubuntu in same way
+    alias pbcopy="xclip -selection clipboar"
+
+elif [[ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]]; then
+    export OS="MinGW"
+fi
+
 function command_exists () {
   command -v "$1"  > /dev/null 2>&1;
 }
@@ -108,17 +120,29 @@ function len(){
   echo ${#string}
 }
 
-if [[ "$(uname)" == "Darwin" ]]; then
-    OS="Mac"
+function fzf-log() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
 
-elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
-    OS="Linux"
-    # to run copy in macos and ubuntu in same way
-    alias pbcopy="xclip -selection clipboar"
 
-elif [[ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]]; then
-    OS="MinGW"
-fi
+function fzf-log-preview() {
+  _gitLogLineToHash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
+  _viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always % | diff-so-fancy'"
+
+  git log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr% C(auto)%an" "$@" |
+      fzf --no-sort --reverse --tiebreak=index --no-multi \
+          --ansi --preview="$_viewGitLogLine" \
+              --header "enter to view, alt-y to copy hash" \
+              --bind "enter:execute:$_viewGitLogLine   | less -R" \
+              --bind "alt-y:execute:$_gitLogLineToHash | pbcopy"
+}
 
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 

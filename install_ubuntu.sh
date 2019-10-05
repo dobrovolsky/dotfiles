@@ -139,9 +139,6 @@ curl -s https://raw.githubusercontent.com/ZZROTDesign/docker-clean/v2.0.4/docker
     sudo tee /usr/local/bin/docker-clean > /dev/null && \
     sudo chmod +x /usr/local/bin/docker-clean
 
-# install tig
-sudo apt install tig -y
-
 # install xclip
 sudo apt install xclip -y
 

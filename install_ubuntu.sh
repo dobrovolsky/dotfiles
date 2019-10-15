@@ -99,9 +99,9 @@ tar -C programs -xzf goland-2019.2.1.tar.gz
 rm goland-2019.2.1.tar.gz
 
 # install VSComdium
-wget https://github.com/VSCodium/vscodium/releases/download/1.37.1/codium_1.37.1-1565952268_amd64.deb
-sudo dpkg -i codium_1.37.1-1565952268_amd64.deb
-rm codium_1.37.1-1565952268_amd64.deb
+wget https://github.com/VSCodium/vscodium/releases/download/1.39.1/codium_1.39.1-1570791011_amd64.deb
+sudo dpkg -i codium_1.39.1-1570791011_amd64.deb
+rm codium_1.39.1-1570791011_amd64.deb
 rm -rf ~/.config/VSCodium/User
 mkdir ~/.config/VSCodium/User
 ln -sfv ${PWD}/vscode/User/* ~/.config/VSCodium/User

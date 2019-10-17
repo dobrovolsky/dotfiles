@@ -97,8 +97,8 @@ pmset -a hibernatemode 0
 # ==================================
 # PYTHON
 # ==================================
-pyenv install 3.7.3
-pyenv global 3.7.3
+pyenv install 3.8.0
+pyenv global 3.8.0
 pip install ipython
 
 # add litecli

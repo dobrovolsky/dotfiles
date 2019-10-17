@@ -10,4 +10,5 @@
     "workbench.colorTheme": "One Dark Pro",
     "python.jediEnabled": false,
     "explorer.confirmDelete": false,
+    "files.autoSave": "onFocusChange",
 }

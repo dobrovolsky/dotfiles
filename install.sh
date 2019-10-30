@@ -35,6 +35,7 @@ brew cask install transmission
 brew cask install spotify
 brew cask install vscodium
 brew cask install flux
+brew cask install bitwarden
 
 # ==================================
 # SHELL SETTINGS
@@ -97,18 +98,19 @@ pmset -a hibernatemode 0
 # ==================================
 # PYTHON
 # ==================================
-pyenv install 3.8.0
-pyenv global 3.8.0
-pip install ipython
+PYTHON_VERSION=3.8.0
+pyenv install "${PYTHON_VERSION}"
+pyenv global "${PYTHON_VERSION}"
+~/.pyenv/versions/"${PYTHON_VERSION}"/bin/pip install ipython
 
 # add litecli
-pip install litecli
+~/.pyenv/versions/"${PYTHON_VERSION}"/bin/pip install litecli
 
 # add poetry
-pip install poetry
+~/.pyenv/versions/"${PYTHON_VERSION}"/bin/pip install poetry
 mkdir ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/poetry
-poetry completions zsh > ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/poetry/_poetry
-poetry config settings.virtualenvs.in-project true
+~/.pyenv/shims/poetry completions zsh > ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/poetry/_poetry
+~/.pyenv/shims/poetry config settings.virtualenvs.in-project true
 
 # add httpstat
 go get github.com/davecheney/httpstat

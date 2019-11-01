@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if /opt/cisco/anyconnect/bin/vpn state | grep -q Connected ; then
+    echo Connected to VPN, disconnecting...
+    /opt/cisco/anyconnect/bin/vpn disconnect
+else
+    echo NOT Connected to VPN, connecting...
+    
+    enable_vpn
+fi

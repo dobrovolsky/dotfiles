@@ -12,6 +12,7 @@ if [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]; then
 fi
 
 DISABLE_AUTO_UPDATE="true"
+export ENABLE_VPNSTATUS="true"
 
 if [[ "$(uname)" == "Darwin" ]]; then
     export OS="Mac"

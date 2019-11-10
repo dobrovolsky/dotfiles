@@ -1,5 +1,5 @@
 {
-    "go.goroot": "/usr/local/Cellar/go/1.12.7/libexec",
+    "go.goroot": "/usr/local/Cellar/go/1.13.4/libexec",
     "go.gopath": "/Users/bogdan/go",
     "go.useLanguageServer": true,
 
@@ -11,4 +11,5 @@
     "python.jediEnabled": false,
     "explorer.confirmDelete": false,
     "files.autoSave": "onFocusChange",
+    "window.zoomLevel": 0,
 }

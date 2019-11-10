@@ -12,7 +12,7 @@ if [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]; then
 fi
 
 DISABLE_AUTO_UPDATE="true"
-export ENABLE_VPNSTATUS="true"
+export ENABLE_VPNSTATUS="false"
 
 if [[ "$(uname)" == "Darwin" ]]; then
     export OS="Mac"
@@ -33,6 +33,7 @@ function command_exists () {
 plugins=(
   zsh-syntax-highlighting 
   zsh-autosuggestions 
+  z
 )
 
 if command_exists git ; then

@@ -12,7 +12,6 @@ if [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]; then
 fi
 
 DISABLE_AUTO_UPDATE="true"
-export ENABLE_VPNSTATUS="false"
 
 if [[ "$(uname)" == "Darwin" ]]; then
     export OS="Mac"
@@ -146,3 +145,11 @@ function fzf-log-preview() {
 
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+dsf() {
+    if [ "$#" -eq 2 ]; then
+        git diff --no-index --color "$@" | diff-so-fancy | less -RFXx2
+    fi
+}
+dsf $@
+

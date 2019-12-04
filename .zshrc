@@ -33,11 +33,10 @@ plugins=(
   zsh-syntax-highlighting 
   zsh-autosuggestions 
   z
+  git 
+  gitfast
+  web-search
 )
-
-if command_exists git ; then
-  plugins+=(git gitfast)
-fi
 
 if command_exists tmux ; then
   plugins+=(tmux)
@@ -59,8 +58,8 @@ if command_exists httpie ; then
   plugins+=(httpie)
 fi
 
-if command_exists poetry ; then
-  plugins+=(poetry)
+if [ -f $HOME/.pyenv/shims/poetry ]; then
+    plugins+=(poetry)
 fi
 
 source $ZSH/oh-my-zsh.sh

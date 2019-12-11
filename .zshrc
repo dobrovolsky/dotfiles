@@ -7,10 +7,6 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 
-if [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]; then 
-    ZSH_TMUX_AUTOSTART=true
-fi
-
 DISABLE_AUTO_UPDATE="true"
 
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -36,10 +32,17 @@ plugins=(
   git 
   gitfast
   web-search
+  kubectl
 )
 
 if command_exists tmux ; then
-  plugins+=(tmux)
+    plugins+=(tmux)
+
+    ZSH_TMUX_AUTOSTART=true
+
+    if [ "$TERMINAL_EMULATOR" = "JetBrains-JediTerm" ] || [ -n "$SSH_CONNECTION" ]; then
+        ZSH_TMUX_AUTOSTART=false
+    fi
 fi
 
 if command_exists pyenv ; then

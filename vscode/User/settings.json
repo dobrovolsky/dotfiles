@@ -7,9 +7,19 @@
     "editor.fontSize": 16,
     "editor.fontFamily": "Fira Code",
     "editor.fontWeight": "300",
-    "workbench.colorTheme": "One Dark Pro",
-    "python.jediEnabled": false,
+    "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
     "files.autoSave": "onFocusChange",
     "window.zoomLevel": 0,
+
+    "terminal.integrated.env.osx": {
+        "TERMINAL_EMULATOR": "VSCODE"
+    },
+    "terminal.integrated.env.linux": {
+        "TERMINAL_EMULATOR": "VSCODE"
+    },
+
+    "python.jediEnabled": false,
+    
+    "workbench.colorTheme": "White",
 }

@@ -40,7 +40,10 @@ if command_exists tmux ; then
 
     ZSH_TMUX_AUTOSTART=true
 
-    if [ "$TERMINAL_EMULATOR" = "JetBrains-JediTerm" ] || [ -n "$SSH_CONNECTION" ]; then
+    JB="JetBrains-JediTerm"
+    VC="VSCODE"
+    
+    if [ "$TERMINAL_EMULATOR" = "$JB" ] || [ "$TERMINAL_EMULATOR" = "$VC" ] || [ -n "$SSH_CONNECTION" ]; then
         ZSH_TMUX_AUTOSTART=false
     fi
 fi

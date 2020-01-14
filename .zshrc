@@ -103,7 +103,7 @@ alias ts="date -u -r"
 # Get current time in timestamp
 alias tsn="date +%s"
 # Apply theme for bat
-alias bat="bat --theme=Monokai\ Extended\ Light"
+# alias bat="bat --theme=Monokai\ Extended\ Light"
 
 # Automatically list directory contents on `cd`.
 auto-ls () {
@@ -149,7 +149,6 @@ function fzf-log-preview() {
 }
 
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 dsf() {
     if [ "$#" -eq 2 ]; then
@@ -157,4 +156,13 @@ dsf() {
     fi
 }
 dsf $@
+
+function rg {
+    local tempfile="/tmp/pwd-from-ranger"
+    ranger --choosedir=$tempfile $argv
+    local rangerpwd=$(cat $tempfile)
+    if [[ "$PWD" != $rangerpwd ]]; then
+        cd $rangerpwd
+    fi
+}
 

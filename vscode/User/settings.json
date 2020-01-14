@@ -3,15 +3,19 @@
     "go.gopath": "/Users/bogdan/go",
     "go.useLanguageServer": true,
 
-    "editor.fontLigatures": true,
     "editor.fontSize": 16,
     "editor.fontFamily": "Fira Code",
-    "editor.fontWeight": "300",
+    "editor.fontWeight": "400",
+    "editor.fontLigatures": true,
+    "editor.lineHeight": 30,
     "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
     "files.autoSave": "onFocusChange",
     "window.zoomLevel": 0,
 
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontFamily": "Fira Code",
+    "terminal.integrated.fontWeight": "400",
     "terminal.integrated.env.osx": {
         "TERMINAL_EMULATOR": "VSCODE"
     },
@@ -21,5 +25,14 @@
 
     "python.jediEnabled": false,
     
-    "workbench.colorTheme": "White",
+    "workbench.colorTheme": "Dark Purple - Webstorm",
+    "workbench.activityBar.visible": true,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "gitlens.hovers.enabled": false,
+    "gitlens.blame.format": "${author|14?} ${ago|14-}",
+    "gitlens.mode.active": "zen",
+    "gitlens.blame.compact": false
 }

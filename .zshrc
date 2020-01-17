@@ -111,6 +111,8 @@ auto-ls () {
 	  ll
   fi
 }
+
+original_chpwd=chpwd_functions
 chpwd_functions=( $chpwd_functions auto-ls)
 
 # Create a new directory and enter it
@@ -164,5 +166,32 @@ function rg {
     if [[ "$PWD" != $rangerpwd ]]; then
         cd $rangerpwd
     fi
+}
+
+function update_toolchain() {
+    tmp_chpwd=chpwd_functions
+    chpwd_functions=original_chpwd
+    
+    echo "Updating brew..."
+    brew update
+    brew upgrade
+    brew cask upgrade
+
+    echo "\nUpdating oh my zsh..."
+    upgrade_oh_my_zsh
+    
+    (echo "\nUpdating pure..."
+    cd ~/.oh-my-zsh/custom/plugins/pure
+    git pull origin master)
+    
+    (echo "\nUpdating zsh-autosuggestions..."
+    cd ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    git pull origin master)
+    
+    (echo "\nUpdating zsh-syntax-highlighting..."
+    cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    git pull origin master)
+    
+    chpwd_functions=tmp_chpwd
 }
 

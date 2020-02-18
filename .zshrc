@@ -8,6 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 
 DISABLE_AUTO_UPDATE="true"
+LS_ON_CD=true
 
 if [[ "$(uname)" == "Darwin" ]]; then
     export OS="Mac"
@@ -107,12 +108,11 @@ alias tsn="date +%s"
 
 # Automatically list directory contents on `cd`.
 auto-ls () {
-  if [ $HOME != "$(pwd)" ]; then 
+  if [ $HOME != "$(pwd)" ] && [ $LS_ON_CD = true ]; then 
 	  ll
   fi
 }
 
-original_chpwd=chpwd_functions
 chpwd_functions=( $chpwd_functions auto-ls)
 
 # Create a new directory and enter it
@@ -169,9 +169,8 @@ function rg {
 }
 
 function update_toolchain() {
-    tmp_chpwd=chpwd_functions
-    chpwd_functions=original_chpwd
-    
+    LS_ON_CD=false
+
     echo "Updating brew..."
     brew update
     brew upgrade
@@ -191,7 +190,7 @@ function update_toolchain() {
     (echo "\nUpdating zsh-syntax-highlighting..."
     cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     git pull origin master)
-    
-    chpwd_functions=tmp_chpwd
+
+    LS_ON_CD=true
 }
 

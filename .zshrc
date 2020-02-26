@@ -34,6 +34,8 @@ plugins=(
   gitfast
   web-search
   kubectl
+  colored-man-pages
+  extract
 )
 
 if command_exists tmux ; then
@@ -189,6 +191,10 @@ function update_toolchain() {
     
     (echo "\nUpdating zsh-syntax-highlighting..."
     cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    git pull origin master)
+
+    (echo "\nUpdating tpm..."
+    cd  ~/.tmux/plugins/tpm
     git pull origin master)
 
     LS_ON_CD=true

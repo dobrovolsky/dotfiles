@@ -36,6 +36,7 @@ plugins=(
   kubectl
   colored-man-pages
   extract
+  zsh-interactive-cd
 )
 
 if command_exists tmux ; then

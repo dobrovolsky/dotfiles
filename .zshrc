@@ -5,6 +5,8 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export ZSH=$HOME/.oh-my-zsh
 
+export BAT_CONFIG_PATH=$HOME/dotfiles/bat.conf
+
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 
 DISABLE_AUTO_UPDATE="true"
@@ -106,8 +108,6 @@ fi
 alias ts="date -u -r"
 # Get current time in timestamp
 alias tsn="date +%s"
-# Apply theme for bat
-# alias bat="bat --theme=Monokai\ Extended\ Light"
 
 # Automatically list directory contents on `cd`.
 auto-ls () {

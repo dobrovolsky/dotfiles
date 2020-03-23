@@ -1,5 +1,5 @@
 {
-    "go.goroot": "/usr/local/Cellar/go/1.13.4/libexec",
+    "go.goroot": "/usr/local/Cellar/go/1.14/libexec",
     "go.gopath": "/Users/bogdan/go",
     "go.useLanguageServer": true,
 

@@ -25,7 +25,7 @@
 
     "python.jediEnabled": false,
     
-    "workbench.colorTheme": "Dark Purple - Webstorm",
+    "workbench.colorTheme": "Atom One Light",
     "workbench.activityBar.visible": true,
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
@@ -34,5 +34,6 @@
     "gitlens.hovers.enabled": false,
     "gitlens.blame.format": "${author|14?} ${ago|14-}",
     "gitlens.mode.active": "zen",
-    "gitlens.blame.compact": false
+    "gitlens.blame.compact": false,
+    "workbench.iconTheme": "material-icon-theme"
 }

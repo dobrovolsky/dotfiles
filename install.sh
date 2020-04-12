@@ -9,33 +9,8 @@ cd dotfiles
 # ==================================
 # APP INSTALL
 # ==================================
-brew install httpie
-brew install pgcli
-brew install awscli
-brew install htop
-brew install pyenv
-brew install pipenv
-brew install fzf
-brew install golang
-brew install tmux
-brew install ctop
-brew install exa
-brew install bat
-brew install diff-so-fancy
-brew install docker-clean
-brew install ranger
-brew install youtube-dl
-brew cask install google-chrome
-brew cask install iina
-brew cask install iterm2
-brew cask install telegram
-brew cask install pycharm
-brew cask install goland
-brew cask install transmission
-brew cask install spotify
-brew cask install vscodium
-brew cask install flux
-brew cask install bitwarden
+cat brew.list | xargs brew install 
+cat cask.list | xargs brew cask install 
 
 # ==================================
 # SHELL SETTINGS

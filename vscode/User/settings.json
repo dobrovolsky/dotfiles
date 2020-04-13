@@ -1,5 +1,5 @@
 {
-    "go.goroot": "/usr/local/Cellar/go/1.14/libexec",
+    "go.goroot": "/usr/local/Cellar/go/1.14.2_1/libexec",
     "go.gopath": "/Users/bogdan/go",
     "go.useLanguageServer": true,
 
@@ -35,5 +35,6 @@
     "gitlens.blame.format": "${author|14?} ${ago|14-}",
     "gitlens.mode.active": "zen",
     "gitlens.blame.compact": false,
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.largeFileOptimizations": false,
 }

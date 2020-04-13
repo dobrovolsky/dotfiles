@@ -109,6 +109,8 @@ fi
 alias ts="date -u -r"
 # Get current time in timestamp
 alias tsn="date +%s"
+# make notes
+alias note="open -a typora ~/Google\ Drive/Notes/Notes.md"
 
 # Automatically list directory contents on `cd`.
 auto-ls () {

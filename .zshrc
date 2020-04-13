@@ -6,7 +6,9 @@ export PATH="$HOME/.local/bin:$PATH"
 export ZSH=$HOME/.oh-my-zsh
 
 export BAT_CONFIG_PATH=$HOME/dotfiles/bat.conf
-export DISABLE_AUTO_TITLE='true'
+
+# allow JetBrains' IDEAs to access history
+HISTFILE=~/.zsh_history
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 

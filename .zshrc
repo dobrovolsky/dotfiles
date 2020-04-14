@@ -81,6 +81,8 @@ source $ZSH/oh-my-zsh.sh
 
 fpath=("$ZSH/custom/plugins/pure" $fpath )
 autoload -U promptinit; promptinit
+# show stash icon
+zstyle :prompt:pure:git:stash show yes 
 prompt pure
 
 # set language environment

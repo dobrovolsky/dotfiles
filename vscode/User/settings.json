@@ -5,13 +5,13 @@
 
     "editor.fontSize": 16,
     "editor.fontFamily": "Fira Code",
-    "editor.fontWeight": "400",
+    "editor.fontWeight": "500",
     "editor.fontLigatures": true,
     "editor.lineHeight": 30,
     "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
     "files.autoSave": "onFocusChange",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
 
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.fontFamily": "Fira Code",
@@ -25,16 +25,11 @@
 
     "python.jediEnabled": false,
     
-    "workbench.colorTheme": "Atom One Light",
+    "workbench.colorTheme": "Dark Purple - Webstorm",
     "workbench.activityBar.visible": true,
-    "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.codeLens.enabled": false,
-    "gitlens.statusBar.enabled": false,
-    "gitlens.hovers.enabled": false,
-    "gitlens.blame.format": "${author|14?} ${ago|14-}",
-    "gitlens.mode.active": "zen",
-    "gitlens.blame.compact": false,
+
     "workbench.iconTheme": "material-icon-theme",
     "editor.largeFileOptimizations": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }

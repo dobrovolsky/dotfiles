@@ -42,6 +42,7 @@ plugins=(
   colored-man-pages
   extract
   zsh-interactive-cd
+  nvm
 )
 
 if command_exists tmux ; then

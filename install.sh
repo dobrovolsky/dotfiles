@@ -93,6 +93,9 @@ go get github.com/davecheney/httpstat
 # install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
 # https://github.com/robbyrussell/oh-my-zsh/issues/7308#issuecomment-481255255
 rm ~/.zcompdump*
 

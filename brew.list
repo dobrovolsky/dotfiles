@@ -8,9 +8,11 @@ fzf
 golang
 htop
 httpie
+nodenv
 pgcli
 pipenv
 pyenv
+pyenv-virtualenv
 ranger
 tmux
 youtube-dl

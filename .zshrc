@@ -42,7 +42,6 @@ plugins=(
   colored-man-pages
   extract
   zsh-interactive-cd
-  nvm
 )
 
 if command_exists tmux ; then
@@ -209,3 +208,5 @@ function update_toolchain() {
     LS_ON_CD=true
 }
 
+# init nodenv
+eval "$(nodenv init - zsh)"

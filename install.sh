@@ -73,7 +73,7 @@ pmset -a hibernatemode 0
 # ==================================
 # PYTHON
 # ==================================
-PYTHON_VERSION=3.8.0
+PYTHON_VERSION=3.8.2
 pyenv install "${PYTHON_VERSION}"
 pyenv global "${PYTHON_VERSION}"
 ~/.pyenv/versions/"${PYTHON_VERSION}"/bin/pip install ipython
@@ -87,14 +87,18 @@ mkdir ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/poetry
 ~/.pyenv/shims/poetry completions zsh > ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/poetry/_poetry
 ~/.pyenv/shims/poetry config settings.virtualenvs.in-project true
 
+# ==================================
+# NODEJS
+# ==================================
+NODE_VERSION=14.1.0
+nodenv install "${NODE_VERSION}"
+nodenv global "${NODE_VERSION}"
+
 # add httpstat
 go get github.com/davecheney/httpstat
 
 # install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 # https://github.com/robbyrussell/oh-my-zsh/issues/7308#issuecomment-481255255
 rm ~/.zcompdump*

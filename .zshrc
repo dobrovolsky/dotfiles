@@ -114,7 +114,6 @@ alias ts="date -u -r"
 # Get current time in timestamp
 alias tsn="date +%s"
 # make notes
-alias qn="open 'notion://www.notion.so/e398ce19ebc8457c8bbd8187cc9f46e4?v=75cddc846deb4e449e5cb91e8bb6470b&p=d1704e379f3a4353af8bcd549eeba79e'"
 alias n="open 'notion://www.notion.so/e398ce19ebc8457c8bbd8187cc9f46e4?v=75cddc846deb4e449e5cb91e8bb6470b'"
 
 # Automatically list directory contents on `cd`.

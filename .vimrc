@@ -30,6 +30,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 

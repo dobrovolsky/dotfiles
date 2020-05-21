@@ -69,7 +69,7 @@ if command_exists docker ; then
   plugins+=(docker docker-compose)
 fi
 
-if command_exists httpie ; then
+if command_exists http ; then
   plugins+=(httpie)
 fi
 

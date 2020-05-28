@@ -38,9 +38,6 @@ rm -rf ~/Library/Application\ Support/VSCodium/User
 mkdir  ~/Library/Application\ Support/VSCodium/User
 ln -sfv ${PWD}/vscode/User/* ~/Library/Application\ Support/VSCodium/User/
 
-# apply themes
-ln -sv ${PWD}/xxf.zsh-theme  $ZSH_CUSTOM/themes/xxf.zsh-theme
-
 # isntall pure
 git clone https://github.com/sindresorhus/pure ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure
 ln -s "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure/async.zsh" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/pure/async"

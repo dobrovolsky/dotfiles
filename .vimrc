@@ -53,17 +53,20 @@ function! LightlineFilename()
               \ expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
   endfunction
 
-  let g:unite_force_overwrite_statusline = 0
-  let g:vimfiler_force_overwrite_statusline = 0
-  let g:vimshell_force_overwrite_statusline = 0
+let g:unite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
+let g:vimshell_force_overwrite_statusline = 0
 
 " enable NEDRTRee by default
 " autocmd vimenter * NERDTree
 " how hidden files
 let NERDTreeShowHidden=1
 
-colorscheme default
+colorscheme default 
 let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size = 1
+let g:indent_guides_guide_size = 4
 let g:indent_guides_color_change_percent = 3
-let g:indent_guides_enable_on_vim_startup = 1
+
+" set light theme
+set background=light
+

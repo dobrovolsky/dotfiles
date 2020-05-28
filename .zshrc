@@ -63,6 +63,9 @@ fi
 
 if command_exists go ; then
   plugins+=(golang)
+
+  # Add go liblary to path
+  export PATH="$PATH:$(go env GOPATH)/bin"
 fi
 
 if command_exists docker ; then
@@ -92,11 +95,6 @@ export LANG=en_US.UTF-8
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Add go liblary to path
-if command_exists go ; then
-  export PATH="$PATH:$(go env GOPATH)/bin"
-fi
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ALIASES
@@ -109,12 +107,17 @@ if command_exists exa ; then
 else
   alias ll="ls -la"
 fi
+
 # Convert timestamp to date by UTC
 alias ts="date -u -r"
 # Get current time in timestamp
 alias tsn="date +%s"
 # make notes
 alias n="open 'notion://www.notion.so/e398ce19ebc8457c8bbd8187cc9f46e4?v=75cddc846deb4e449e5cb91e8bb6470b'"
+# check weather
+alias weather="curl 'wttr.in/Kiev?2Q'"
+# usually useful in some dialogs ¯\_(ツ)_/¯
+alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 
 # Automatically list directory contents on `cd`.
 auto-ls () {
@@ -160,8 +163,7 @@ function fzf-log-preview() {
               --bind "alt-y:execute:$_gitLogLineToHash | pbcopy"
 }
 
-alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
-
+# use diff-so-fancy for comparing 2 files
 dsf() {
     if [ "$#" -eq 2 ]; then
         git diff --no-index --color "$@" | diff-so-fancy | less -RFXx2
@@ -169,6 +171,7 @@ dsf() {
 }
 dsf $@
 
+# run ranger and change directory to last navigated on exit
 function rg {
     local tempfile="/tmp/pwd-from-ranger"
     ranger --choosedir=$tempfile $argv
@@ -178,6 +181,7 @@ function rg {
     fi
 }
 
+# update dependencies
 function update_toolchain() {
     LS_ON_CD=false
 

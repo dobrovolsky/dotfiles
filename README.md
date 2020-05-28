@@ -6,17 +6,9 @@
 ![alt](/images/preview.png)
 
 ### Install for MacOS
-Run [install.sh](https://github.com/dobrovolsky/dotfiles/blob/master/install.sh)
-Short URL to get and run script.
-```
-curl -L https://git.io/fjADp | sh
-```
-### Install for Ubuntu
-Run [install_ubuntu.sh](https://github.com/dobrovolsky/dotfiles/blob/master/install_ubuntu.sh)
-Short URL to get and run script.
-```
-curl -L https://git.io/fjAyf | sh
-```
+1. Clone this repo
+2. `cd` into `dotfiles/` folder
+3. run `./install.sh`
 
 ### Tools
 - MacOS
@@ -37,12 +29,10 @@ curl -L https://git.io/fjAyf | sh
 - [ctop](https://github.com/bcicen/ctop)
 - [docker-clean](https://github.com/ZZROTDesign/docker-clean)
 - [ranger](https://github.com/ranger/ranger)
-- [tig](https://jonas.github.io/tig/)
 - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 - [ipython](https://ipython.org)
 - [poetry](https://github.com/sdispater/poetry)
 - [pyenv](https://github.com/pyenv/pyenv)
-- [pipenv](https://github.com/pypa/pipenv)
 - [youtube-dl](https://github.com/ytdl-org/youtube-dl)
 - [tpm](https://github.com/tmux-plugins/tpm)
     - [tmux-better-mouse-mode](https://github.com/NHDaly/tmux-better-mouse-mode)
@@ -54,16 +44,3 @@ curl -L https://git.io/fjAyf | sh
     - [nerdtree](https://github.com/scrooloose/nerdtree)
     - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
     - [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides)
-
-## Applications
-- golang
-- python
-- google-chrome
-- iina
-- iterm2
-- telegram
-- pycharm
-- goland
-- transmission
-- spotify
-- vscodium

@@ -25,7 +25,7 @@
 
     "python.jediEnabled": false,
     
-    "workbench.colorTheme": "Dark Purple - Webstorm",
+    "workbench.colorTheme": "Atom One Light",
     "workbench.activityBar.visible": true,
 
     "workbench.iconTheme": "material-icon-theme",

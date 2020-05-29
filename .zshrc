@@ -37,7 +37,6 @@ plugins=(
   z
   git 
   gitfast
-  web-search
   kubectl
   colored-man-pages
   extract

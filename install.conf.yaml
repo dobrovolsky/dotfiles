@@ -1,0 +1,45 @@
+- defaults:
+    link:
+      relink: true
+    shell:
+      stderr: true
+
+- clean: ['~']
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+
+- link:
+    ~/.gitconfig: config/.gitconfig
+    ~/.gitignore: config/.gitignore
+    ~/.ideavimrc: config/.ideavimrc
+    ~/.tmux.conf: config/.tmux.conf
+    ~/.vimrc: config/.vimrc
+    ~/.zshrc: config/.zshrc
+
+# MacOS applications
+- shell:
+    - [cat brew.list | xargs brew install, Installing console applications]
+    - [cat cask.list | xargs brew cask install , Installing GUI applications]
+    - [chsh -s $(which zsh), Making zsh the default shell]
+    - [bash ./python/install.sh, Installing Python and required packages]
+    - [bash ./node/install.sh, Installing NodeJS and required packages]
+    - [bash ./go/install.sh, Installing Golang required packages]
+    
+# VSCode
+- link:
+    "~/Library/Application Support/VSCodium/User/settings.json":
+        path: vscode/settings.json
+        create: true
+    "~/Library/Application Support/VSCodium/User/keybindings.json":
+        path: vscode/keybindings.json
+        create: true
+
+- shell:
+    - [bash ./vscode/install.sh, Installing vscode extensions]
+
+# Cleaning up:
+- shell:
+    - [brew cleanup, Cleaning up]
+      
+

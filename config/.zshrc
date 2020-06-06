@@ -16,76 +16,79 @@ DISABLE_AUTO_UPDATE="true"
 LS_ON_CD=true
 
 if [[ "$(uname)" == "Darwin" ]]; then
-    export OS="Mac"
+  export OS="Mac"
 
 elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
-    export OS="Linux"
-    # to run copy in macos and ubuntu in same way
-    alias pbcopy="xclip -selection clipboar"
+  export OS="Linux"
+  # to run copy in macos and ubuntu in same way
+  alias pbcopy="xclip -selection clipboar"
 
 elif [[ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]]; then
-    export OS="MinGW"
+  export OS="MinGW"
 fi
 
 function command_exists () {
   command -v "$1"  > /dev/null 2>&1;
 }
 
-plugins=(
-  zsh-syntax-highlighting 
-  zsh-autosuggestions 
-  z
-  git 
-  gitfast
-  kubectl
-  colored-man-pages
-  extract
-  zsh-interactive-cd
-)
+source ~/dotfiles/antigen/antigen.zsh
+
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+
+antigen use oh-my-zsh
+
+antigen bundle z
+antigen bundle git
+antigen bundle gitfast
+antigen bundle kubectl
+antigen bundle colored-man-pages
+antigen bundle extract
+antigen bundle zsh-interactive-cd
 
 if command_exists tmux ; then
-    plugins+=(tmux)
+  antigen bundle tmux
+  ZSH_TMUX_AUTOSTART=true
 
-    ZSH_TMUX_AUTOSTART=true
-
-    JB="JetBrains-JediTerm"
-    VC="VSCODE"
+  JB="JetBrains-JediTerm"
+  VC="VSCODE"
     
-    if [ "$TERMINAL_EMULATOR" = "$JB" ] || [ "$TERMINAL_EMULATOR" = "$VC" ] || [ -n "$SSH_CONNECTION" ]; then
-        ZSH_TMUX_AUTOSTART=false
-    fi
+  if [ "$TERMINAL_EMULATOR" = "$JB" ] || [ "$TERMINAL_EMULATOR" = "$VC" ] || [ -n "$SSH_CONNECTION" ]; then
+      ZSH_TMUX_AUTOSTART=false
+  fi
 fi
 
 if command_exists pyenv ; then
-  plugins+=(pyenv)
+  antigen bundle pyenv
 fi
 
 if command_exists go ; then
-  plugins+=(golang)
+  antigen bundle golang
 
   # Add go liblary to path
   export PATH="$PATH:$(go env GOPATH)/bin"
 fi
 
 if command_exists docker ; then
-  plugins+=(docker docker-compose)
+  antigen bundle docker
+  antigen bundle docker-compose
 fi
 
 if command_exists http ; then
-  plugins+=(httpie)
+  antigen bundle httpie
 fi
 
 if [ -f $HOME/.pyenv/shims/poetry ]; then
-    plugins+=(poetry)
+  antigen bundle --loc=~/dotfiles/python/_poetry
 fi
 
-source $ZSH/oh-my-zsh.sh
+antigen apply
 
-fpath=("$ZSH/custom/plugins/pure" $fpath )
-autoload -U promptinit; promptinit
 # show stash icon
 zstyle :prompt:pure:git:stash show yes 
-prompt pure
 
 # set language environment
 export LC_ALL=en_US.UTF-8
@@ -94,7 +97,16 @@ export LANG=en_US.UTF-8
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Setup FZF
+if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+fi
+
+# Auto-completion
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
 # ALIASES
 # My IP
@@ -121,7 +133,8 @@ alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 # Automatically list directory contents on `cd`.
 auto-ls () {
   if [ $HOME != "$(pwd)" ] && [ $LS_ON_CD = true ]; then 
-	  ll
+    # ll doen't exists, should call in this way :( 
+	  eval "ll"
   fi
 }
 
@@ -172,45 +185,44 @@ dsf $@
 
 # run ranger and change directory to last navigated on exit
 function rg {
-    local tempfile="/tmp/pwd-from-ranger"
-    ranger --choosedir=$tempfile $argv
-    local rangerpwd=$(cat $tempfile)
-    if [[ "$PWD" != $rangerpwd ]]; then
-        cd $rangerpwd
-    fi
+  local tempfile="/tmp/pwd-from-ranger"
+  ranger --choosedir=$tempfile $argv
+  local rangerpwd=$(cat $tempfile)
+  if [[ "$PWD" != $rangerpwd ]]; then
+      cd $rangerpwd
+  fi
 }
 
 # update dependencies
 function update_toolchain() {
-    LS_ON_CD=false
+  LS_ON_CD=false
 
-    echo "Updating brew..."
-    brew update
-    brew upgrade
-    brew cask upgrade
+  echo "Updating brew..."
+  brew update
+  brew upgrade
+  brew cask upgrade
 
-    echo "\nUpdating oh my zsh..."
-    upgrade_oh_my_zsh
+  echo "\nUpdating oh my zsh..."
+  upgrade_oh_my_zsh
     
-    (echo "\nUpdating pure..."
-    cd ~/.oh-my-zsh/custom/plugins/pure
-    git pull origin master)
+  (echo "\nUpdating pure..."
+  cd ~/.oh-my-zsh/custom/plugins/pure
+  git pull origin master)
     
-    (echo "\nUpdating zsh-autosuggestions..."
-    cd ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-    git pull origin master)
+  (echo "\nUpdating zsh-autosuggestions..."
+  cd ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  git pull origin master)
     
-    (echo "\nUpdating zsh-syntax-highlighting..."
-    cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-    git pull origin master)
+  (echo "\nUpdating zsh-syntax-highlighting..."
+  cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  git pull origin master)
 
-    (echo "\nUpdating tpm..."
-    cd  ~/.tmux/plugins/tpm
-    git pull origin master)
+  (echo "\nUpdating tpm..."
+  cd  ~/.tmux/plugins/tpm
+  git pull origin master)
 
-    LS_ON_CD=true
+  LS_ON_CD=true
 }
 
 # init nodenv
 eval "$(nodenv init - zsh)"
-

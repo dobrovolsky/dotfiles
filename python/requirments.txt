@@ -1,0 +1,6 @@
+awscli
+httpie
+ipython
+litecli
+poetry
+youtube-dl

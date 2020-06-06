@@ -3,7 +3,9 @@ source $HOME/.config/dotfiles/antigen/antigen.zsh
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
-antigen bundle zsh-users/zsh-syntax-highlighting
+# should use feature branch cause of this issue 
+# https://github.com/zsh-users/zsh-syntax-highlighting/issues/654
+antigen bundle zsh-users/zsh-syntax-highlighting@feature/redrawhook
 antigen bundle zsh-users/zsh-autosuggestions
 
 antigen bundle --loc=~/dotfiles/python/_poetry

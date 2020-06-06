@@ -1,4 +1,4 @@
-# don't start tmux of ide and ssh terminals
+# don't start tmux in ide and ssh terminals
 if [ "$TERMINAL_EMULATOR" = "JetBrains-JediTerm" ] || 
    [ "$TERMINAL_EMULATOR" = "VSCODE" ] || 
    [ -n "$SSH_CONNECTION" ]; then

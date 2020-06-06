@@ -1,4 +1,4 @@
-source $HOME/.config/dotfiles/antigen/antigen.zsh
+source $HOME/.config/dotfiles/deps/antigen/antigen.zsh
 
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure

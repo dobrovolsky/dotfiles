@@ -23,7 +23,7 @@ set showmatch
 let python_highlight_all = 1
 
 " load plugins
-call plug#begin()
+call plug#begin('$HOME/.config/dotfiles/deps/vim-plug')
 
 Plug 'itchyny/lightline.vim'
 Plug '/usr/local/opt/fzf'

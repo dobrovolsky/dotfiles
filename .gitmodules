@@ -1,9 +1,13 @@
-[submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
-[submodule "tpm"]
-	path = tpm
+[submodule "deps/tpm"]
+	path = deps/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "antigen"]
-	path = antigen
+[submodule "deps/antigen"]
+	path = deps/antigen
 	url = https://github.com/zsh-users/antigen
+[submodule "deps/vim-plug"]
+	path = deps/vim-plug
+	url = https://github.com/junegunn/vim-plug
+[submodule "deps/dotbot"]
+	path = deps/dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty

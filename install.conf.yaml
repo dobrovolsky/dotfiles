@@ -10,6 +10,21 @@
     - [git submodule update --init --recursive, Installing submodules]
 
 - link:
+    ~/.config/dotfiles/shell:
+        path: shell
+        create: true
+    ~/.config/dotfiles/antigen:
+        path: antigen
+        create: true
+    ~/.config/dotfiles/python:
+        path: python
+        create: true
+    ~/.config/dotfiles/bin:
+        path: bin
+        create: true
+    ~/.config/dotfiles/tpm:
+        path: tpm
+        create: true
     ~/.gitconfig: config/.gitconfig
     ~/.gitignore: config/.gitignore
     ~/.ideavimrc: config/.ideavimrc
@@ -25,6 +40,7 @@
     - [bash ./python/install.sh, Installing Python and required packages]
     - [bash ./node/install.sh, Installing NodeJS and required packages]
     - [bash ./go/install.sh, Installing Golang required packages]
+    - [curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim, Installing vim plugin]
     
 # VSCode
 - link:

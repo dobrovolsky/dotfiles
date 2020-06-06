@@ -1,3 +1,6 @@
 bin/fs
 bin/es
 python/_poetry
+
+# Ignore compiled zsh files
+*.zwc

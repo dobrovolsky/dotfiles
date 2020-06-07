@@ -7,6 +7,11 @@ antigen bundle sindresorhus/pure
 # https://github.com/zsh-users/zsh-syntax-highlighting/issues/654
 antigen bundle zsh-users/zsh-syntax-highlighting@feature/redrawhook
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle lukechilds/zsh-better-npm-completion
+antigen bundle MichaelAquilina/zsh-you-should-use
+antigen bundle MichaelAquilina/zsh-auto-notify
+antigen bundle Aloxaf/fzf-tab
+antigen bundle changyuheng/fz
 
 antigen bundle --loc=~/dotfiles/python/_poetry
 
@@ -18,7 +23,6 @@ antigen bundle gitfast
 antigen bundle kubectl
 antigen bundle colored-man-pages
 antigen bundle extract
-antigen bundle zsh-interactive-cd
 antigen bundle tmux
 antigen bundle pyenv
 antigen bundle golang

@@ -29,5 +29,23 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # use custom settings for bat
 export BAT_CONFIG_PATH=$HOME/.bat.conf
 
+# don't start tmux in ide and ssh terminals
+if [ "$TERMINAL_EMULATOR" = "JetBrains-JediTerm" ] || 
+   [ "$TERMINAL_EMULATOR" = "VSCODE" ] || 
+   [ -n "$SSH_CONNECTION" ]; then
+    ZSH_TMUX_AUTOSTART=false
+else 
+    ZSH_TMUX_AUTOSTART=true
+fi
+
+# allow JetBrains' IDEAs to access history
+HISTFILE=~/.zsh_history
+
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=250"
+
 # init nodenv
 eval "$(nodenv init - zsh)"
+
+# show stash icon
+zstyle :prompt:pure:git:stash show yes 

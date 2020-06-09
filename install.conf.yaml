@@ -10,18 +10,7 @@
     - [git submodule update --init --recursive, Installing submodules]
 
 - link:
-    ~/.config/dotfiles/shell:
-        path: shell
-        create: true
-    ~/.config/dotfiles/deps:
-        path: deps
-        create: true
-    ~/.config/dotfiles/python:
-        path: python
-        create: true
-    ~/.config/dotfiles/bin:
-        path: bin
-        create: true
+    ~/.dotfiles: ""
     ~/.gitconfig: config/.gitconfig
     ~/.gitignore: config/.gitignore
     ~/.ideavimrc: config/.ideavimrc

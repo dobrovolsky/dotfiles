@@ -49,8 +49,7 @@ dsf() {
     if [ "$#" -eq 2 ]; then	
         git diff --no-index --color "$@" | diff-so-fancy | less -RFXx2	
     fi	
-}	
-dsf $@	
+}
 
 
 # run ranger and change directory to last navigated on exit	
@@ -61,4 +60,9 @@ function rg {
   if [[ "$PWD" != $rangerpwd ]]; then	
       cd $rangerpwd	
   fi	
+}
+
+# get info who is using given port
+function port() {
+  lsof -n -i ":$@" | grep LISTEN
 }

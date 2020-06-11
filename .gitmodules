@@ -11,3 +11,6 @@
 	path = deps/dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "deps/dotbot-brew"]
+	path = deps/dotbot-brew
+	url = https://github.com/d12frosted/dotbot-brew

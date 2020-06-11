@@ -19,10 +19,10 @@
     ~/.zshrc: config/.zshrc
     ~/.bat.conf: config/.bat.conf
 
-# MacOS applications
+- brewfile:
+    - Brewfile
+
 - shell:
-    - [cat brew.list | xargs brew install, Installing console applications]
-    - [cat cask.list | xargs brew cask install , Installing GUI applications]
     - [chsh -s $(which zsh), Making zsh the default shell]
 
 # Set up languages and apps that are using this languages

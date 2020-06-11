@@ -8,7 +8,7 @@
 ### Install for MacOS
 1. Clone this repo
 2. `cd` into `dotfiles/` folder
-3. run `./install.sh`
+3. run `./install`
 
 ### Tools
 - MacOS

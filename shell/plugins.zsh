@@ -2,10 +2,7 @@ source $HOME/.config/dotfiles/deps/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
-antigen bundle z
-antigen bundle git
 antigen bundle gitfast
-antigen bundle kubectl
 antigen bundle colored-man-pages
 antigen bundle extract
 antigen bundle tmux
@@ -24,6 +21,7 @@ antigen bundle lukechilds/zsh-better-npm-completion
 antigen bundle MichaelAquilina/zsh-you-should-use
 antigen bundle MichaelAquilina/zsh-auto-notify
 antigen bundle changyuheng/fz
+antigen bundle rupa/z
 
 antigen bundle --loc=~/dotfiles/python/_poetry
 

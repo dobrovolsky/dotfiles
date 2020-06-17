@@ -24,6 +24,7 @@
 
 - shell:
     - [chsh -s $(which zsh), Making zsh the default shell]
+    - [vim -c 'autocmd VimEnter * PlugUpdate --sync | qa', Install vim plugins]
 
 # Set up languages and apps that are using this languages
 - shell:

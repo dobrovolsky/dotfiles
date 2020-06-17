@@ -1,19 +1,24 @@
 {
-    "go.goroot": "/usr/local/Cellar/go/1.14.2_1/libexec",
+    "go.goroot": "/usr/local/Cellar/go/1.14.3/libexec",
     "go.gopath": "/Users/bogdan/go",
     "go.useLanguageServer": true,
-
-    "editor.fontSize": 16,
+    
+    "editor.fontSize": 18,
     "editor.fontFamily": "Fira Code",
     "editor.fontWeight": "500",
     "editor.fontLigatures": true,
-    "editor.lineHeight": 30,
+    "editor.lineHeight": 33,
     "editor.minimap.enabled": false,
+    "editor.largeFileOptimizations": false,
+    "editor.suggestSelection": "first",
+    
     "explorer.confirmDelete": false,
+    
     "files.autoSave": "onFocusChange",
+    
     "window.zoomLevel": 0,
-
-    "terminal.integrated.fontSize": 16,
+    
+    "terminal.integrated.fontSize": 18,
     "terminal.integrated.fontFamily": "Fira Code",
     "terminal.integrated.fontWeight": "400",
     "terminal.integrated.env.osx": {
@@ -22,14 +27,12 @@
     "terminal.integrated.env.linux": {
         "TERMINAL_EMULATOR": "VSCODE"
     },
-
-    "python.jediEnabled": false,
     
     "workbench.colorTheme": "Atom One Light",
-    "workbench.activityBar.visible": true,
-
     "workbench.iconTheme": "material-icon-theme",
-    "editor.largeFileOptimizations": false,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.activityBar.visible": false,
+    "workbench.statusBar.visible": true,
+    
+    "vim.hlsearch": true,
+    "vim.useSystemClipboard": true
 }

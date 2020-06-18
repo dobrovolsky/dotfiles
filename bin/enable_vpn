@@ -1,0 +1,22 @@
+#!/usr/bin/expect   
+
+#This script connects to cisco anyconnect vpn with MFA with 
+# https://github.com/dlenski/python-vipaccess   
+# Put password to ~/.vpn_password and host of vpn to ~/.vpn_host    
+
+set timeout 60  
+
+set vip_code [exec bw get totp 85b3f00b-f056-4dcd-908c-ab3e00b4258e]    
+set pass [exec bw get password 85b3f00b-f056-4dcd-908c-ab3e00b4258e]      
+
+eval spawn /opt/cisco/anyconnect/bin/vpn connect $::env(CISCO_VPN)    
+
+expect "2)" { send "2\r" }  
+expect "Username: " { send "\r" }   
+expect "Password: " { send $pass\r" }   
+expect "Second "    { send "$vip_code\r" }  
+expect "accept? "   { send "y\r" }  
+
+expect "VPN>"   
+
+exit 

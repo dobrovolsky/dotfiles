@@ -23,11 +23,10 @@
     - Brewfile
 
 - shell:
+    - [cp ~/.dotfiles/shell/.sensitive_example ~/.dotfiles/shell/.sensitive, 'Copy example of sensative shell info']
     - [chsh -s $(which zsh), Making zsh the default shell]
     - [vim -c 'autocmd VimEnter * PlugUpdate --sync | qa', Install vim plugins]
-
-# Set up languages and apps that are using this languages
-- shell:
+    # Set up languages and apps that are using this languages
     - [bash ./python/install.sh, Installing Python and required packages]
     - [bash ./node/install.sh, Installing NodeJS and required packages]
     - [bash ./go/install.sh, Installing Golang required packages]

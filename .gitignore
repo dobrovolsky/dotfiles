@@ -4,3 +4,6 @@ python/_poetry
 
 # Ignore compiled zsh files
 *.zwc
+
+# Ingore .sensitive data
+shell/.sensitive

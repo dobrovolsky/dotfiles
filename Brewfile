@@ -1,4 +1,5 @@
 brew "bat"
+brew "bitwarden-cli"
 brew "ctop"
 brew "diff-so-fancy"
 brew "docker-clean"

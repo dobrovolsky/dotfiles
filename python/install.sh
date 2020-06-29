@@ -1,4 +1,4 @@
-PYTHON_VERSION=3.8.2
+PYTHON_VERSION=3.8.3
 
 pyenv install "${PYTHON_VERSION}"
 pyenv global "${PYTHON_VERSION}"

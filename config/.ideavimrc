@@ -4,3 +4,5 @@ set clipboard+=unnamed
 " enable vim-surround
 set surround
 
+" highlight matches with the last search pattern
+set hlsearch

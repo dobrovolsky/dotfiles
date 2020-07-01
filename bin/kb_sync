@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-set -e
-
-cd ~/Google\ Drive/kb
-
-git add .
-git commit -m '- regular update'
-git push

@@ -6,3 +6,10 @@ set surround
 
 " highlight matches with the last search pattern
 set hlsearch
+
+
+" disable keys to build new habits
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>

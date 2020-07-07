@@ -70,3 +70,8 @@ let g:indent_guides_color_change_percent = 3
 " set light theme
 set background=light
 
+" disable keys to build new habits
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>

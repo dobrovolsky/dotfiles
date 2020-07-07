@@ -33,6 +33,13 @@
     "workbench.activityBar.visible": false,
     "workbench.statusBar.visible": true,
     
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "[markdown]": {
+        "editor.quickSuggestions": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
     "vim.hlsearch": true,
     "vim.useSystemClipboard": true
 }

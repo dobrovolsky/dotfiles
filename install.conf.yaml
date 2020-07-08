@@ -18,6 +18,7 @@
     ~/.vimrc: config/.vimrc
     ~/.zshrc: config/.zshrc
     ~/.bat.conf: config/.bat.conf
+    ~/.hammerspoon: config/.hammerspoon
 
 - brewfile:
     - Brewfile

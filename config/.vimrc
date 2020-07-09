@@ -19,8 +19,27 @@ set shiftwidth=4
 " show the matching part of the pair for [] {} and ()
 set showmatch
 
-" enable all Python syntax highlighting features
-let python_highlight_all = 1
+" set light theme
+set background=light
+
+" disable keys to build new habits
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+" display incomplete commands
+set showcmd
+
+" highlight matches
+set hlsearch
+
+" incremental searching
+set incsearch
+
+" searches are case insensitive
+set ignorecase
+
 
 " load plugins
 call plug#begin('$HOME/.dotfiles/deps/vim-plug')
@@ -66,12 +85,3 @@ colorscheme default
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 4
 let g:indent_guides_color_change_percent = 3
-
-" set light theme
-set background=light
-
-" disable keys to build new habits
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>

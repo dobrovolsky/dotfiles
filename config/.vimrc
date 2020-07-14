@@ -1,8 +1,10 @@
 " enable syntax highlighting
 syntax enable
 
+
 " show line numbers
 set number
+set relativenumber
 
 " set tabs to have 4 spaces
 set ts=4
@@ -40,6 +42,8 @@ set incsearch
 " searches are case insensitive
 set ignorecase
 
+" use system clipboard
+set clipboard+=unnamed
 
 " load plugins
 call plug#begin('$HOME/.dotfiles/deps/vim-plug')

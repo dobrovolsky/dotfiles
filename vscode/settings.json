@@ -27,8 +27,6 @@
     "terminal.integrated.env.linux": {
         "TERMINAL_EMULATOR": "VSCODE"
     },
-    
-    "workbench.colorTheme": "Atom One Light",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.activityBar.visible": false,
     "workbench.statusBar.visible": true,
@@ -41,5 +39,7 @@
     },
 
     "vim.hlsearch": true,
-    "vim.useSystemClipboard": true
+    "vim.useSystemClipboard": true,
+    "workbench.colorTheme": "Atom One Light",
+    "editor.lineNumbers": "relative",
 }

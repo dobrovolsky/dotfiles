@@ -66,3 +66,19 @@ function rg {
 function port() {
   lsof -n -i ":$@" | grep LISTEN
 }
+
+
+refi() {
+  echo "======= PROD ======="
+  echo "cloud-tool-fr -vv login -uMGMT\\MC268370 -a015205986388 -rhuman-role/a205826-Developer -p\`bw get password 15188fb7-e7e7-4b31-8d91-ab5700f0a9ab\`"
+  echo "aws eks update-kubeconfig --name a205826-cb-prod-us1"
+
+  echo "\n======= DEV ======="
+  echo "cloud-tool-fr login -uMGMT\\MC268370 -a342562131727 -rhuman-role/a205826-Developer -p\`bw get password 15188fb7-e7e7-4b31-8d91-ab5700f0a9ab\`"
+  echo "aws eks update-kubeconfig --name a205826-cb-dev-us1"
+
+  echo "\n======= BASIC ======="
+  echo "kubectl get pods --all-namespaces"
+  echo "kubectl logs jupyter-paxtra83004 -n jhub | c"
+  echo "kubectl logs jupyter-paxtra83004 -n jhub -c notebook | c"
+}

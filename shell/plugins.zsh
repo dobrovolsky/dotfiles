@@ -11,6 +11,7 @@ antigen bundle golang
 antigen bundle docker
 antigen bundle docker-compose
 antigen bundle httpie
+antigen bundle vi-mode
 
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure

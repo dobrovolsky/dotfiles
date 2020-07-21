@@ -4,5 +4,4 @@ ipython
 litecli
 poetry
 youtube-dl
-ranger-fm
 

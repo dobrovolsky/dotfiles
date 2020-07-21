@@ -11,6 +11,7 @@ brew "nodenv"
 brew "pgcli"
 brew "pyenv"
 brew "pyenv-virtualenv"
+brew "ranger"
 brew "tmux"
 brew "zsh"
 

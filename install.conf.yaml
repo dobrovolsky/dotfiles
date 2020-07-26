@@ -19,11 +19,23 @@
     ~/.zshrc: config/.zshrc
     ~/.bat.conf: config/.bat.conf
     ~/.hammerspoon: config/.hammerspoon
+    ~/.vim/autoload/plug.vim: 
+        create: true
+        path: deps/vim-plug/plug.vim
+    ~/.tmux/plugins/tpm: 
+        create: true
+        path: deps/tpm
 
 - brewfile:
     - Brewfile
 
 - shell:
+    - [~/.tmux/plugins/tpm/bin/install_plugins, Install tmux plugins]
+    - 
+        command: vim +'PlugInstall --sync' +qa
+        description: Install vim plugins
+        stdout: true
+        stdin: true
     - [cp ~/.dotfiles/shell/.sensitive_example ~/.dotfiles/shell/.sensitive, 'Copy example of sensative shell info']
     - [chsh -s $(which zsh), Making zsh the default shell]
     # Set up languages and apps that are using this languages
@@ -46,5 +58,3 @@
 # Cleaning up:
 - shell:
     - [brew cleanup, Cleaning up]
-      
-

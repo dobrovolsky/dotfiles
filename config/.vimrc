@@ -56,7 +56,7 @@ set clipboard+=unnamed
 nnoremap <esc> :noh<return><esc>
 
 " load plugins
-call plug#begin('$HOME/.dotfiles/deps/vim-plug')
+call plug#begin('$HOME/.vim/vim-plug')
 
 Plug 'itchyny/lightline.vim'
 Plug '/usr/local/opt/fzf'

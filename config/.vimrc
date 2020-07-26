@@ -44,6 +44,17 @@ set ignorecase
 " use system clipboard
 set clipboard+=unnamed
 
+" https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
+:nnoremap n nzz
+:nnoremap N Nzz
+:nnoremap * *zz
+:nnoremap # #zz
+:nnoremap g* g*zz
+:nnoremap g# g#zz
+
+" clear highlights on search
+nnoremap <esc> :noh<return><esc>
+
 " load plugins
 call plug#begin('$HOME/.dotfiles/deps/vim-plug')
 

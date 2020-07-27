@@ -1,7 +1,7 @@
 # brew
 PATH=$HOME/bin:/usr/local/bin:$PATH
 # local bin in dotfiles
-PATH=$HOME/.config/dotfiles/bin:$PATH
+PATH=$HOME/.dotfiles/bin:$PATH
 # pyenv bin
 PATH="$HOME/.pyenv/bin:$PATH"
 # golang bin

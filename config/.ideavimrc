@@ -1,4 +1,5 @@
 " enable vim-surround
 set surround
+set highlightedyank
 
 source ~/.vimrc

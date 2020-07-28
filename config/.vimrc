@@ -64,6 +64,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-surround'
+Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
 

@@ -42,4 +42,8 @@
     "vim.useSystemClipboard": true,
     "workbench.colorTheme": "Atom One Light",
     "editor.lineNumbers": "relative",
+
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredLightColorTheme":"Atom One Light",
+    "workbench.preferredDarkColorTheme":"Dark Purple - Webstorm",
 }

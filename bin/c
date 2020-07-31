@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+ARGS=()
+case "$(defaults read -globalDomain AppleInterfaceStyle 2>/dev/null || echo "Light")" in
+	Light)  ARGS+=(--theme OneHalfLight) ;;
+	Dark|*) : ;;
+esac
+ARGS+=("$@")
+
+exec /usr/local/bin/bat "${ARGS[@]}"

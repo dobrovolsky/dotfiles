@@ -40,7 +40,7 @@
 
     "vim.hlsearch": true,
     "vim.useSystemClipboard": true,
-    "workbench.colorTheme": "Atom One Light",
+    "workbench.colorTheme": "Dark Purple - Webstorm",
     "editor.lineNumbers": "relative",
 
     "window.autoDetectColorScheme": true,

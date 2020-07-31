@@ -42,7 +42,8 @@ fi
 HISTFILE=~/.zsh_history
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=250"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=248"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # init nodenv
 eval "$(nodenv init - zsh)"

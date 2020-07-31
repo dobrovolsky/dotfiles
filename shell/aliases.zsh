@@ -19,7 +19,6 @@ alias weather="curl 'wttr.in/Kiev?2Q'"
 # usually useful in some dialogs ¯\_(ツ)_/¯
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 
-alias c="bat"
 alias y="youtube-dl"
 
 # GIT

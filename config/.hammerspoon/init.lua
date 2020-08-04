@@ -1,4 +1,7 @@
+dm = require "darkmode"
+
 hotKeys = {
+    { { "ctrl" }, "1", function() dm.setDarkMode(not dm.getDarkMode()) end },
     { { "ctrl" }, "2", function() hs.application.launchOrFocus("Spotify") end },
     { { "ctrl" }, "3", function() hs.application.launchOrFocus("Telegram") end },
     { { "ctrl" }, "4", function() hs.application.launchOrFocus("Brave Browser") end },

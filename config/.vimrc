@@ -44,6 +44,10 @@ set ignorecase
 " use system clipboard
 set clipboard+=unnamed
 
+" With a map leader it's possible to do extra key combinations
+" " like <leader>w saves the current file
+let mapleader = ","
+
 " https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
 :nnoremap n nzz
 :nnoremap N Nzz
@@ -51,6 +55,12 @@ set clipboard+=unnamed
 :nnoremap # #zz
 :nnoremap g* g*zz
 :nnoremap g# g#zz
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " clear highlights on search
 nnoremap <esc> :noh<return><esc>
@@ -65,9 +75,26 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
+Plug 'luochen1990/rainbow'
 
 call plug#end()
 
+"""""""""""""""
+" Rainbow
+"""""""""""""""
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+
+
+""""""""""""""
+" Git gutter
+""""""""""""""
+let g:gitgutter_enabled=0
+nnoremap <silent> <leader>d :GitGutterToggle<cr>
+
+
+"""""""""""""
+" Lightline
+"""""""""""""
 " set settings for lightline.vim
 set laststatus=2
 
@@ -91,12 +118,23 @@ let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 
+""""""""""""""""
+" NERDTRee
+""""""""""""""""
 " enable NEDRTRee by default
 " autocmd vimenter * NERDTree
 " how hidden files
 let NERDTreeShowHidden=1
 
-colorscheme default 
-let g:indent_guides_enable_on_vim_startup = 1
+map <leader>e :NERDTreeToggle<CR>
+
+
+"""""""""""""""""""""""
+" vim-indent-guides
+"""""""""""""""""""""""
+map <leader>g :IndentGuidesToggle<CR>
+
+let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_guide_size = 4
 let g:indent_guides_color_change_percent = 3
+

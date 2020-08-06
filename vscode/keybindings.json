@@ -1,11 +1,41 @@
 [
   {
-      "key": "cmd+d",
-      "command": "editor.action.copyLinesDownAction",
-      "when": "editorTextFocus && !editorReadonly"
+    "key": "cmd+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
   },
   {
-      "key": "cmd+,",
-      "command": "workbench.action.openSettingsJson"
+    "key": "cmd+shift+up",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+shift+down",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+,",
+    "command": "workbench.action.openSettingsJson"
+  },
+  {
+    "key": "cmd+1",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+shift+a",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "alt+f12",
+    "command": "workbench.action.terminal.toggleTerminal",
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "command": "workbench.action.navigateForward",
+    "key": "cmd+]"
   }
 ]

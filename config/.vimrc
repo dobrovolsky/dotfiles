@@ -44,9 +44,16 @@ set ignorecase
 " use system clipboard
 set clipboard+=unnamed
 
+" make backspace work like most other programs
+set backspace=indent,eol,start
+
 " With a map leader it's possible to do extra key combinations
 " " like <leader>w saves the current file
-let mapleader = ","
+let mapleader = " "
+
+" lazzy to type :command CR
+map <leader>q :wq<CR>
+map <leader>w :w<CR>
 
 " https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
 :nnoremap n nzz
@@ -63,7 +70,10 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " clear highlights on search
-nnoremap <esc> :noh<return><esc>
+nnoremap <CR> :noh<CR>
+
+inoremap jk <ESC>
+inoremap jj <ESC>
 
 " load plugins
 call plug#begin('$HOME/.vim/vim-plug')
@@ -76,6 +86,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
 Plug 'luochen1990/rainbow'
+Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 

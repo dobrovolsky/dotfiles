@@ -23,6 +23,7 @@ antigen bundle MichaelAquilina/zsh-you-should-use
 antigen bundle MichaelAquilina/zsh-auto-notify
 antigen bundle changyuheng/fz
 antigen bundle rupa/z
+antigen bundle sobolevn/wakatime-zsh-plugin
 
 antigen bundle --loc=~/dotfiles/python/_poetry
 

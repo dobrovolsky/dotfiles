@@ -1,8 +1,4 @@
 {
-    "go.goroot": "/usr/local/Cellar/go/1.14.3/libexec",
-    "go.gopath": "/Users/bogdan/go",
-    "go.useLanguageServer": true,
-    
     "editor.fontSize": 18,
     "editor.fontFamily": "Fira Code",
     "editor.fontWeight": "500",
@@ -33,17 +29,13 @@
     
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    "[markdown]": {
-        "editor.quickSuggestions": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-
+    
     "vim.hlsearch": true,
     "vim.useSystemClipboard": true,
-    "workbench.colorTheme": "Atom One Light",
     "editor.lineNumbers": "relative",
 
     "window.autoDetectColorScheme": true,
     "workbench.preferredLightColorTheme":"Atom One Light",
-    "workbench.preferredDarkColorTheme":"Dark Purple - Webstorm",
+    "workbench.preferredDarkColorTheme": "Dark Purple - Webstorm",
+    "workbench.colorTheme": "Atom One Light",
 }

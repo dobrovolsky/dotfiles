@@ -5,5 +5,8 @@ python/_poetry
 # Ignore compiled zsh files
 *.zwc
 
-# Ingore .sensitive data
+# Ignore .sensitive data
 shell/.sensitive
+
+# Ignore file produced by brew dotbot plugin
+Brewfile.lock.json

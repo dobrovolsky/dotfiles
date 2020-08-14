@@ -39,8 +39,7 @@
         description: Install vim plugins
         stdout: true
         stdin: true
-    - [cp ~/.dotfiles/shell/.sensitive_example ~/.dotfiles/shell/.sensitive, 'Copy example of sensative shell info']
-    - [chsh -s $(which zsh), Making zsh the default shell]
+    - ['[ -f  ~/.dotfiles/shell/.sensitive ] || cp ~/.dotfiles/shell/.sensitive_example ~/.dotfiles/shell/.sensitive', 'Copy example of sensative shell info']
     # Set up languages and apps that are using this languages
     - [bash ./python/install.sh, Installing Python and required packages]
     - [bash ./node/install.sh, Installing NodeJS and required packages]

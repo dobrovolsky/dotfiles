@@ -6,7 +6,6 @@ antigen bundle gitfast
 antigen bundle colored-man-pages
 antigen bundle extract
 antigen bundle tmux
-antigen bundle pyenv
 antigen bundle golang
 antigen bundle docker
 antigen bundle docker-compose

@@ -44,8 +44,13 @@ HISTFILE=~/.zsh_history
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=248"
 
-# init nodenv
-eval "$(nodenv init - zsh)"
+# init nodenv (should run nodenv rehash when installing cli)
+eval "$(nodenv init --no-rehash - zsh)"
+
+# init pyenv (should run pyenv rehash when installing cli)
+eval "$(pyenv init --no-rehash - zsh)"
+eval "$(pyenv virtualenv-init - zsh)"
 
 # show stash icon
 zstyle :prompt:pure:git:stash show yes 
+

@@ -3,5 +3,6 @@ httpie
 ipython
 litecli
 poetry
+wakatime
 youtube-dl
 

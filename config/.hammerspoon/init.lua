@@ -1,3 +1,5 @@
+require 'control-escape'
+
 dm = require "darkmode"
 
 hotKeys = {

@@ -16,7 +16,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Change caps_lock to control if pressed with other keys, to escape if pressed alone.",
+                        "description": "modal_mode holding caps_lock to activate",
                         "manipulators": [
                             {
                                 "from": {
@@ -29,7 +29,18 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_control"
+                                        "set_variable": {
+                                            "name": "modal_mode",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "modal_mode",
+                                            "value": 0
+                                        }
                                     }
                                 ],
                                 "to_if_alone": [
@@ -42,12 +53,12 @@
                         ]
                     },
                     {
-                        "description": "space_mod + key to perform an action",
+                        "description": "modal_mode + key to perform an action",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -70,7 +81,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -93,7 +104,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -116,7 +127,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -139,7 +150,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -162,7 +173,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -185,7 +196,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -208,7 +219,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -234,7 +245,137 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "a",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "modal_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "e",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "modal_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "c",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "modal_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "d",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "modal_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "l",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -263,7 +404,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -290,153 +431,12 @@
                         ]
                     },
                     {
-                        "description": "Quit application by pressing command-q twice",
+                        "description": "modal_mode + h/j/k/l to Arrow Keys",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "command-q",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "q",
-                                        "modifiers": "left_command"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "command-q",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_delayed_action": {
-                                    "to_if_canceled": [
-                                        {
-                                            "set_variable": {
-                                                "name": "command-q",
-                                                "value": 0
-                                            }
-                                        }
-                                    ],
-                                    "to_if_invoked": [
-                                        {
-                                            "set_variable": {
-                                                "name": "command-q",
-                                                "value": 0
-                                            }
-                                        }
-                                    ]
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "space_mode holding space to activate",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "space_mode",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "space_mode",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "spacebar"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change from right_command to ctrl-b tmux prefix (only for Iterm)",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com.googlecode.iterm2"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "right_command",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "b",
-                                        "modifiers": [
-                                            "control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "space_mod + h/j/k/l to Arrow Keys",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -459,7 +459,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -482,7 +482,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -505,7 +505,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -528,12 +528,12 @@
                         ]
                     },
                     {
-                        "description": "space_mod + o to Delete",
+                        "description": "modal_mode + o to Delete",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "space_mode",
+                                        "name": "modal_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -556,7 +556,7 @@
                         ]
                     },
                     {
-                        "description": "Disable arrows",
+                        "description": "Use arrows to change window shape",
                         "manipulators": [
                             {
                                 "from": {
@@ -648,6 +648,78 @@
                                         "key_code": "vk_none"
                                     }
                                 ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Quit application by pressing command-q twice",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "command-q",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "q",
+                                        "modifiers": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "command-q",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "command-q",
+                                                "value": 0
+                                            }
+                                        }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "command-q",
+                                                "value": 0
+                                            }
+                                        }
+                                    ]
+                                },
                                 "type": "basic"
                             }
                         ]

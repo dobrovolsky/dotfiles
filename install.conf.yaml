@@ -18,7 +18,9 @@
     ~/.vimrc: config/.vimrc
     ~/.zshrc: config/.zshrc
     ~/.bat.conf: config/.bat.conf
-    ~/.hammerspoon: config/.hammerspoon
+    ~/.config/karabiner: 
+        create: true
+        path: config/karabiner
     ~/.vim/autoload/plug.vim: 
         create: true
         path: deps/vim-plug/plug.vim

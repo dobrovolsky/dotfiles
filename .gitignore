@@ -10,3 +10,6 @@ shell/.sensitive
 
 # Ignore file produced by brew dotbot plugin
 Brewfile.lock.json
+
+# don't need to sync backups
+config/karabiner/automatic_backups/

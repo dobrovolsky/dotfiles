@@ -18,9 +18,9 @@
     ~/.vimrc: config/.vimrc
     ~/.zshrc: config/.zshrc
     ~/.bat.conf: config/.bat.conf
-    ~/.config/karabiner: 
+    ~/.config/karabiner.edn: 
         create: true
-        path: config/karabiner
+        path: config/karabiner.edn
     ~/.vim/autoload/plug.vim: 
         create: true
         path: deps/vim-plug/plug.vim

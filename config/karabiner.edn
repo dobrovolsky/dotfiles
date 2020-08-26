@@ -1,0 +1,68 @@
+{
+  :templates {
+    :launch-app "open -a %s"
+    :toggle-theme "osascript -e 'tell application \"System Events\"' -e 'tell appearance preferences' -e 'set dark mode to not dark mode' -e 'end tell' -e 'end tell'"
+  }
+  :layers {
+    :modal_mode {:key :caps_lock :alone {:key :escape}}
+  }
+  ;; !  | means mandatory
+  ;; #  | means optional
+  ;; C  | left_command
+  ;; T  | left_control
+  ;; O  | left_option
+  ;; S  | left_shift
+  ;; F  | fn
+  ;; Q  | right_command
+  ;; W  | right_control
+  ;; E  | right_option
+  ;; R  | right_shift
+  ;; !! | mandatory command + control + optional + shift (hyper)
+  ;; ## | optional any
+
+  :main [
+    {:des "modal_mode + key"
+      :rules [
+        :modal_mode
+        [:1 [:toggle-theme]]
+        [:2 [:launch-app "Spotify"]]
+        [:3 [:launch-app "Telegram"]]
+        [:4 [:launch-app "Brave\\ Browser"]]
+        [:5 [:launch-app "Iterm"]]
+        [:6 [:launch-app "Pycharm"]]
+        [:7 [:launch-app "Visual\\ Studio\\ Code"]]
+        [:w :!Cw]
+        [:a :!Ta]
+        [:e :!Te]
+        [:c :!Tc]
+        [:d :!Td]
+        [:semicolon :!Tl]
+        [:r :!Tr]
+        [:t :!Tt]
+        [:grave_accent_and_tilde :!CTOSf12] ; track time with toggl
+        ; arrows
+        [:h :left_arrow]
+        [:j :down_arrow]
+        [:k :up_arrow]
+        [:l :right_arrow]
+        [:o :delete_or_backspace]
+        [:return_or_enter :!TOreturn_or_enter] ; maximize window with ractangel
+        ]}
+      {:des "Build new habbit by changing default behavior"
+      :rules [
+        ; window manipulation with ractangel
+        [:left_arrow :!TOleft_arrow]
+        [:down_arrow :!TOdown_arrow]
+        [:up_arrow :!TOup_arrow]
+        [:right_arrow :!TOright_arrow]
+        ; disable keys
+        [:delete_or_backspace :vk_none]
+        [:escape :vk_none]
+      ]}
+    { :des "Quit application only when tapping command-q twice"
+      :rules [
+        [:!Cq [:!Cq ["command-q" 0]] ["command-q" 1]]
+        [:!Cq ["command-q" 1] nil {:delayed {:invoked ["command-q" 0] :canceled ["command-q" 0]}}]
+      ]}
+  ]
+}

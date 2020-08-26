@@ -6,6 +6,9 @@
   :layers {
     :modal_mode {:key :caps_lock :alone {:key :escape}}
   }
+  :applications {
+    :iterm ["^com\\.googlecode\\.iterm2$"]
+  }
   ;; !  | means mandatory
   ;; #  | means optional
   ;; C  | left_command
@@ -31,7 +34,6 @@
         [:5 [:launch-app "Iterm"]]
         [:6 [:launch-app "Pycharm"]]
         [:7 [:launch-app "Visual\\ Studio\\ Code"]]
-        [:w :!Cw]
         [:a :!Ta]
         [:e :!Te]
         [:c :!Tc]
@@ -45,10 +47,21 @@
         [:j :down_arrow]
         [:k :up_arrow]
         [:l :right_arrow]
+        ; delete button is too far away
         [:o :delete_or_backspace]
+        [:p :delete_forward]
         [:return_or_enter :!TOreturn_or_enter] ; maximize window with ractangel
-        ]}
-      {:des "Build new habbit by changing default behavior"
+      ]}
+    {:des "Iterm to tmux mapping"
+      :rules [
+        :iterm
+        [:!CSd [:!Tb :hyphen]]
+        [:!Cd [:!Tb :backslash]]
+        [:!Ct [:!Tb :c]]
+        [:!Cn [:!Tb :n]]
+        [:b :!Tb [:modal_mode]]
+      ]}
+    {:des "Build new habbit by changing default behavior"
       :rules [
         ; window manipulation with ractangel
         [:left_arrow :!TOleft_arrow]

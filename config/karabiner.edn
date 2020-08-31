@@ -1,7 +1,6 @@
 {
   :templates {
-    :launch-app "open -a %s"
-    :toggle-theme "osascript -e 'tell application \"System Events\"' -e 'tell appearance preferences' -e 'set dark mode to not dark mode' -e 'end tell' -e 'end tell'"
+    :launch_app "open -a %s"
   }
   :layers {
     :modal_mode {:key :caps_lock :alone {:key :escape}}
@@ -9,6 +8,18 @@
   :applications {
     :iterm ["^com\\.googlecode\\.iterm2$"]
   }
+  :input-sources {
+    :us {:input_source_id "com.apple.keylayout.US"}
+    :ru {:input_source_id "com.apple.keylayout.Russian"}
+    :ua {:input_source_id "com.apple.keylayout.Ukrainian-PC"}
+  }
+  :tos {
+    :select_us {:input :us}
+    :select_ru {:input :ru}
+    :select_ua {:input :ua}
+    :toggle_theme {:shell "osascript -e 'tell application \"System Events\"' -e 'tell appearance preferences' -e 'set dark mode to not dark mode' -e 'end tell' -e 'end tell'"}
+  } 
+
   ; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md
   ;; !  | means mandatory
   ;; #  | means optional
@@ -28,22 +39,26 @@
     {:des "modal_mode + key"
       :rules [
         :modal_mode
-        [:1 [:toggle-theme]]
-        [:2 [:launch-app "Spotify"]]
-        [:3 [:launch-app "Telegram"]]
-        [:4 [:launch-app "Brave\\ Browser"]]
-        [:5 [:launch-app "Iterm"]]
-        [:6 [:launch-app "Pycharm"]]
-        [:7 [:launch-app "Visual\\ Studio\\ Code"]]
+        [:1 :select_us]
+        [:2 :select_ru]
+        [:3 :select_ua]
+        [:!C1 [:toggle_theme]]
+        [:!C2 [:launch_app "Spotify"]]
+        [:!C3 [:launch_app "Telegram"]]
+        [:4 [:launch_app "Brave\\ Browser"]]
+        [:5 [:launch_app "Iterm"]]
+        [:6 [:launch_app "Pycharm"]]
+        [:7 [:launch_app "Visual\\ Studio\\ Code"]]
+        ; emulate control in terminal
         [:a :!Ta]
         [:e :!Te]
         [:c :!Tc]
         [:d :!Td]
         [:z :!Tz]
-        [:q :!Tf2] ; show menu bar
         [:semicolon :!Tl]
         [:r :!Tr]
         [:t :!Tt]
+        [:q :!Tf2] ; show menu bar
         [:grave_accent_and_tilde :!CTOSf12] ; track time with toggl
         ; arrows
         [:#Ch :left_arrow]
@@ -75,7 +90,7 @@
         [:delete_or_backspace :vk_none]
         [:escape :vk_none]
       ]}
-    { :des "Quit application only when tapping command-q twice"
+    {:des "Quit application only when tapping command-q twice"
       :rules [
         [:!Cq [:!Cq ["command-q" 0]] ["command-q" 1]]
         [:!Cq ["command-q" 1] nil {:delayed {:invoked ["command-q" 0] :canceled ["command-q" 0]}}]

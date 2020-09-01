@@ -35,8 +35,8 @@
   :main [
     {:des "Use caps_lock for activationg modal_mode (hold) and escape for pressig twice"
       :rules [
-        [:caps_lock [:escape ["esc" 0]] ["esc" 1]]
-        [:caps_lock ["esc" 1] nil {
+        [:##caps_lock [:escape ["esc" 0]] ["esc" 1]]
+        [:##caps_lock ["esc" 1] nil {
           :delayed {:invoked ["esc" 0] :canceled ["esc" 0]} 
           :held ["modal_mode" 1] 
           :afterup ["modal_mode" 0] 

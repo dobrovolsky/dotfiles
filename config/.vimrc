@@ -23,12 +23,6 @@ set showmatch
 " set light theme
 set background=light
 
-" disable keys to build new habits
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
 " display incomplete commands
 set showcmd
 

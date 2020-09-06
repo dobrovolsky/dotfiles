@@ -1,6 +1,9 @@
 {
   :templates {
-    :launch_app "open -a %s"
+    :launch-app "open -a '%s'"
+    :code-project "open -a 'Visual Studio Code' %s"
+    :charm-project "open -a 'Pycharm' %s"
+    :open "open %s"
   }
   :applications {
     :iterm ["^com\\.googlecode\\.iterm2$"]
@@ -11,12 +14,15 @@
     :ua {:input_source_id "com.apple.keylayout.Ukrainian-PC"}
   }
   :tos {
-    :select_us {:input :us}
-    :select_ru {:input :ru}
-    :select_ua {:input :ua}
-    :toggle_theme {:shell "osascript -e 'tell application \"System Events\"' -e 'tell appearance preferences' -e 'set dark mode to not dark mode' -e 'end tell' -e 'end tell'"}
+    :select-us {:input :us}
+    :select-ru {:input :ru}
+    :select-ua {:input :ua}
+    :toggle-theme {:shell "osascript -e 'tell application \"System Events\"' -e 'tell appearance preferences' -e 'set dark mode to not dark mode' -e 'end tell' -e 'end tell'"}
   } 
-
+  :simlayers {
+    :w-mode {:key :w}
+    :q-mode {:key :q}
+  }
   ; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md
   ;; !  | means mandatory
   ;; #  | means optional
@@ -38,24 +44,18 @@
         [:##caps_lock [:escape ["esc" 0]] ["esc" 1]]
         [:##caps_lock ["esc" 1] nil {
           :delayed {:invoked ["esc" 0] :canceled ["esc" 0]} 
-          :held ["modal_mode" 1] 
-          :afterup ["modal_mode" 0] 
+          :held ["modal-mode" 1] 
+          :afterup ["modal-mode" 0] 
           :params {:held 10}
         }]
       ]} 
-    {:des "modal_mode + key"
+    {:des "modal-mode + key"
       :rules [
-        :modal_mode
-        [:1 :select_us]
-        [:2 :select_ru]
-        [:3 :select_ua]
-        [:4 [:toggle_theme]]
-        [:!C1 [:launch_app "Visual\\ Studio\\ Code"]]
-        [:!C2 [:launch_app "Pycharm"]]
-        [:!C3 [:launch_app "Iterm"]]
-        [:!C4 [:launch_app "Brave\\ Browser"]]
-        [:!C5 [:launch_app "Spotify"]]
-        [:!C6 [:launch_app "Telegram"]]
+        :modal-mode
+        [:1 :select-us]
+        [:2 :select-ru]
+        [:3 :select-ua]
+        [:4 [:toggle-theme]]
         ; emulate control shell and vim
         [:a :!Ta]
         [:e :!Te]
@@ -74,6 +74,7 @@
         [:!Ck :!Tk]
         [:!Cj :!Tj]
         [:!Ch :!Th]
+        [:semicolon :!Tl]
         [:q :!Tf2] ; show menu bar
         [:grave_accent_and_tilde :!CTOSf12] ; track time with toggl
         ; arrows
@@ -110,6 +111,27 @@
       :rules [
         [:!Cq [:!Cq ["command-q" 0]] ["command-q" 1]]
         [:!Cq ["command-q" 1] nil {:delayed {:invoked ["command-q" 0] :canceled ["command-q" 0]}}]
-      ]}
+    ]}
+    {:des "w-mode"
+      :rules [
+        :w-mode
+        [:u [:launch-app "Bitwarden"]]
+        [:i [:launch-app "Pycharm"]]
+        [:o [:launch-app "Iterm"]]
+        [:p [:launch-app "Google Chrome"]]
+        [:j [:launch-app "Brave Browser"]]
+        [:k [:launch-app "Spotify"]]
+        [:l [:launch-app "Telegram"]]
+    ]}
+    {:des "q-mode"
+      :rules [
+        :q-mode
+        [:j [:code-project "~/kb"]]
+        [:k [:code-project "~/dotfiles"]]
+        [:l [:charm-project "~/projects/ref/jupyter-notebook"]]
+        [:semicolon [:charm-project "~/projects/ref/jupyterhub-fork"]]
+        [:u [:open "https://www.notion.so/e398ce19ebc8457c8bbd8187cc9f46e4?v=75cddc846deb4e449e5cb91e8bb6470b"]]
+        [:i [:open "https://docs.google.com/spreadsheets/d/1lya8s1rvHx5AkheZU3eYrgD7irRkJK0NuIsVA-mKeoY/edit#gid=358988098"]]
+    ]}
   ]
 }

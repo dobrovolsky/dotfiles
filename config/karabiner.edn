@@ -2,7 +2,9 @@
   :templates {
     :launch-app "open -a '%s'"
     :code-project "open -a 'Visual Studio Code' %s"
-    :charm-project "open -a 'Pycharm' %s"
+    ; wait on https://youtrack.jetbrains.com/issue/IDEA-250241 or https://youtrack.jetbrains.com/issue/IDEA-247313
+    ; :charm-project "open -a 'Pycharm' %s"
+    ; :charm-project "/usr/local/bin/charm %s"
     :open "open %s"
   }
   :applications {
@@ -77,6 +79,7 @@
         [:semicolon :!Tl]
         [:q :!Tf2] ; show menu bar
         [:grave_accent_and_tilde :!CTOSf12] ; track time with toggl
+        [:return_or_enter :!TOreturn_or_enter] ; maximize window with ractangel
         ; arrows
         [:#Ch :left_arrow]
         [:#Cj :down_arrow]
@@ -85,7 +88,6 @@
         ; delete button is too far away
         [:o :delete_or_backspace]
         [:p :delete_forward]
-        [:return_or_enter :!TOreturn_or_enter] ; maximize window with ractangel
       ]}
     {:des "Iterm to tmux mapping"
       :rules [
@@ -128,8 +130,8 @@
         :q-mode
         [:j [:code-project "~/kb"]]
         [:k [:code-project "~/dotfiles"]]
-        [:l [:charm-project "~/projects/ref/jupyter-notebook"]]
-        [:semicolon [:charm-project "~/projects/ref/jupyterhub-fork"]]
+        ; [:l [:charm-project "~/projects/ref/jupyter-notebook"]]
+        ; [:semicolon [:charm-project "~/projects/ref/jupyterhub-fork"]]
         [:u [:open "https://www.notion.so/e398ce19ebc8457c8bbd8187cc9f46e4?v=75cddc846deb4e449e5cb91e8bb6470b"]]
         [:i [:open "https://docs.google.com/spreadsheets/d/1lya8s1rvHx5AkheZU3eYrgD7irRkJK0NuIsVA-mKeoY/edit#gid=358988098"]]
     ]}

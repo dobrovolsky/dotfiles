@@ -64,7 +64,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " clear highlights on search
-nnoremap <CR> :noh<CR>
+nnoremap <ESC> :noh<CR>
 
 inoremap jk <ESC>
 inoremap jj <ESC>

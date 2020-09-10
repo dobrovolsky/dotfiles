@@ -5,6 +5,10 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
+    "key": "cmd+e",
+    "command": "workbench.action.quickOpen"
+  },
+  {
     "key": "cmd+shift+up",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
@@ -35,7 +39,10 @@
     "command": "workbench.action.navigateBack"
   },
   {
-    "command": "workbench.action.navigateForward",
-    "key": "cmd+]"
+    "key": "cmd+]",
+    "command": "workbench.action.navigateForward"
   }
 ]
+
+
+

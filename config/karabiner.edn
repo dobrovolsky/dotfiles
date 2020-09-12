@@ -24,6 +24,7 @@
   :simlayers {
     :w-mode {:key :w}
     :q-mode {:key :q}
+    :z-mode {:key :z}
   }
   ; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md
   ;; !  | means mandatory
@@ -58,6 +59,7 @@
         [:2 :select-ru]
         [:3 :select-ua]
         [:4 [:toggle-theme]]
+        [:5 :!CTOSf12] ; track time with toggl
         ; emulate control shell and vim
         [:a :!Ta]
         [:e :!Te]
@@ -71,23 +73,22 @@
         [:b :!Tb]
         [:y :!Ty]
         [:u :!Tu]
+        [:i :!Tl]
+        ; delete button is too far away
+        [:o :delete_or_backspace]
+        [:p :delete_forward]
+        ; arrows
+        [:h :left_arrow]
+        [:j :down_arrow]
+        [:k :up_arrow]
+        [:l :right_arrow]
         [:!Co :!To]
+        ; enable control + arrows
         [:!Cl :!Tl]
         [:!Ck :!Tk]
         [:!Cj :!Tj]
         [:!Ch :!Th]
-        [:semicolon :!Tl]
-        [:q :!Tf2] ; show menu bar
-        [:grave_accent_and_tilde :!CTOSf12] ; track time with toggl
         [:return_or_enter :!TOreturn_or_enter] ; maximize window with ractangel
-        ; arrows
-        [:#Ch :left_arrow]
-        [:#Cj :down_arrow]
-        [:#Ck :up_arrow]
-        [:#Cl :right_arrow]
-        ; delete button is too far away
-        [:o :delete_or_backspace]
-        [:p :delete_forward]
       ]}
     {:des "Iterm to tmux mapping"
       :rules [
@@ -135,5 +136,50 @@
         [:u [:open "https://www.notion.so/e398ce19ebc8457c8bbd8187cc9f46e4?v=75cddc846deb4e449e5cb91e8bb6470b"]]
         [:i [:open "https://docs.google.com/spreadsheets/d/1lya8s1rvHx5AkheZU3eYrgD7irRkJK0NuIsVA-mKeoY/edit#gid=358988098"]]
     ]}
+    {:des "z-mode"
+      :rules [
+        :z-mode
+        [:l [:c :o :n :s :o :l :e :period :l :o :g :!S9 :!S0 :left_arrow]] ; console.log()
+        [:p [:p :r :i :n :t :!S9 :!S0 :left_arrow]] ; -> print()
+    ]}
+    {:des "make ru similar to en"
+      :rules [
+        :ru
+        [:grave_accent_and_tilde :!TOgrave_accent_and_tilde]
+        [:#Sopen_bracket :!TO#Sopen_bracket :modal-mode]
+        [:#Sclose_bracket :!TO#Sclose_bracket :modal-mode]
+        [:#Ssemicolon :!TO#Ssemicolon :modal-mode]
+        [:#Squote :!TO#Squote :modal-mode]
+        [:#Scomma :!TO#Scomma :modal-mode]
+        [:#Speriod :!TO#Speriod :modal-mode]
+        [:!S2 :!O2]
+        [:!S3 :!O3]
+        [:!S4 :!O4]
+        [:!S5 :!O5]
+        [:!S6 :!O6]
+        [:!S7 :!O7]
+        [:!S8 :!O8]
+    ]}
+    {:des "make ua similar to en"
+      :rules [
+        :ua
+        [:grave_accent_and_tilde :!TOgrave_accent_and_tilde]
+        [:#Sopen_bracket :!TO#Sopen_bracket :modal-mode]
+        [:#Sclose_bracket :!TO#Sclose_bracket :modal-mode]
+        [:#Ssemicolon :!TO#Ssemicolon :modal-mode]
+        [:#Squote :!TO#Squote :modal-mode]
+        [:#Scomma :!TO#Scomma :modal-mode]
+        [:#Speriod :!TO#Speriod :modal-mode]
+        [:!S2 :!O2]
+        [:!S3 :!O3]
+        [:!S4 :!O4]
+        [:!S5 :!O5]
+        [:!S6 :!O6]
+        [:!S7 :!O7]
+        [:!S8 :!O8]
+        [:#Sslash :!TO#Sslash] ; ua and ru work dirrently by default
+    ]}
+    {:des "right command to command+tab"
+      :rules [[:right_command :!Ctab]]}
   ]
 }

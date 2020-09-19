@@ -146,12 +146,18 @@
       :rules [
         :ru
         [:grave_accent_and_tilde :!TOgrave_accent_and_tilde]
-        [:#Sopen_bracket :!TO#Sopen_bracket :modal-mode]
-        [:#Sclose_bracket :!TO#Sclose_bracket :modal-mode]
-        [:#Ssemicolon :!TO#Ssemicolon :modal-mode]
-        [:#Squote :!TO#Squote :modal-mode]
-        [:#Scomma :!TO#Scomma :modal-mode]
-        [:#Speriod :!TO#Speriod :modal-mode]
+        [:open_bracket :!Sgrave_accent_and_tilde :modal-mode]
+        [:!Sopen_bracket :!O9 :modal-mode]
+        [:close_bracket :grave_accent_and_tilde :modal-mode]
+        [:!Sclose_bracket :!O0 :modal-mode]
+        [:semicolon :!S5 :modal-mode]
+        [:!Ssemicolon :!S8 :modal-mode]
+        [:quote :!OS2 :modal-mode]
+        [:!Squote :!OS9 :modal-mode]
+        [:comma :!TOcomma :modal-mode]
+        [:!Scomma [:select-us :!Scomma :select-ru] :modal-mode]
+        [:period :!TOperiod :modal-mode]
+        [:!Speriod [:select-us :!Speriod :select-ru] :modal-mode]
         [:!S2 :!O2]
         [:!S3 :!O3]
         [:!S4 :!O4]
@@ -166,10 +172,13 @@
         [:grave_accent_and_tilde :!TOgrave_accent_and_tilde]
         [:#Sopen_bracket :!TO#Sopen_bracket :modal-mode]
         [:#Sclose_bracket :!TO#Sclose_bracket :modal-mode]
-        [:#Ssemicolon :!TO#Ssemicolon :modal-mode]
-        [:#Squote :!TO#Squote :modal-mode]
+        [:semicolon :!TOSsemicolon :modal-mode]
+        [:!Ssemicolon :!TOsemicolon :modal-mode]
+        [:quote :!TOSquote :modal-mode]
+        [:!Squote :!TOquote :modal-mode]
         [:#Scomma :!TO#Scomma :modal-mode]
         [:#Speriod :!TO#Speriod :modal-mode]
+        [:#Sslash :!TO#Sslash] 
         [:!S2 :!O2]
         [:!S3 :!O3]
         [:!S4 :!O4]
@@ -177,9 +186,15 @@
         [:!S6 :!O6]
         [:!S7 :!O7]
         [:!S8 :!O8]
-        [:#Sslash :!TO#Sslash] ; ua and ru work dirrently by default
     ]}
     {:des "right command to command+tab"
       :rules [[:right_command :!Ctab]]}
+    {:des "swap : ; and ' \" "
+      :rules [
+        [:semicolon :!Ssemicolon]
+        [:!Ssemicolon :semicolon]
+        [:quote :!Squote]
+        [:!Squote :quote]
+    ]}
   ]
 }

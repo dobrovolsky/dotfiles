@@ -178,7 +178,7 @@
         [:!Squote :!TOquote :modal-mode]
         [:#Scomma :!TO#Scomma :modal-mode]
         [:#Speriod :!TO#Speriod :modal-mode]
-        [:#Sslash :!TO#Sslash] 
+        [:#Sslash :!TO#Sslash :modal-mode] 
         [:!S2 :!O2]
         [:!S3 :!O3]
         [:!S4 :!O4]
@@ -191,10 +191,10 @@
       :rules [[:right_command :!Ctab]]}
     {:des "swap : ; and ' \" "
       :rules [
-        [:semicolon :!Ssemicolon]
-        [:!Ssemicolon :semicolon]
-        [:quote :!Squote]
-        [:!Squote :quote]
+        [:semicolon :!Ssemicolon [:!ua :!ru]]
+        [:!Ssemicolon :semicolon [:!ua :!ru]]
+        [:quote :!Squote [:!ua :!ru]]
+        [:!Squote :quote [:!ua :!ru]]
     ]}
   ]
 }

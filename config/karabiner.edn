@@ -76,7 +76,7 @@
         [:i :!Tl]
         ; delete button is too far away
         [:o :delete_or_backspace]
-        [:p :delete_forward]
+        [:!So :delete_forward]
         ; arrows
         [:h :left_arrow]
         [:j :down_arrow]
@@ -178,7 +178,7 @@
         [:!Squote :!TOquote :modal-mode]
         [:#Scomma :!TO#Scomma :modal-mode]
         [:#Speriod :!TO#Speriod :modal-mode]
-        [:#Sslash :!TO#Sslash :modal-mode] 
+        [:#Sslash :!TO#Sslash] 
         [:!S2 :!O2]
         [:!S3 :!O3]
         [:!S4 :!O4]

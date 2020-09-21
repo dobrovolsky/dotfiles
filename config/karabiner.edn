@@ -21,6 +21,9 @@
     :select-ua {:input :ua}
     :toggle-theme {:shell "osascript -e 'tell application \"System Events\"' -e 'tell appearance preferences' -e 'set dark mode to not dark mode' -e 'end tell' -e 'end tell'"}
   } 
+  :layers {
+    :modal-mode {:key :delete_or_backspace}
+  }
   :simlayers {
     :w-mode {:key :w}
     :q-mode {:key :q}

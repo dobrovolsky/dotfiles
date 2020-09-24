@@ -22,7 +22,7 @@
     :toggle-theme {:shell "osascript -e 'tell application \"System Events\"' -e 'tell appearance preferences' -e 'set dark mode to not dark mode' -e 'end tell' -e 'end tell'"}
   } 
   :layers {
-    :modal-mode {:key :delete_or_backspace}
+    :modal-mode {:key :delete_or_backspace :alone {:key :vk_none}}
   }
   :simlayers {
     :w-mode {:key :w}
@@ -43,7 +43,7 @@
   ;; R  | right_shift
   ;; !! | mandatory command + control + optional + shift (hyper)
   ;; ## | optional any
-
+  
   :main [
     {:des "Use caps_lock for activationg modal_mode (hold) and escape for pressig twice"
       :rules [

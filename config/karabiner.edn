@@ -144,6 +144,7 @@
         :z-mode
         [:l [:c :o :n :s :o :l :e :period :l :o :g :!S9 :!S0 :left_arrow]] ; console.log()
         [:p [:p :r :i :n :t :!S9 :!S0 :left_arrow]] ; -> print()
+        [:m [:b :o :g :d :a :n :period :g :m :2 :4 :!S2 :g :m :a :i :l :period :c :o :m]] ; -> bogdan.gm24@gmail.com   
     ]}
     {:des "make ru similar to en"
       :rules [

@@ -62,7 +62,7 @@
         [:2 :select-ru]
         [:3 :select-ua]
         [:4 [:toggle-theme]]
-        [:5 :!CTOSf12] ; track time with toggl
+        [:5 [:!CTOSf11 :!CTOSf12]] ; track time with toggl and use focus
         ; emulate control shell and vim
         [:a :!Ta]
         [:e :!Te]

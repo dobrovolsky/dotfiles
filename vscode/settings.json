@@ -7,7 +7,7 @@
     "editor.minimap.enabled": false,
     "editor.largeFileOptimizations": false,
     "editor.suggestSelection": "first",
-    
+
     "explorer.confirmDelete": false,
     
     "files.autoSave": "onFocusChange",

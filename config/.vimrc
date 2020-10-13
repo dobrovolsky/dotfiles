@@ -64,10 +64,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " clear highlights on search
-nnoremap <ESC> :noh<CR>
-
-inoremap jk <ESC>
-inoremap jj <ESC>
+nnoremap <CR> :noh<CR>
 
 " load plugins
 call plug#begin('$HOME/.vim/vim-plug')

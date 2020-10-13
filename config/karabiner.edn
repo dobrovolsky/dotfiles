@@ -196,8 +196,6 @@
         [:!S7 :!O7]
         [:!S8 :!O8]
     ]}
-    {:des "right command to command+tab"
-      :rules [[:right_command :!Ctab]]}
     {:des "swap : ; and ' \" "
       :rules [
         [:semicolon :!Ssemicolon [:!ua :!ru]]

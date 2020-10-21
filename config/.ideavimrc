@@ -1,5 +1,10 @@
-" enable vim-surround
+" load default mapping
+source ~/.vimrc
+
+" enable ideavim plugins
 set surround
 set highlightedyank
 
-source ~/.vimrc
+:map <leader>f :action ShowIntentionActions<CR>
+:map <leader>p :action Tool_External Tools_black<CR>
+

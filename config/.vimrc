@@ -48,6 +48,9 @@ let mapleader = " "
 " lazzy to type :command CR
 map <leader>q :wq<CR>
 map <leader>w :w<CR>
+map <leader>r :register<CR>
+map <leader>m :marks<CR>
+
 
 " https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
 :nnoremap n nzz

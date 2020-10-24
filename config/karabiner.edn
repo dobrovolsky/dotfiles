@@ -8,7 +8,8 @@
     :open "open %s"
   }
   :applications {
-    :iterm ["^com\\.googlecode\\.iterm2$"]
+    :iterm ["^com.googlecode.iterm2$"]
+    :brave ["^com.brave.Browser$"]
   }
   :input-sources {
     :us {:input_source_id "com.apple.keylayout.US"}
@@ -101,6 +102,12 @@
         [:!Ct [:!Tb :c]]
         [:!Cn [:!Tb :n]]
         [:b :!Tb [:modal_mode]]
+      ]}
+    {:des "Brave mapping"
+      :rules [
+        :brave
+        ; uses Copy as Markdown's hot key to copy markdown link and open kb
+        [:!Cm [:!Cm [:code-project "~/kb"]]]
       ]}
     {:des "Build new habbit by changing default behavior"
       :rules [

@@ -16,6 +16,7 @@ brew "ranger"
 brew "tmux"
 brew "yqrashawn/goku/goku"
 brew "zsh"
+brew "neovim", args: ["HEAD"]
 cask "alfred"
 cask "bitwarden"
 cask "brave-browser"

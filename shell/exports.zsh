@@ -41,6 +41,9 @@ fi
 # allow JetBrains' IDEAs to access history
 HISTFILE=~/.zsh_history
 
+# don't store command in hystory if starts with space
+HIST_IGNORE_SPACE="true"
+
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=248"
 

@@ -30,12 +30,15 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     
-    "vim.hlsearch": true,
-    "vim.useSystemClipboard": true,
     "editor.lineNumbers": "relative",
+    "editor.scrollBeyondLastLine": false,
+
+    "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.vim",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
 
     "window.autoDetectColorScheme": true,
     "workbench.preferredLightColorTheme":"Atom One Light",
     "workbench.preferredDarkColorTheme": "Atom One Dark",
-    "workbench.colorTheme": "Atom One Light"
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.startupEditor": "newUntitledFile"
 }

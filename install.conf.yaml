@@ -15,13 +15,15 @@
     ~/.gitignore: config/.gitignore
     ~/.ideavimrc: config/.ideavimrc
     ~/.tmux.conf: config/.tmux.conf
-    ~/.vimrc: config/.vimrc
     ~/.zshrc: config/.zshrc
     ~/.bat.conf: config/.bat.conf
+    ~/.config/nvim/init.vim:
+        create: true
+        path: nvim/init.vim
     ~/.config/karabiner.edn: 
         create: true
         path: config/karabiner.edn
-    ~/.vim/autoload/plug.vim: 
+    ~/.local/share/nvim/site/autoload/plug.vim:
         create: true
         path: deps/vim-plug/plug.vim
     ~/.tmux/plugins/tpm: 
@@ -37,7 +39,7 @@
 - shell:
     - [~/.tmux/plugins/tpm/bin/install_plugins, Install tmux plugins]
     - 
-        command: vim +'PlugInstall --sync' +qa
+        command: nvim +'PlugInstall --sync' +qa
         description: Install vim plugins
         stdout: true
         stdin: true

@@ -24,3 +24,12 @@ map <C-l> <C-W>l
 
 " clear highlights on search
 nnoremap <CR> :noh<CR>
+
+" show NERDTree
+map <leader>e :NERDTreeToggle<CR>
+
+" show indent
+map <leader>g :IndentGuidesToggle<CR>
+
+" show git info
+map <silent> <leader>d :GitGutterToggle<cr>

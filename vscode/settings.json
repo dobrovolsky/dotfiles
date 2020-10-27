@@ -39,6 +39,6 @@
     "window.autoDetectColorScheme": true,
     "workbench.preferredLightColorTheme":"Atom One Light",
     "workbench.preferredDarkColorTheme": "Atom One Dark",
-    "workbench.colorTheme": "Atom One Dark",
+    "workbench.colorTheme": "Atom One Light",
     "workbench.startupEditor": "newUntitledFile"
 }

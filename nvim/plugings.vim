@@ -23,7 +23,6 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 " Git gutter
 """"""""""""""
 let g:gitgutter_enabled=0
-nnoremap <silent> <leader>d :GitGutterToggle<cr>
 
 
 """""""""""""
@@ -52,6 +51,7 @@ let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 
+
 """"""""""""""""
 " NERDTRee
 """"""""""""""""
@@ -60,14 +60,10 @@ let g:vimshell_force_overwrite_statusline = 0
 " how hidden files
 let NERDTreeShowHidden=1
 
-map <leader>e :NERDTreeToggle<CR>
-
 
 """""""""""""""""""""""
 " vim-indent-guides
 """""""""""""""""""""""
-map <leader>g :IndentGuidesToggle<CR>
-
 let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_guide_size = 4
 let g:indent_guides_color_change_percent = 3

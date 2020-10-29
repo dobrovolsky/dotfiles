@@ -1,8 +1,9 @@
 " load plugins
 call plug#begin('$HOME/.vim/vim-plug')
 
-Plug 'itchyny/lightline.vim'
 Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -10,6 +11,7 @@ Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
 Plug 'luochen1990/rainbow'
 Plug 'wakatime/vim-wakatime'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 

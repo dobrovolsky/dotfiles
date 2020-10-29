@@ -1,5 +1,5 @@
 " enable syntax highlighting
-syntax enable
+syntax on
 " show line numbers
 set number
 set relativenumber
@@ -19,8 +19,9 @@ set shiftwidth=4
 " show the matching part of the pair for [] {} and ()
 set showmatch
 
-" set light theme
-set background=light
+" set onedark theme
+colorscheme onedark
+set termguicolors
 
 " display incomplete commands
 set showcmd

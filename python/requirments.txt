@@ -3,6 +3,7 @@ httpie
 ipython
 litecli
 poetry
+pynvim
 wakatime
 youtube-dl
 

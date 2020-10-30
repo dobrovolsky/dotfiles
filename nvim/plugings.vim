@@ -9,17 +9,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
-Plug 'luochen1990/rainbow'
 Plug 'wakatime/vim-wakatime'
 Plug 'joshdick/onedark.vim'
+Plug 'mhinz/vim-startify'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
-
-"""""""""""""""
-" Rainbow
-"""""""""""""""
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
-
 
 """"""""""""""
 " Git gutter
@@ -69,3 +66,10 @@ let NERDTreeShowHidden=1
 let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_guide_size = 4
 let g:indent_guides_color_change_percent = 3
+
+
+"""""""""""""""""""""""
+" deoplete
+""""""""""""""""""""""""
+let g:deoplete#enable_at_startup = 1
+

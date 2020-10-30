@@ -48,18 +48,11 @@
     - [bash ./python/install.sh, Installing Python and required packages]
     - [bash ./node/install.sh, Installing NodeJS and required packages]
     - [bash ./go/install.sh, Installing Golang required packages]
+    - [goku, Generate karabiner config]
 
-# VSCode
+# Knowledge base custom completion
 - link:
-    "~/Library/Application Support/Code/User/settings.json":
-        path: vscode/settings.json
-        create: true
-    "~/Library/Application Support/Code/User/keybindings.json":
-        path: vscode/keybindings.json
-        create: true
-
-- shell:
-    - [bash ./vscode/install.sh, Installing vscode extensions]
+    ~/.vim/vim-plug/deoplete.nvim/rplugin/python3/deoplete/source/wiki_files.py: nvim/deoplete/sources/wiki_files.py
 
 # Cleaning up:
 - shell:

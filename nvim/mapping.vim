@@ -5,8 +5,9 @@ let mapleader = " "
 " lazzy to type :command CR
 map <leader>q :wq<CR>
 map <leader>w :w<CR>
-map <leader>r :register<CR>
-map <leader>m :marks<CR>
+map <leader>m :Marks<CR>
+map <leader>f :Files<CR>
+map <leader>b :Buffers<CR>
 
 " https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
 :nnoremap n nzz
@@ -33,3 +34,8 @@ map <leader>g :IndentGuidesToggle<CR>
 
 " show git info
 map <silent> <leader>d :GitGutterToggle<cr>
+
+" allow using tab for completion
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+

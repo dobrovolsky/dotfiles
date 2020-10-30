@@ -1,0 +1,6 @@
+file=$(fzf --preview 'c --color=always {}')
+
+[[ -n "$file" ]] || exit
+
+nvim "$file"
+

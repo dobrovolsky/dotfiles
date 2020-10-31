@@ -1,7 +1,6 @@
 {
   :templates {
     :launch-app "open -a '%s'"
-    :code-project "open -a 'Visual Studio Code' %s"
     ; wait on https://youtrack.jetbrains.com/issue/IDEA-250241 or https://youtrack.jetbrains.com/issue/IDEA-247313
     ; :charm-project "open -a 'Pycharm' %s"
     ; :charm-project "/usr/local/bin/charm %s"
@@ -107,7 +106,7 @@
       :rules [
         :brave
         ; uses Copy as Markdown's hot key to copy markdown link and open kb
-        [:!Cm [:!Cm [:code-project "~/kb"]]]
+        [:!Cm [:!Cm [:launch-app "Iterm"]]]
       ]}
     {:des "Build new habbit by changing default behavior"
       :rules [
@@ -130,8 +129,7 @@
         :w-mode
         [:u [:launch-app "Bitwarden"]]
         [:i [:launch-app "Pycharm"]]
-        [:o [:launch-app "Iterm"]]
-        [:p [:launch-app "Google Chrome"]]
+        [:o [:launch-app "Google Chrome"]]
         [:j [:launch-app "Brave Browser"]]
         [:k [:launch-app "Spotify"]]
         [:l [:launch-app "Telegram"]]
@@ -139,9 +137,8 @@
     {:des "q-mode"
       :rules [
         :q-mode
-        [:j [:code-project "~/kb"]]
+        [:j [:launch-app "Iterm"]]
         [:k "open obsidian://vault/kb"]
-        [:l [:code-project "~/dotfiles"]]
         ; [:l [:charm-project "~/projects/ref/jupyter-notebook"]]
         ; [:semicolon [:charm-project "~/projects/ref/jupyterhub-fork"]]
         [:u [:open "https://www.notion.so/e398ce19ebc8457c8bbd8187cc9f46e4?v=75cddc846deb4e449e5cb91e8bb6470b"]]

@@ -31,7 +31,6 @@ export BAT_CONFIG_PATH=$HOME/.bat.conf
 
 # don't start tmux in ide and ssh terminals
 if [ "$TERMINAL_EMULATOR" = "JetBrains-JediTerm" ] || 
-   [ "$TERMINAL_EMULATOR" = "VSCODE" ] || 
    [ -n "$SSH_CONNECTION" ]; then
     ZSH_TMUX_AUTOSTART=false
 else 

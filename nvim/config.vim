@@ -40,3 +40,10 @@ set clipboard+=unnamed
 
 " make backspace work like most other programs
 set backspace=indent,eol,start
+
+" use 1 option for autocomplete
+set completeopt+=noinsert
+
+" prettier's doc says to add it
+packloadall
+

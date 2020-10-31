@@ -2,6 +2,7 @@
 " knowledge base related mappings
 """"""""""""""""""""
 
+" load some part only for kb
 autocmd BufNewFile,BufRead,BufEnter ~/kb/* call Load_kb_settings()
 
 " slugify note for filename
@@ -36,6 +37,10 @@ function! Load_kb_settings()
   " allow to use gf for links
   set suffixesadd=.md
   set path+=~/kb
+
+  " autosave
+  autocmd TextChanged,TextChangedI * silent write
+  autocmd TextChanged,InsertLeave * silent :PrettierAsync
   
   " open curent file in obsidian
   map <leader>o :silent !open 'obsidian://%:p'<cr>
@@ -80,8 +85,10 @@ function! Load_kb_settings()
   nmap г u
   nmap З P
   
-  map <leader>й :wq<cr>
-  map <leader>ц :w<cr>
+  map <leader>й :PrettierAsync<cr>:q<cr>
+  map <leader>q :PrettierAsync<cr>:q<cr>
+  map <leader>ц :PrettierAsync<cr>
+  map <leader>w :PrettierAsync<cr>
   map <leader>ь :Marks<cr>
   map <leader>а :Files<cr>
 endfunction

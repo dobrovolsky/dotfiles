@@ -15,6 +15,10 @@ Plug 'mhinz/vim-startify'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'plasticboy/vim-markdown'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install'
+  \ }
 
 call plug#end()
 
@@ -70,6 +74,12 @@ let g:indent_guides_color_change_percent = 3
 
 """""""""""""""""""""""
 " deoplete
-""""""""""""""""""""""""
+"""""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
+
+
+"""""""""""""""""""""""
+" vim-markdown
+"""""""""""""""""""""""
+let g:vim_markdown_folding_disabled = 1
 

@@ -1,9 +1,10 @@
 " load default mapping
-source ~/.dotfiles/config/init.vim
+source ~/.dotfiles/nvim/init.vim
 
 " enable ideavim plugins
 set surround
 set highlightedyank
+set easymotion
 
 :map <leader>f :action ShowIntentionActions<CR>
 :map <leader>p :action Tool_External Tools_black<CR>

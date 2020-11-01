@@ -29,13 +29,18 @@ nnoremap <CR> :noh<CR>
 " show NERDTree
 map <leader>e :NERDTreeToggle<CR>
 
-" show indent
-map <leader>g :IndentGuidesToggle<CR>
-
 " show git info
 map <silent> <leader>d :GitGutterToggle<cr>
 
 " allow using tab for completion
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+map <Leader>s <Plug>(easymotion-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+map <Leader>s <Plug>(easymotion-f2)
 

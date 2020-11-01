@@ -27,8 +27,8 @@ function! New_note()
 endfunction
 
 " quick open of kb
-map <silent> <leader>k :FZF ~/kb<cr>
-map <silent> <leader>л :FZF ~/kb<cr>
+map <silent> <leader>k :Files ~/kb<cr>
+map <silent> <leader>л :Files ~/kb<cr>
 
 map <silent> <leader>n :call New_note()<cr>
 map <silent> <leader>т :call New_note()<cr>
@@ -38,9 +38,11 @@ function! Load_kb_settings()
   set suffixesadd=.md
   set path+=~/kb
 
-  " autosave
-  autocmd TextChanged,TextChangedI * silent write
-  autocmd TextChanged,InsertLeave * silent :PrettierAsync
+  " don't try to save NERDTree buffer
+  autocmd TextChanged,TextChangedI *
+    \ if &buftype ==# '' || &buftype == 'acwrite' |
+    \     silent write |
+    \ endif
   
   " open curent file in obsidian
   map <leader>o :silent !open 'obsidian://%:p'<cr>

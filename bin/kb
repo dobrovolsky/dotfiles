@@ -1,6 +1,6 @@
 cd $HOME/kb
 
-file=$(fd -I -e md | fzf --preview 'c --color=always {}')
+file=$(fd -I -e md | fzf --reverse --preview 'c --color=always {}')
 
 [[ -n "$file" ]] || exit
 

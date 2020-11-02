@@ -87,10 +87,10 @@ function! Load_kb_settings()
   nmap г u
   nmap З P
   
-  map <leader>й :PrettierAsync<cr>:q<cr>
-  map <leader>q :PrettierAsync<cr>:q<cr>
-  map <leader>ц :PrettierAsync<cr>
-  map <leader>w :PrettierAsync<cr>
+  map <leader>й :Prettier<cr>:q<cr>
+  map <leader>q :Prettier<cr>:q<cr>
+  map <leader>ц :Prettier<cr>
+  map <leader>w :Prettier<cr>
   map <leader>ь :Marks<cr>
   map <leader>а :Files<cr>
 endfunction

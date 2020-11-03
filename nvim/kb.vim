@@ -86,6 +86,22 @@ function! Load_kb_settings()
   nmap щ o
   nmap г u
   nmap З P
+ 
+  " set spelling
+  set spell spelllang=uk,en
+
+  " https://coreyja.com/vim-spelling-suggestions-fzf/
+  function! FzfSpellSink(word)
+    exe 'normal! "_ciw'.a:word
+  endfunction
+
+  function! FzfSpell()
+    let suggestions = spellsuggest(expand("<cword>"))
+    return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'window': {'width': 0.5, 'height': 0.5} })
+  endfunction
+
+  nnoremap z= :call FzfSpell()<CR>
+  nnoremap я= :call FzfSpell()<CR>
   
   map <leader>й :Prettier<cr>:q<cr>
   map <leader>q :Prettier<cr>:q<cr>

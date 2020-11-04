@@ -261,8 +261,8 @@ function! Load_kb_settings()
   map <leader>вв ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
   
   " insert `- year-month-day - ` in the end of file and start typing
-  map <leader>h Gi- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
-  map <leader>р Gi- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
+  map <leader>h Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
+  map <leader>р Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
   
   " insert h3 and start typing
   map <leader>3 i###<space>

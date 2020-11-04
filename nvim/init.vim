@@ -196,35 +196,45 @@ map <Leader>s <Plug>(easymotion-f2)
 " load some part only for kb
 autocmd BufNewFile,BufRead,BufEnter ~/kb/* call Load_kb_settings()
 
+" https://coreyja.com/vim-spelling-suggestions-fzf/
+function! FzfSpellSink(word)
+  exe 'normal! "_ciw'.a:word
+endfunction
+
+function! FzfSpell()
+  let suggestions = spellsuggest(expand("<cword>"))
+  return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'window': {'width': 0.5, 'height': 0.5} })
+endfunction
+
+
+" slugify note for filename
+function! Sluggify(text)
+  let l:trimmed_line = substitute(a:text, '^#* ', '', '')
+  let l:lowered_line = tolower(l:trimmed_line)
+  let l:sanitized_line = substitute(l:lowered_line, '[^a-z0-9 ]', '', 'g')
+  let l:dashed_line = substitute(l:sanitized_line, ' ', '-', 'g')
+  let l:slugged_line = substitute(l:dashed_line, '--*', '-', 'g')
+  return l:slugged_line
+endfunction
+
+" create new md file in kb or open existing
+function! New_note()
+  let l:name = input("Note name: ")
+  let l:fname = "~/kb/" . Sluggify(l:name) . ".md"
+  exec "e " . l:fname
+   " insert template only for new files
+   if empty(expand(glob(l:fname)))
+     exec "normal gg0i# " . l:name . "\<cr>\<cr>## References\<cr>\<cr>## Links\<cr>\<cr>## Notes\<cr>\<cr>\<esc>"
+   endif
+endfunction
 
 function! Load_kb_settings()
-  " slugify note for filename
-  function! Sluggify(text)
-    let l:trimmed_line = substitute(a:text, '^#* ', '', '')
-    let l:lowered_line = tolower(l:trimmed_line)
-    let l:sanitized_line = substitute(l:lowered_line, '[^a-z0-9 ]', '', 'g')
-    let l:dashed_line = substitute(l:sanitized_line, ' ', '-', 'g')
-    let l:slugged_line = substitute(l:dashed_line, '--*', '-', 'g')
-    return l:slugged_line
-  endfunction
-  
-  " create new md file in kb or open existing
-  function! New_note()
-    let l:name = input("Note name: ")
-    let l:fname = "~/kb/" . Sluggify(l:name) . ".md"
-    exec "e " . l:fname
-    " insert template only for new files
-    if empty(expand(glob(l:fname)))
-      exec "normal gg0i# " . l:name . "\<cr>\<cr>## References\<cr>\<cr>## Links\<cr>\<cr>## Notes\<cr>\<cr>\<esc>"
-    endif
-  endfunction
-  
   " quick open of kb
-  map <silent> <leader>k :Files ~/kb<cr>
-  map <silent> <leader>л :Files ~/kb<cr>
+  map <leader>k :Files ~/kb<cr>
+  map <leader>л :Files ~/kb<cr>
   
-  map <silent> <leader>n :call New_note()<cr>
-  map <silent> <leader>т :call New_note()<cr>
+  map <leader>n :call New_note()<cr>
+  map <leader>т :call New_note()<cr>
 
   " allow to use gf for links
   set suffixesadd=.md
@@ -281,16 +291,6 @@ function! Load_kb_settings()
  
   " set spelling
   set spell spelllang=uk,en
-
-  " https://coreyja.com/vim-spelling-suggestions-fzf/
-  function! FzfSpellSink(word)
-    exe 'normal! "_ciw'.a:word
-  endfunction
-
-  function! FzfSpell()
-    let suggestions = spellsuggest(expand("<cword>"))
-    return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'window': {'width': 0.5, 'height': 0.5} })
-  endfunction
 
   nnoremap z= :call FzfSpell()<CR>
   nnoremap я= :call FzfSpell()<CR>

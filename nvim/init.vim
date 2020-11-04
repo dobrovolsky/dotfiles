@@ -201,6 +201,10 @@ map <Leader>s <Plug>(easymotion-f)
 " Need one more keystroke, but on average, it may be more comfortable.
 map <Leader>s <Plug>(easymotion-f2)
 
+map <leader>ev :e $MYVIMRC<cr>
+" quick open of kb
+map <leader>k :Files ~/kb<cr>
+map <leader>л :Files ~/kb<cr>
 
 """""""""""""""""""""""
 " Knowledge Base
@@ -241,10 +245,7 @@ function! New_note()
 endfunction
 
 function! Load_kb_settings()
-  " quick open of kb
-  map <leader>k :Files ~/kb<cr>
-  map <leader>л :Files ~/kb<cr>
-
+  " create new note
   map <leader>n :call New_note()<cr>
   map <leader>т :call New_note()<cr>
 

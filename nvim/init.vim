@@ -109,14 +109,14 @@ syntax on
 " show line numbers
 set number
 set relativenumber
-" set tabs to have 4 spaces
-set ts=4
+" set tabs to have 2 spaces
+set ts=2
 " indent when moving to the next line while writing code
 set autoindent
 " expand tabs into spaces
 set expandtab
 " when using the >> or << commands, shift lines by 4 spaces
-set shiftwidth=4
+set shiftwidth=2
 " show the matching part of the pair for [] {} and ()
 set showmatch
 " set onedark theme
@@ -130,14 +130,26 @@ set hlsearch
 set incsearch
 " searches are case insensitive
 set ignorecase
+" searches are case sensative only when term has at least one capital
+set smartcase
 " use system clipboard
 set clipboard+=unnamed
 " make backspace work like most other programs
 set backspace=indent,eol,start
+" highlight column 120
+set colorcolumn=120
 " use 1 option for autocomplete
 set completeopt+=noinsert
 " prettier's doc says to add it
 packloadall
+" highlight spaces in the end of line
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 
 """""""""""""""""""""""
@@ -232,7 +244,7 @@ function! Load_kb_settings()
   " quick open of kb
   map <leader>k :Files ~/kb<cr>
   map <leader>л :Files ~/kb<cr>
-  
+
   map <leader>n :call New_note()<cr>
   map <leader>т :call New_note()<cr>
 
@@ -245,41 +257,41 @@ function! Load_kb_settings()
     \ if &buftype ==# '' || &buftype == 'acwrite' |
     \     silent write |
     \ endif
-  
+
   " open curent file in obsidian
   map <leader>o :silent !open 'obsidian://%:p'<cr>
   map <leader>щ :silent !open 'obsidian://%:p'<cr>
-  
+
   " open graph in obsidian
   map <leader>g :silent !~/kb/scripts/graph.js<cr>
   map <leader>п :silent !~/kb/scripts/graph.js<cr>
-  
+
   " encrypt notes
   map <leader>l :!~/kb/scripts/encrypt.py<cr>
   map <leader>д :!~/kb/scripts/encrypt.py<cr>
-  
+
   " decrypt notes
   map <leader>u :!~/kb/scripts/decrypt.py<cr>:e ~/kb/daily-notes/current-period.md<cr>
   map <leader>г :!~kb/scripts/decrypt.py<cr>:e ~/kb/daily-notes/current-period.md<cr>
-  
+
   " commit and push changes
   map <leader>p :!~/kb/scripts/save.py<cr>
   map <leader>з :!~/kb/scripts/save.py<cr>
-  
+
   " insert `## year-month-day` in the top of file and start typing
   map <leader>dd ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
   map <leader>вв ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
-  
+
   " insert `- year-month-day - ` in the end of file and start typing
   map <leader>h Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
   map <leader>р Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
-  
+
   " insert h3 and start typing
   map <leader>3 i###<space>
-  
+
   " allow to use cyrillic chars
   set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
-  
+
   nmap Ж :
   " yank
   nmap Н Y
@@ -288,13 +300,13 @@ function! Load_kb_settings()
   nmap щ o
   nmap г u
   nmap З P
- 
+
   " set spelling
   set spell spelllang=uk,en
 
   nnoremap z= :call FzfSpell()<CR>
   nnoremap я= :call FzfSpell()<CR>
-  
+
   map <leader>й :Prettier<cr>:q<cr>
   map <leader>q :Prettier<cr>:q<cr>
   map <leader>ц :Prettier<cr>

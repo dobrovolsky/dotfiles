@@ -138,6 +138,8 @@ set clipboard+=unnamed
 set backspace=indent,eol,start
 " highlight column 120
 set colorcolumn=120
+" keep context on scrolling
+set scrolloff=5
 " use 1 option for autocomplete
 set completeopt+=noinsert
 " prettier's doc says to add it
@@ -162,9 +164,13 @@ let mapleader = " "
 " lazzy to type :command CR
 map <leader>q :wq<CR>
 map <leader>w :w<CR>
-map <leader>m :Marks<CR>
-map <leader>f :Files<CR>
-map <leader>b :Buffers<CR>
+" (s)earch (c)ommnad
+map <leader>sf :Files<CR>
+map <leader>sb :Buffers<CR>
+map <leader>sl :Lines<CR>
+map <leader>sm :Marks<CR>
+map <leader>sh :History<CR>
+map <leader>sc :Commits<CR>
 
 " https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
 :nnoremap n nzz
@@ -184,10 +190,10 @@ map <C-l> <C-W>l
 nnoremap <CR> :noh<CR>
 
 " show NERDTree
-map <leader>e :NERDTreeToggle<CR>
+map <leader>1 :NERDTreeToggle<CR>
 
-" show git info
-map <silent> <leader>d :GitGutterToggle<cr>
+" (t)oggle (d)iff
+map <silent> <leader>td :GitGutterToggle<cr>
 
 " allow using tab for completion
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -201,7 +207,16 @@ map <Leader>s <Plug>(easymotion-f)
 " Need one more keystroke, but on average, it may be more comfortable.
 map <Leader>s <Plug>(easymotion-f2)
 
+" insert line below cursor
+map <leader>oj o<esc>
+" insert line above cursor
+map <leader>ok O<esc>
+
+" open vim config file
 map <leader>ev :e $MYVIMRC<cr>
+" load vim config file
+map <leader>sv :source $MYVIMRC<cr>:nohl<cr>
+
 " quick open of kb
 map <leader>k :Files ~/kb<cr>
 map <leader>л :Files ~/kb<cr>
@@ -259,7 +274,7 @@ function! Load_kb_settings()
     \     silent write |
     \ endif
 
-  " open curent file in obsidian
+  " open current file in obsidian
   map <leader>o :silent !open 'obsidian://%:p'<cr>
   map <leader>щ :silent !open 'obsidian://%:p'<cr>
 
@@ -280,8 +295,8 @@ function! Load_kb_settings()
   map <leader>з :!~/kb/scripts/save.py<cr>
 
   " insert `## year-month-day` in the top of file and start typing
-  map <leader>dd ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
-  map <leader>вв ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
+  map <leader>d ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
+  map <leader>в ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
 
   " insert `- year-month-day - ` in the end of file and start typing
   map <leader>h Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
@@ -290,23 +305,14 @@ function! Load_kb_settings()
   " insert h3 and start typing
   map <leader>3 i###<space>
 
-  " allow to use cyrillic chars
+  " allow to use Cyrillic chars
   set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
-
-  nmap Ж :
-  " yank
-  nmap Н Y
-  nmap з p
-  nmap ф a
-  nmap щ o
-  nmap г u
-  nmap З P
 
   " set spelling
   set spell spelllang=uk,en
 
-  nnoremap z= :call FzfSpell()<CR>
-  nnoremap я= :call FzfSpell()<CR>
+  map z= :call FzfSpell()<CR>
+  map я= :call FzfSpell()<CR>
 
   map <leader>й :Prettier<cr>:q<cr>
   map <leader>q :Prettier<cr>:q<cr>

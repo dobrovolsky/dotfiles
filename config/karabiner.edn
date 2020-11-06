@@ -9,6 +9,7 @@
   :applications {
     :iterm ["^com.googlecode.iterm2$"]
     :brave ["^com.brave.Browser$"]
+    :charm ["^com.jetbrains.pycharm$"]
   }
   :input-sources {
     :us {:input_source_id "com.apple.keylayout.US"}
@@ -20,7 +21,7 @@
     :select-ru {:input :ru}
     :select-ua {:input :ua}
     :toggle-theme {:shell "osascript -e 'tell application \"System Events\"' -e 'tell appearance preferences' -e 'set dark mode to not dark mode' -e 'end tell' -e 'end tell'"}
-  } 
+  }
   :layers {
     :modal-mode {:key :delete_or_backspace :alone {:key :vk_none}}
   }
@@ -43,18 +44,18 @@
   ;; R  | right_shift
   ;; !! | mandatory command + control + optional + shift (hyper)
   ;; ## | optional any
-  
+
   :main [
     {:des "Use caps_lock for activationg modal_mode (hold) and escape for pressig twice"
       :rules [
         [:##caps_lock [:escape ["esc" 0]] ["esc" 1]]
         [:##caps_lock ["esc" 1] nil {
-          :delayed {:invoked ["esc" 0] :canceled ["esc" 0]} 
-          :held ["modal-mode" 1] 
-          :afterup ["modal-mode" 0] 
+          :delayed {:invoked ["esc" 0] :canceled ["esc" 0]}
+          :held ["modal-mode" 1]
+          :afterup ["modal-mode" 0]
           :params {:held 10}
         }]
-      ]} 
+      ]}
     {:des "modal-mode + key"
       :rules [
         :modal-mode
@@ -96,11 +97,11 @@
     {:des "Iterm to tmux mapping"
       :rules [
         :iterm
-        [:!CSd [:!Tb :hyphen]]
-        [:!Cd [:!Tb :backslash]]
-        [:!Ct [:!Tb :c]]
-        [:!Cn [:!Tb :n]]
-        [:b :!Tb [:modal_mode]]
+        [:!CSd [:!Ta :hyphen]]
+        [:!Cd [:!Ta :backslash]]
+        [:!Ct [:!Ta :c]]
+        [:!Cn [:!Ta :n]]
+        [:a :!Ta [:modal_mode]]
       ]}
     {:des "Brave mapping"
       :rules [
@@ -148,12 +149,14 @@
     {:des "z-mode"
       :rules [
         :z-mode
+        [:n [:!Of12] [:charm]] ; open toggle terminal
+        [:m [:!CSquote] [:charm]] ; maximize restore terminal
         [:u [:c :o :n :s :o :l :e :period :l :o :g :!S9 :!S0 :left_arrow] [:!ua :!ru]] ; console.log()
         [:i [:t :h :i :s :period] [:!ua :!ru]] ; -> this.
         [:j [:p :r :i :n :t :!S9 :!S0 :left_arrow] [:!ua :!ru]] ; -> print()
         [:k [:s :e :l :f :period] [:!ua :!ru]] ; -> self.
-        [:spacebar [:r :e :t :u :r :n :spacebar] [:!ua :!ru]] ; -> return 
-        [:m [:b :o :g :d :a :n :period :g :m :2 :4 :!S2 :g :m :a :i :l :period :c :o :m] [:!ua :!ru]] ; -> bogdan.gm24@gmail.com   
+        [:spacebar [:r :e :t :u :r :n :spacebar] [:!ua :!ru]] ; -> return
+        [:m [:b :o :g :d :a :n :period :g :m :2 :4 :!S2 :g :m :a :i :l :period :c :o :m] [:!ua :!ru]] ; -> bogdan.gm24@gmail.com
     ]}
     {:des "make ru similar to en"
       :rules [

@@ -173,12 +173,12 @@ map <leader>sh :History<CR>
 map <leader>sc :Commits<CR>
 
 " https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
-:nnoremap n nzz
-:nnoremap N Nzz
-:nnoremap * *zz
-:nnoremap # #zz
-:nnoremap g* g*zz
-:nnoremap g# g#zz
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
 
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -200,12 +200,12 @@ inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-map <Leader>s <Plug>(easymotion-f)
+" `ss{char}{label}`
+map <Leader>ss <Plug>(easymotion-f)
 " or
-" `s{char}{char}{label}`
+" `ss{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
-map <Leader>s <Plug>(easymotion-f2)
+map <Leader>ss <Plug>(easymotion-f2)
 
 " insert line below cursor
 map <leader>oj o<esc>
@@ -311,8 +311,14 @@ function! Load_kb_settings()
   " set spelling
   set spell spelllang=uk,en
 
-  map z= :call FzfSpell()<CR>
-  map я= :call FzfSpell()<CR>
+  " find suggestion for word under cursor
+  map <leader>f :call FzfSpell()<CR>
+  map <leader>к :call FzfSpell()<CR>
+
+  " insert line below cursor
+  map <leader>що o<esc>
+  " insert line above cursor
+  map <leader>щл O<esc>
 
   map <leader>й :Prettier<cr>:q<cr>
   map <leader>q :Prettier<cr>:q<cr>

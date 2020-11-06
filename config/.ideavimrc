@@ -1,11 +1,64 @@
 " load default mapping
-source ~/.dotfiles/nvim/init.vim
-
-" enable ideavim plugins
 set surround
 set highlightedyank
 set easymotion
 
-:map <leader>f :action ShowIntentionActions<CR>
-:map <leader>p :action Tool_External Tools_black<CR>
+" Ideavim specific
+set ideastatusicon=gray
 
+" use system clipboard
+set clipboard+=unnamed
+" highlight matches
+set hlsearch
+" incremental searching
+set incsearch
+" searches are case insensitive
+set ignorecase
+" searches are case sensative only when term has at least one capital
+set smartcas
+" show line numbers
+set number
+set relativenumber
+" display incomplete commands
+set showcmd
+" keep context on scrolling
+set scrolloff=5
+
+let mapleader=" "
+
+" (s)earch (c)ommnad
+map <leader>sm :marks<CR>
+map <leader>sr :register<CR>
+
+" https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
+" Smart way to move between windows
+maip <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" clear highlights on search
+nnoremap <CR> :noh<CR>
+
+" insert line below cursor
+map <leader>oj o<esc>
+" insert line above cursor
+map <leader>ok O<esc>
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `ss{char}{label}`
+map <Leader>ss <Plug>(easymotion-f)
+
+map <leader>f <Action>(ShowIntentionActions)
+map <leader>p <Action>(Tool_External Tools_black)
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>a <Action>(Annotate)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>j <Action>(ShowNavBar)

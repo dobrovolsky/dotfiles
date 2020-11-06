@@ -313,7 +313,7 @@ function! Load_kb_settings()
 
   " find suggestion for word under cursor
   map <leader>f :call FzfSpell()<CR>
-  map <leader>к :call FzfSpell()<CR>
+  map <leader>а :call FzfSpell()<CR>
 
   " insert line below cursor
   map <leader>що o<esc>
@@ -322,8 +322,13 @@ function! Load_kb_settings()
 
   map <leader>й :Prettier<cr>:q<cr>
   map <leader>q :Prettier<cr>:q<cr>
-  map <leader>ц :Prettier<cr>
   map <leader>w :Prettier<cr>
-  map <leader>ь :Marks<cr>
-  map <leader>а :Files<cr>
+  map <leader>ц :Prettier<cr>
+  map <leader>іа :Files<CR>
+  map <leader>іи :Buffers<CR>
+  map <leader>ід :Lines<CR>
+  map <leader>іь :Marks<CR>
+  map <leader>ір :History<CR>
+  map <leader>іс :Commits<CR>
+
 endfunction

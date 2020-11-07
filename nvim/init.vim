@@ -11,7 +11,7 @@ Plug 'junegunn/vim-peekaboo'
 " file explorer
 Plug 'scrooloose/nerdtree'
 " visual stuff
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/goyo.vim'
@@ -94,35 +94,6 @@ autocmd BufWinLeave * call clearmatches()
 " Git gutter
 """"""""""""""
 let g:gitgutter_enabled=1
-"""""""""""""
-" Lightline
-"""""""""""""
-" set settings for lightline.vim
-set laststatus=2
-" set filemane in pangel
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ 'active': {
-      \   'right': [['lineinfo'], ['filetype'], ['gitbranch']]
-      \ },
-      \ 'component_function': {
-      \   'filename': 'LightlineFilename',
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
-
-set noshowmode
-
-function! LightlineFilename()
-      return &filetype ==# 'vimfiler' ? vimfiler#get_status_string() :
-              \ &filetype ==# 'unite' ? unite#get_status_string() :
-              \ &filetype ==# 'vimshell' ? vimshell#get_status_string() :
-              \ expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
-endfunction
-
-let g:unite_force_overwrite_statusline = 0
-let g:vimfiler_force_overwrite_statusline = 0
-let g:vimshell_force_overwrite_statusline = 0
 """"""""""""""""
 " NERDTRee
 """"""""""""""""
@@ -230,7 +201,7 @@ function! SetBackgroundMode(...)
         let s:new_bg = "light"
     endif
     if &background !=? s:new_bg
-        let &background = s:new_bg
+      let &background = s:new_bg
     endif
 endfunction
 call SetBackgroundMode()

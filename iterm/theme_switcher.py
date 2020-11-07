@@ -7,9 +7,9 @@ async def update(connection, theme):
     # Themes have space-delimited attributes, one of which will be light or dark.
     parts = theme.split(" ")
     if "dark" in parts:
-        preset = await iterm2.ColorPreset.async_get(connection, "Dracula")
+        preset = await iterm2.ColorPreset.async_get(connection, "gruvbox-dark")
     else:
-        preset = await iterm2.ColorPreset.async_get(connection, "white")
+        preset = await iterm2.ColorPreset.async_get(connection, "gruvbox-light")
 
     # Update the list of all profiles and iterate over them.
     profiles=await iterm2.PartialProfile.async_query(connection)

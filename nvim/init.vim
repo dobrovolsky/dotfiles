@@ -15,7 +15,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/goyo.vim'
-Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 " better start screen
 Plug 'mhinz/vim-startify'
 " collect coding stats
@@ -38,6 +38,58 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
+"""""""""""""""""""""""
+" CONFIG
+"""""""""""""""""""""""
+" enable syntax highlighting
+syntax on
+" show line numbers
+set number
+set relativenumber
+" set tabs to have 2 spaces
+set ts=2
+" indent when moving to the next line while writing code
+set autoindent
+" expand tabs into spaces
+set expandtab
+" when using the >> or << commands, shift lines by 4 spaces
+set shiftwidth=2
+" show the matching part of the pair for [] {} and ()
+set showmatch
+" set 24-bit RGB color
+set termguicolors
+colorscheme gruvbox
+" display incomplete commands
+set showcmd
+" highlight matches
+set hlsearch
+" incremental searching
+set incsearch
+" searches are case insensitive
+set ignorecase
+" searches are case sensative only when term has at least one capital
+set smartcase
+" use system clipboard
+set clipboard+=unnamed
+" make backspace work like most other programs
+set backspace=indent,eol,start
+" highlight column 120
+set colorcolumn=120
+" keep context on scrolling
+set scrolloff=5
+" use 1 option for autocomplete
+set completeopt+=noinsert
+" prettier's doc says to add it
+packloadall
+" highlight spaces in the end of line
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
 """"""""""""""
 " Git gutter
 """"""""""""""
@@ -49,7 +101,7 @@ let g:gitgutter_enabled=1
 set laststatus=2
 " set filemane in pangel
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'right': [['lineinfo'], ['filetype'], ['gitbranch']]
       \ },
@@ -66,7 +118,7 @@ function! LightlineFilename()
               \ &filetype ==# 'unite' ? unite#get_status_string() :
               \ &filetype ==# 'vimshell' ? vimshell#get_status_string() :
               \ expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
-  endfunction
+endfunction
 
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
@@ -99,60 +151,6 @@ let g:vim_markdown_folding_disabled = 1
 let g:EasyMotion_do_mapping = 0
 " Turn on case-insensitive feature
 let g:EasyMotion_smartcase = 1
-
-
-"""""""""""""""""""""""
-" CONFIG
-"""""""""""""""""""""""
-" enable syntax highlighting
-syntax on
-" show line numbers
-set number
-set relativenumber
-" set tabs to have 2 spaces
-set ts=2
-" indent when moving to the next line while writing code
-set autoindent
-" expand tabs into spaces
-set expandtab
-" when using the >> or << commands, shift lines by 4 spaces
-set shiftwidth=2
-" show the matching part of the pair for [] {} and ()
-set showmatch
-" set onedark theme
-colorscheme onedark
-set termguicolors
-" display incomplete commands
-set showcmd
-" highlight matches
-set hlsearch
-" incremental searching
-set incsearch
-" searches are case insensitive
-set ignorecase
-" searches are case sensative only when term has at least one capital
-set smartcase
-" use system clipboard
-set clipboard+=unnamed
-" make backspace work like most other programs
-set backspace=indent,eol,start
-" highlight column 120
-set colorcolumn=120
-" keep context on scrolling
-set scrolloff=5
-" use 1 option for autocomplete
-set completeopt+=noinsert
-" prettier's doc says to add it
-packloadall
-" highlight spaces in the end of line
-highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-
 
 """""""""""""""""""""""
 " MAPPINGS
@@ -220,6 +218,24 @@ map <leader>sv :source $MYVIMRC<cr>:nohl<cr>
 " quick open of kb
 map <leader>k :Files ~/kb<cr>
 map <leader>л :Files ~/kb<cr>
+
+" follow system theme mode
+" https://stefan.sofa-rockers.org/2018/10/23/macos-dark-mode-terminal-vim/
+function! SetBackgroundMode(...)
+    let s:new_bg = "light"
+    let s:mode = systemlist("defaults read -g AppleInterfaceStyle")[0]
+    if s:mode ==? "dark"
+        let s:new_bg = "dark"
+    else
+        let s:new_bg = "light"
+    endif
+    if &background !=? s:new_bg
+        let &background = s:new_bg
+    endif
+endfunction
+call SetBackgroundMode()
+call timer_start(3000, "SetBackgroundMode", {"repeat": -1})
+
 
 """""""""""""""""""""""
 " Knowledge Base

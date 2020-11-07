@@ -24,6 +24,8 @@ alias v="nvim"
 
 alias y="youtube-dl"
 
+alias c="bat"
+
 # GIT
 alias g='git'
 alias ga='git add'

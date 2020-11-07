@@ -26,8 +26,8 @@
     untracked = red bold
 [color "diff-highlight"]
     oldNormal = red bold
-    oldHighlight = red bold 124
+    oldHighlight = red bold reverse
     newNormal = green bold
-    newHighlight = green bold 112
+    newHighlight = green bold reverse
 [alias]
     squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"

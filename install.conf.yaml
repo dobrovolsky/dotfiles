@@ -20,13 +20,13 @@
     ~/.config/nvim/init.vim:
         create: true
         path: nvim/init.vim
-    ~/.config/karabiner.edn: 
+    ~/.config/karabiner.edn:
         create: true
         path: config/karabiner.edn
     ~/.local/share/nvim/site/autoload/plug.vim:
         create: true
         path: deps/vim-plug/plug.vim
-    ~/.tmux/plugins/tpm: 
+    ~/.tmux/plugins/tpm:
         create: true
         path: deps/tpm
     ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch/theme_switcher.py:
@@ -38,7 +38,7 @@
 
 - shell:
     - [~/.tmux/plugins/tpm/bin/install_plugins, Install tmux plugins]
-    - 
+    -
         command: nvim +'PlugInstall --sync' +qa
         description: Install vim plugins
         stdout: true

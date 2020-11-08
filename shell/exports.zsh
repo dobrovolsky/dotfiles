@@ -30,10 +30,10 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 export BAT_CONFIG_PATH=$HOME/.bat.conf
 
 # don't start tmux in ide and ssh terminals
-if [ "$TERMINAL_EMULATOR" = "JetBrains-JediTerm" ] || 
+if [ "$TERMINAL_EMULATOR" = "JetBrains-JediTerm" ] ||
    [ -n "$SSH_CONNECTION" ]; then
     ZSH_TMUX_AUTOSTART=false
-else 
+else
     ZSH_TMUX_AUTOSTART=true
 fi
 
@@ -54,5 +54,5 @@ eval "$(pyenv init --no-rehash - zsh)"
 eval "$(pyenv virtualenv-init - zsh)"
 
 # show stash icon
-zstyle :prompt:pure:git:stash show yes 
+zstyle :prompt:pure:git:stash show yes
 

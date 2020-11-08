@@ -14,12 +14,12 @@
     ~/.gitconfig: config/.gitconfig
     ~/.gitignore: config/.gitignore
     ~/.ideavimrc: config/.ideavimrc
-    ~/.tmux.conf: config/.tmux.conf
+    ~/.tmux.conf: config/tmux/.tmux.conf
     ~/.zshrc: config/.zshrc
     ~/.bat.conf: config/.bat.conf
     ~/.config/nvim/init.vim:
         create: true
-        path: nvim/init.vim
+        path: config/nvim/init.vim
     ~/.config/karabiner.edn:
         create: true
         path: config/karabiner.edn
@@ -52,7 +52,7 @@
 
 # Knowledge base custom completion
 - link:
-    ~/.vim/vim-plug/deoplete.nvim/rplugin/python3/deoplete/source/wiki_files.py: nvim/deoplete/sources/wiki_files.py
+    ~/.vim/vim-plug/deoplete.nvim/rplugin/python3/deoplete/source/wiki_files.py: config/nvim/deoplete/sources/wiki_files.py
 
 # Cleaning up:
 - shell:

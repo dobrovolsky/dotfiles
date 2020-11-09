@@ -102,6 +102,11 @@
         [:!Ct [:!Ta :c]]
         [:!Cn [:!Ta :n]]
         [:a :!Ta [:modal_mode]]
+        ; enable option + hjkl to navigate splits
+        [:!Ol [:!Ta :l]]
+        [:!Ok [:!Ta :k]]
+        [:!Oj [:!Ta :j]]
+        [:!Oh [:!Ta :h]]
       ]}
     {:des "Brave mapping"
       :rules [
@@ -194,7 +199,7 @@
         [:!Squote :!TOquote :modal-mode]
         [:#Scomma :!TO#Scomma :modal-mode]
         [:#Speriod :!TO#Speriod :modal-mode]
-        [:#Sslash :!TO#Sslash] 
+        [:#Sslash :!TO#Sslash]
         [:!S2 :!O2]
         [:!S3 :!O3]
         [:!S4 :!O4]

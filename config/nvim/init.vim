@@ -125,6 +125,14 @@ let g:EasyMotion_do_mapping = 0
 " Turn on case-insensitive feature
 let g:EasyMotion_smartcase = 1
 
+" make airline minimal
+let g:airline_section_a = airline#section#create(['mode'])
+let g:airline_section_x = ''
+let g:airline_section_y = ''
+let g:airline_section_z = ''
+let g:airline_section_error = ''
+let g:airline_section_warning = ''
+
 """""""""""""""""""""""
 " MAPPINGS
 """""""""""""""""""""""

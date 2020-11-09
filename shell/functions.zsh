@@ -109,5 +109,7 @@ _theme_watcher () {
 }
 
 # run async worker with theme watcher
-async_start_worker theme_watcher_worker
-async_job theme_watcher_worker _theme_watcher
+if [ -n "$TMUX" ]; then
+  async_start_worker theme_watcher_worker
+  async_job theme_watcher_worker _theme_watcher
+fi

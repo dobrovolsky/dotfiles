@@ -1,5 +1,5 @@
 # Automatically list directory contents on `cd` except home.
-auto-ls () {
+auto-ls() {
 if [ $HOME != "$(pwd)" ]; then
     ll
   fi
@@ -9,17 +9,17 @@ if [ $HOME != "$(pwd)" ]; then
 chpwd_functions=( $chpwd_functions auto-ls)
 
 # Create a new directory and enter it
-function mk() {
+mk() {
   mkdir -p "$@" && cd "$@"
 }
 
 # Get length of string
-function len(){
+len() {
   string=$@
   echo ${#string}
 }
 
-function fzf-log() {
+fzf-log() {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
   fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
@@ -30,8 +30,7 @@ function fzf-log() {
 FZF-EOF"
 }
 
-
-function fzf-log-preview() {
+fzf-log-preview() {
   _gitLogLineToHash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
   _viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always % | diff-so-fancy'"
 
@@ -43,7 +42,6 @@ function fzf-log-preview() {
                 --bind "ctrl-y:execute:$_gitLogLineToHash | pbcopy"
 }
 
-
 # use diff-so-fancy for comparing 2 files
 dsf() {
   if [ "$#" -eq 2 ]; then
@@ -51,9 +49,8 @@ dsf() {
   fi
 }
 
-
 # run ranger and change directory to last navigated on exit
-function rg {
+rg() {
   local tempfile="/tmp/pwd-from-ranger"
   ranger --choosedir=$tempfile $argv
   local rangerpwd=$(cat $tempfile)
@@ -63,37 +60,26 @@ function rg {
 }
 
 # get info who is using given port
-function port() {
+port() {
   lsof -n -i ":$@" | grep LISTEN
 }
 
-
-refi() {
-  echo "======= PROD ======="
-  echo "cloud-tool-fr -vv login -uMGMT\\\\\\MC268370 -a015205986388 -rhuman-role/a205826-Developer -p\`bw get password 15188fb7-e7e7-4b31-8d91-ab5700f0a9ab\`"
-  echo "aws eks update-kubeconfig --name a205826-cb-prod-us1"
-
-  echo "\n======= DEV ======="
-  echo "cloud-tool-fr login -uMGMT\\\\\\MC268370 -a342562131727 -rhuman-role/a205826-Developer -p\`bw get password 15188fb7-e7e7-4b31-8d91-ab5700f0a9ab\`"
-  echo "aws eks update-kubeconfig --name a205826-cb-dev-us1"
-
-  echo "\n======= BASIC ======="
-  echo "kubectl get pods --all-namespaces"
-  echo "kubectl logs jupyter-paxtra83004 -n jhub | c"
-  echo "kubectl logs jupyter-paxtra83004 -n jhub -c notebook | c"
+# get 2fa code and copy to clipboard
+2f() {
+  2fa $(2fa -list | fzf ) | pbcopy
 }
 
 # load dark or light config for tmux
-_load_theme () {
-     if [ "$1" != "Dark" ]; then
-      tmux source ~/.dotfiles/config/tmux/tmux-line-light.conf
-    else
-      tmux source ~/.dotfiles/config/tmux/tmux-line-dark.conf
-    fi
+_load_theme() {
+  if [ "$1" != "Dark" ]; then
+  tmux source ~/.dotfiles/config/tmux/tmux-line-light.conf
+  else
+    tmux source ~/.dotfiles/config/tmux/tmux-line-dark.conf
+  fi
 }
 
 # check if theme is changed
-_theme_watcher () {
+_theme_watcher() {
   theme=`defaults read -g AppleInterfaceStyle 2>/dev/null`
   _load_theme $theme
 

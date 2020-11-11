@@ -76,11 +76,8 @@ defaults write org.m0k.transmission WarningLegal -bool false
 
 # Install theme for iTerm
 open "${HOME}/.dotfiles/iterm/white.itermcolors"
-
-# Rectangle
-defaults write com.knollsoft.Rectangle gapSize -float 10
-defaults write com.knollsoft.Rectangle almostMaximizeWidth -float 90
-defaults write com.knollsoft.Rectangle almostMaximizeHeight -float 90
+open "${HOME}/.dotfiles/iterm/gruvbox-light.itermcolors"
+open "${HOME}/.dotfiles/iterm/gruvbox-dark.itermcolors"
 
 killall Dock &> /dev/null
 killall Finder &> /dev/null

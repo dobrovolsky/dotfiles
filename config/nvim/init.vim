@@ -150,6 +150,7 @@ map <leader>sl :Lines<CR>
 map <leader>sm :Marks<CR>
 map <leader>sh :History<CR>
 map <leader>sc :Commits<CR>
+map <leader>sr :Rg<CR>
 
 " https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
 nnoremap n nzz

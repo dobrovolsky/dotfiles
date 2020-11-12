@@ -21,6 +21,7 @@ alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 
 alias vim="nvim"
 alias v="nvim"
+alias vv="nvim ."
 
 alias y="youtube-dl"
 

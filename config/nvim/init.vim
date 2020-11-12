@@ -136,9 +136,42 @@ let g:airline_section_warning = ''
 """""""""""""""""""""""
 " MAPPINGS
 """""""""""""""""""""""
+" https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
+" copy from cursor to end of line
+nnoremap Y y$
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" clear highlights on search
+nnoremap <CR> :noh<CR>
+
 " With a map leader it's possible to do extra key combinations
 " " like <leader>w saves the current file
 let mapleader = " "
+
+" insert line below cursor
+map <leader>oj o<esc>
+" insert line above cursor
+map <leader>ok O<esc>
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `ss{char}{label}`
+map <Leader>ss <Plug>(easymotion-f)
+" or
+" `ss{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+map <Leader>ss <Plug>(easymotion-f2)
 
 " lazzy to type :command CR
 map <leader>q :wq<CR>
@@ -151,55 +184,23 @@ map <leader>sm :Marks<CR>
 map <leader>sh :History<CR>
 map <leader>sc :Commits<CR>
 map <leader>sr :Rg<CR>
-
-" https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap * *zz
-nnoremap # #zz
-nnoremap g* g*zz
-nnoremap g# g#zz
-
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-" clear highlights on search
-nnoremap <CR> :noh<CR>
-
 " show NERDTree
 map <leader>1 :NERDTreeToggle<CR>
-
 " (t)oggle (d)iff
-map <silent> <leader>td :GitGutterToggle<cr>
-
-" allow using tab for completion
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `ss{char}{label}`
-map <Leader>ss <Plug>(easymotion-f)
-" or
-" `ss{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-map <Leader>ss <Plug>(easymotion-f2)
-
-" insert line below cursor
-map <leader>oj o<esc>
-" insert line above cursor
-map <leader>ok O<esc>
+map <leader>td :GitGutterToggle<cr>
 
 " open vim config file
 map <leader>ev :e $MYVIMRC<cr>
 " load vim config file
-map <leader>sv :source $MYVIMRC<cr>:nohl<cr>
+map <leader>es :source $MYVIMRC<cr>:nohl<cr>
 
 " quick open of kb
 map <leader>k :Files ~/kb<cr>
 map <leader>л :Files ~/kb<cr>
+
+" allow using tab for completion
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " follow system theme mode
 " https://stefan.sofa-rockers.org/2018/10/23/macos-dark-mode-terminal-vim/
@@ -288,9 +289,9 @@ function! Load_kb_settings()
   map <leader>u :!~/kb/scripts/decrypt.py<cr>:e ~/kb/daily-notes/current-period.md<cr>
   map <leader>г :!~kb/scripts/decrypt.py<cr>:e ~/kb/daily-notes/current-period.md<cr>
 
-  " commit and push changes
-  map <leader>p :!~/kb/scripts/save.py<cr>
-  map <leader>з :!~/kb/scripts/save.py<cr>
+  " save current file commit and push changes
+  map <leader>p :Prettier<cr>:!~/kb/scripts/save.py<cr>
+  map <leader>з :Prettier<cr>:!~/kb/scripts/save.py<cr>
 
   " insert `## year-month-day` in the top of file and start typing
   map <leader>d ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>

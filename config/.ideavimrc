@@ -1,10 +1,9 @@
-" load default mapping
+"""""""""""""""""""""""
+" roughly equal to nvim
+"""""""""""""""""""""""
 set surround
 set highlightedyank
 set easymotion
-
-" Ideavim specific
-set ideastatusicon=gray
 
 " use system clipboard
 set clipboard+=unnamed
@@ -15,21 +14,20 @@ set incsearch
 " searches are case insensitive
 set ignorecase
 " searches are case sensative only when term has at least one capital
-set smartcas
+set smartcase
 " show line numbers
 set number
 set relativenumber
 " display incomplete commands
 set showcmd
+" display incomplete commands
+set showmode
 " keep context on scrolling
 set scrolloff=5
 
-let mapleader=" "
-
-" (s)earch (c)ommnad
-map <leader>sm :marks<CR>
-map <leader>sr :register<CR>
-
+"""""""""""""""""""""""
+" MAPPINGS
+"""""""""""""""""""""""
 " https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
 nnoremap n nzz
 nnoremap N Nzz
@@ -38,14 +36,21 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 
+" copy from cursor to end of line
+nnoremap Y y$
+
 " Smart way to move between windows
-maip <C-j> <C-W>j
+map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " clear highlights on search
 nnoremap <CR> :noh<CR>
+
+" With a map leader it's possible to do extra key combinations
+" " like <leader>w saves the current file
+let mapleader = " "
 
 " insert line below cursor
 map <leader>oj o<esc>
@@ -56,9 +61,38 @@ map <leader>ok O<esc>
 " `ss{char}{label}`
 map <Leader>ss <Plug>(easymotion-f)
 
-map <leader>f <Action>(ShowIntentionActions)
-map <leader>p <Action>(Tool_External Tools_black)
-map <leader>b <Action>(ToggleLineBreakpoint)
-map <leader>a <Action>(Annotate)
-map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
-map <leader>j <Action>(ShowNavBar)
+"""""""""""""""""""""""
+" Ideavim specific
+"""""""""""""""""""""""
+set ideastatusicon=gray
+set ideamarks
+
+" use similar bindings as for nvim
+map <leader>sm <Action>(ShowBookmarks)
+map <leader>sf <Action>(GotoFile)
+map <leader>sh <Action>(RecentFiles)
+map <Leader>sr <Action>(FindInPath)
+map <leader>sc <Action>(Vcs.ShowTabbedFileHistory)
+
+map <leader>su <Action>(FindUsages)
+
+map <leader>ff <Action>(ShowIntentionActions)
+map <leader>fd <Action>(ShowErrorDescription)
+
+map <leader>re <Action>(RenameElement)
+
+map <leader>pp <Action>(Tool_External Tools_black)
+
+map <leader>bb <Action>(ToggleLineBreakpoint)
+
+map <leader>aa <Action>(Annotate)
+
+map <leader>jj <Action>(ShowNavBar)
+
+map <leader>hh <Action>(LocalHistory.ShowHistory)
+
+" use idea's back forward instead of vim emulated
+map <c-o> <Action>(Back)
+map <c-i> <Action>(Forward)
+
+

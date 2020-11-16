@@ -72,9 +72,9 @@ port() {
 # load dark or light config for tmux
 _load_theme() {
   if [ "$1" != "Dark" ]; then
-  tmux source ~/.dotfiles/config/tmux/tmux-line-light.conf
+  tmux source ~/.dotfiles/tmux/tmux-line-light.conf
   else
-    tmux source ~/.dotfiles/config/tmux/tmux-line-dark.conf
+    tmux source ~/.dotfiles/tmux/tmux-line-dark.conf
   fi
 }
 

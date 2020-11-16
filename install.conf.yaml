@@ -11,18 +11,18 @@
 
 - link:
     ~/.dotfiles: ""
-    ~/.gitconfig: config/.gitconfig
-    ~/.gitignore: config/.gitignore
-    ~/.ideavimrc: config/.ideavimrc
-    ~/.tmux.conf: config/tmux/.tmux.conf
-    ~/.zshrc: config/.zshrc
-    ~/.bat.conf: config/.bat.conf
+    ~/.gitconfig: git/.gitconfig
+    ~/.gitignore: git/.gitignore
+    ~/.ideavimrc: .ideavimrc
+    ~/.tmux.conf: tmux/.tmux.conf
+    ~/.zshrc: zsh/.zshrc
+    ~/.bat.conf: .bat.conf
     ~/.config/nvim/init.vim:
         create: true
-        path: config/nvim/init.vim
+        path: nvim/init.vim
     ~/.config/karabiner.edn:
         create: true
-        path: config/karabiner.edn
+        path: karabiner.edn
     ~/.local/share/nvim/site/autoload/plug.vim:
         create: true
         path: deps/vim-plug/plug.vim
@@ -43,7 +43,7 @@
         description: Install vim plugins
         stdout: true
         stdin: true
-    - ['[ -f  ~/.dotfiles/shell/.sensitive ] || cp ~/.dotfiles/shell/.sensitive_example ~/.dotfiles/shell/.sensitive', 'Copy example of sensative shell info']
+    - ['[ -f  ~/.dotfiles/zsh/.sensitive ] || cp ~/.dotfiles/zsh/.sensitive_example ~/.dotfiles/zsh/.sensitive', 'Copy example of sensative shell info']
     # Set up languages and apps that are using this languages
     - [bash ./python/install.sh, Installing Python and required packages]
     - [bash ./node/install.sh, Installing NodeJS and required packages]
@@ -52,7 +52,7 @@
 
 # Knowledge base custom completion
 - link:
-    ~/.vim/vim-plug/deoplete.nvim/rplugin/python3/deoplete/source/wiki_files.py: config/nvim/deoplete/sources/wiki_files.py
+    ~/.vim/vim-plug/deoplete.nvim/rplugin/python3/deoplete/source/wiki_files.py: nvim/deoplete/sources/wiki_files.py
 
 # Cleaning up:
 - shell:

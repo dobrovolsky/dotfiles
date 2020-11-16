@@ -1,6 +1,0 @@
-source "$HOME/.dotfiles/shell/exports.zsh"
-source "$HOME/.dotfiles/shell/plugins.zsh"
-source "$HOME/.dotfiles/shell/aliases.zsh"
-source "$HOME/.dotfiles/shell/functions.zsh"
-source "$HOME/.dotfiles/shell/fzf.zsh"
-source "$HOME/.dotfiles/shell/.sensitive"

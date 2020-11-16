@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd $HOME/kb
+
+NOTE="daily-notes/current-period.md"
+
+if [ ! -f "$NOTE" ]; then
+  scripts/decrypt.py
+fi
+
+nvim $NOTE
+

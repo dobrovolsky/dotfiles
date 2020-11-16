@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd $HOME/kb
 
 file=$(fd -I -e md | fzf --reverse --preview 'bat --color=always {}')

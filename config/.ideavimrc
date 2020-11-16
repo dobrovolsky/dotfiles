@@ -48,6 +48,10 @@ map <C-l> <C-W>l
 " clear highlights on search
 nnoremap <CR> :noh<CR>
 
+" move by line for long lines
+map j gj
+map k gk
+
 " With a map leader it's possible to do extra key combinations
 " " like <leader>w saves the current file
 let mapleader = " "

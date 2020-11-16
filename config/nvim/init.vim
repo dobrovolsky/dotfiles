@@ -16,6 +16,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/goyo.vim'
 Plug 'morhetz/gruvbox'
+Plug 'psliwka/vim-smoothie'
 " better start screen
 Plug 'mhinz/vim-startify'
 " collect coding stats
@@ -73,8 +74,8 @@ set smartcase
 set clipboard+=unnamed
 " make backspace work like most other programs
 set backspace=indent,eol,start
-" highlight column 120
-set colorcolumn=120
+" highlight column 80,120
+set colorcolumn=80,120
 " keep context on scrolling
 set scrolloff=5
 " use 1 option for autocomplete
@@ -155,6 +156,10 @@ map <C-l> <C-W>l
 
 " clear highlights on search
 nnoremap <CR> :noh<CR>
+
+" move by line for long lines
+map j gj
+map k gk
 
 " With a map leader it's possible to do extra key combinations
 " " like <leader>w saves the current file

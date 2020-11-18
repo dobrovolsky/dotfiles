@@ -161,6 +161,17 @@ nnoremap <CR> :noh<CR>
 map j gj
 map k gk
 
+" Run last macro with Q
+nnoremap Q @@
+
+" don't lose selection when indenting
+vnoremap < <gv
+vnoremap > >gv
+vnoremap = =gv
+
+" Common typo
+nnoremap q: :q
+
 " With a map leader it's possible to do extra key combinations
 " " like <leader>w saves the current file
 let mapleader = " "
@@ -177,6 +188,9 @@ map <Leader>ss <Plug>(easymotion-f)
 " `ss{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
 map <Leader>ss <Plug>(easymotion-f2)
+
+" jump betwen 2 last buffers
+nnoremap <leader><leader> <c-^>
 
 " lazzy to type :command CR
 map <leader>q :wq<CR>
@@ -314,6 +328,9 @@ function! Load_kb_settings()
 
   " set spelling
   set spell spelllang=uk,en
+
+  " highlight spell error with red
+  hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
 
   " find suggestion for word under cursor
   map <leader>f :call FzfSpell()<CR>

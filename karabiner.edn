@@ -9,7 +9,8 @@
   :applications {
     :iterm ["^com.googlecode.iterm2$"]
     :brave ["^com.brave.Browser$"]
-    :charm ["^com.jetbrains.pycharm$"]
+    ; :charm ["^com.jetbrains.pycharm$"]
+    :charm ["^com.jetbrains.pycharm-EAP$"]
   }
   :input-sources {
     :us {:input_source_id "com.apple.keylayout.US"}
@@ -134,7 +135,7 @@
       :rules [
         :w-mode
         [:u [:launch-app "Bitwarden"]]
-        [:i [:launch-app "Pycharm"]]
+        [:i [:launch-app "PyCharm 2020.3 EAP"]]
         [:o [:launch-app "Google Chrome"]]
         [:j [:launch-app "Brave Browser"]]
         [:k [:launch-app "Spotify"]]

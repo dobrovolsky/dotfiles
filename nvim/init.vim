@@ -36,6 +36,8 @@ Plug 'tpope/vim-surround'
 " git support
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+" navidate undo history
+Plug 'mbbill/undotree'
 
 call plug#end()
 
@@ -126,6 +128,9 @@ let g:EasyMotion_do_mapping = 0
 " Turn on case-insensitive feature
 let g:EasyMotion_smartcase = 1
 
+"""""""""""""""""""""""
+" vim-airline
+"""""""""""""""""""""""
 " make airline minimal
 let g:airline_section_a = airline#section#create(['mode'])
 let g:airline_section_x = ''
@@ -133,6 +138,10 @@ let g:airline_section_y = ''
 let g:airline_section_z = ''
 let g:airline_section_error = ''
 let g:airline_section_warning = ''
+"""""""""""""""""""""""
+" undotree
+"""""""""""""""""""""""
+let g:undotree_SetFocusWhenToggle = 1
 
 """""""""""""""""""""""
 " MAPPINGS
@@ -207,6 +216,8 @@ map <leader>sr :Rg<CR>
 map <leader>1 :NERDTreeToggle<CR>
 " (t)oggle (d)iff
 map <leader>td :GitGutterToggle<cr>
+" (t)oggle (u)undo
+map <leader>tu :UndotreeToggle<cr>
 
 " open vim config file
 map <leader>ev :e $MYVIMRC<cr>

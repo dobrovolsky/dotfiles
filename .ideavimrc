@@ -84,6 +84,8 @@ set ideamarks
 nnoremap <leader><leader> <c-s-6>
 
 " use similar bindings as for nvim
+map <leader>tu <Action>(LocalHistory.ShowHistory)
+
 map <leader>sm <Action>(ShowBookmarks)
 map <leader>sf <Action>(GotoFile)
 map <leader>sh <Action>(RecentFiles)
@@ -101,11 +103,10 @@ map <leader>dd <Action>(Debug)
 map <leader>bb <Action>(ToggleLineBreakpoint)
 map <leader>aa <Action>(Annotate)
 map <leader>jj <Action>(ShowNavBar)
-map <leader>hh <Action>(LocalHistory.ShowHistory)
 
 " use idea's back forward instead of vim emulated
 map <c-o> <Action>(Back)
 map <c-i> <Action>(Forward)
 
 map <leader>q <Action>(CloseContent)
-map <leader>w <Action>(OptimizeImports)<Action>(Tool_External Tools_black)
+map <leader>w <Action>(Tool_External Tools_black)

@@ -63,8 +63,8 @@
         [:1 :select-us]
         [:2 :select-ru]
         [:3 :select-ua]
-        [:4 [:toggle-theme]]
-        [:5 [:!CTOSf11 :!CTOSf12]] ; track time with toggl and use focus
+        [:5 [:!CTOSf12]] ; track time with toggl
+        [:6 [:toggle-theme]]
         ; emulate control shell and vim
         [:a :!Ta]
         [:e :!Te]
@@ -155,8 +155,8 @@
     {:des "z-mode"
       :rules [
         :z-mode
-        [:n [:!Of12] [:charm]] ; open toggle terminal
-        [:m [:!CSquote] [:charm]] ; maximize restore terminal
+        [:n [:!Of12] [:charm]] ; toggle terminal in pycharm
+        [:m [:!CSquote] [:charm]] ; maximize/restore terminal in pycharm
         [:u [:c :o :n :s :o :l :e :period :l :o :g :!S9 :!S0 :left_arrow] [:!ua :!ru]] ; console.log()
         [:i [:t :h :i :s :period] [:!ua :!ru]] ; -> this.
         [:j [:p :r :i :n :t :!S9 :!S0 :left_arrow] [:!ua :!ru]] ; -> print()

@@ -85,6 +85,7 @@ nnoremap <leader><leader> <c-s-6>
 
 " use similar bindings as for nvim
 map <leader>tu <Action>(LocalHistory.ShowHistory)
+map <leader>tf <Action>(ToggleDistractionFreeMode)
 
 map <leader>sm <Action>(ShowBookmarks)
 map <leader>sf <Action>(GotoFile)

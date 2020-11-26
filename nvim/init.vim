@@ -142,7 +142,15 @@ let g:airline_section_warning = ''
 " undotree
 """""""""""""""""""""""
 let g:undotree_SetFocusWhenToggle = 1
+"""""""""""""""""""""""
+" goyo
+"""""""""""""""""""""""
+function! s:goyo_enter()
+  set number
+  set relativenumber
+endfunction
 
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
 """""""""""""""""""""""
 " MAPPINGS
 """""""""""""""""""""""
@@ -218,6 +226,8 @@ map <leader>1 :NERDTreeToggle<CR>
 map <leader>td :GitGutterToggle<cr>
 " (t)oggle (u)undo
 map <leader>tu :UndotreeToggle<cr>
+" (t)oggle distraction (f)ree
+map <leader>tf :Goyo<cr>
 
 " open vim config file
 map <leader>ev :e $MYVIMRC<cr>
@@ -334,6 +344,9 @@ function! Load_kb_settings()
   " insert h3 and start typing
   map <leader>3 i###<space>
 
+  " insert h4 and start typing
+  map <leader>4 i####<space>
+
   " allow to use Cyrillic chars
   set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
@@ -342,6 +355,7 @@ function! Load_kb_settings()
 
   " highlight spell error with red
   hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
+  autocmd ColorScheme * hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
 
   " find suggestion for word under cursor
   map <leader>f :call FzfSpell()<CR>

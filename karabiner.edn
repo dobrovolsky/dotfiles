@@ -148,7 +148,7 @@
         [:k "open obsidian://vault/kb"]
         ; [:l [:charm-project "~/projects/ref/jupyter-notebook"]]
         ; [:semicolon [:charm-project "~/projects/ref/jupyterhub-fork"]]
-        [:u [:open "https://www.notion.so/e398ce19ebc8457c8bbd8187cc9f46e4?v=75cddc846deb4e449e5cb91e8bb6470b"]]
+        [:u [:open "https://www.notion.so/Home-a569abf38d4b4d7a83c6875c999a6bbf"]]
         [:i [:open "https://docs.google.com/spreadsheets/d/1lya8s1rvHx5AkheZU3eYrgD7irRkJK0NuIsVA-mKeoY/edit#gid=358988098"]]
         [:o [:open "https://monkeytype.com/"]]
     ]}

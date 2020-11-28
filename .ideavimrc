@@ -40,17 +40,17 @@ nnoremap g# g#zz
 nnoremap Y y$
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
 " clear highlights on search
 nnoremap <CR> :noh<CR>
 
 " move by line for long lines
-map j gj
-map k gk
+nnoremap j gj
+nnoremap k gk
 
 " Run last macro with Q
 nnoremap Q @@
@@ -65,13 +65,13 @@ vnoremap = =gv
 let mapleader = " "
 
 " insert line below cursor
-map <leader>oj o<esc>
+nnoremap <leader>oj o<esc>
 " insert line above cursor
-map <leader>ok O<esc>
+nnoremap <leader>ok O<esc>
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `ss{char}{label}`
-map <Leader>ss <Plug>(easymotion-f)
+nnoremap <Leader>ss <Plug>(easymotion-f)
 
 """""""""""""""""""""""
 " Ideavim specific

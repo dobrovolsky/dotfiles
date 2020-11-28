@@ -8,8 +8,6 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 " explore register
 Plug 'junegunn/vim-peekaboo'
-" file explorer
-Plug 'scrooloose/nerdtree'
 " visual stuff
 Plug 'vim-airline/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -49,13 +47,11 @@ syntax on
 " show line numbers
 set number
 set relativenumber
-" set tabs to have 2 spaces
-set ts=2
 " indent when moving to the next line while writing code
 set autoindent
 " expand tabs into spaces
 set expandtab
-" when using the >> or << commands, shift lines by 4 spaces
+" when using the >> or << commands, shift lines by 2 spaces
 set shiftwidth=2
 " show the matching part of the pair for [] {} and ()
 set showmatch
@@ -80,20 +76,25 @@ set backspace=indent,eol,start
 set colorcolumn=80,120
 " keep context on scrolling
 set scrolloff=5
+" don't show mode Airline deals with that
+set noshowmode
 " use 1 option for autocomplete
 set completeopt+=noinsert
 " prettier's doc says to add it
 packloadall
+
 " highlight spaces in the end of line
 highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-" don't show mode Airline deals with that
-set noshowmode
+
+augroup HighlightGroup
+  autocmd!
+  autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+  autocmd BufWinLeave * call clearmatches()
+augroup END
 
 """"""""""""""
 " Git gutter
@@ -166,17 +167,17 @@ nnoremap g# g#zz
 nnoremap Y y$
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
 " clear highlights on search
 nnoremap <CR> :noh<CR>
 
 " move by line for long lines
-map j gj
-map k gk
+nnoremap j gj
+nnoremap k gk
 
 " Run last macro with Q
 nnoremap Q @@
@@ -194,49 +195,49 @@ nnoremap q: :q
 let mapleader = " "
 
 " insert line below cursor
-map <leader>oj o<esc>
+nnoremap <leader>oj o<esc>
 " insert line above cursor
-map <leader>ok O<esc>
+nnoremap <leader>ok O<esc>
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `ss{char}{label}`
-map <Leader>ss <Plug>(easymotion-f)
+nnoremap <Leader>ss <Plug>(easymotion-f)
 " or
 " `ss{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
-map <Leader>ss <Plug>(easymotion-f2)
+nnoremap <Leader>ss <Plug>(easymotion-f2)
 
 " jump betwen 2 last buffers
 nnoremap <leader><leader> <c-^>
 
 " lazzy to type :command CR
-map <leader>q :wq<CR>
-map <leader>w :w<CR>
+nnoremap <leader>q :wq<CR>
+nnoremap <leader>w :w<CR>
 " (s)earch (c)ommnad
-map <leader>sf :Files<CR>
-map <leader>sb :Buffers<CR>
-map <leader>sl :Lines<CR>
-map <leader>sm :Marks<CR>
-map <leader>sh :History<CR>
-map <leader>sc :Commits<CR>
-map <leader>sr :Rg<CR>
+nnoremap <leader>sf :Files<CR>
+nnoremap <leader>sb :Buffers<CR>
+nnoremap <leader>sl :Lines<CR>
+nnoremap <leader>sm :Marks<CR>
+nnoremap <leader>sh :History<CR>
+nnoremap <leader>sc :Commits<CR>
+nnoremap <leader>sr :Rg<CR>
 " show NERDTree
-map <leader>1 :NERDTreeToggle<CR>
+nnoremap <leader>1 :NERDTreeToggle<CR>
 " (t)oggle (d)iff
-map <leader>td :GitGutterToggle<cr>
+nnoremap <leader>td :GitGutterToggle<cr>
 " (t)oggle (u)undo
-map <leader>tu :UndotreeToggle<cr>
+nnoremap <leader>tu :UndotreeToggle<cr>
 " (t)oggle distraction (f)ree
-map <leader>tf :Goyo<cr>
+nnoremap <leader>tf :Goyo<cr>
 
 " open vim config file
-map <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>ev :e $MYVIMRC<cr>
 " load vim config file
-map <leader>es :source $MYVIMRC<cr>:nohl<cr>
+nnoremap <leader>es :source $MYVIMRC<cr>:nohl<cr>
 
 " quick open of kb
-map <leader>k :Files ~/kb<cr>
-map <leader>л :Files ~/kb<cr>
+nnoremap <leader>k :Files ~/kb<cr>
+nnoremap <leader>л :Files ~/kb<cr>
 
 " allow using tab for completion
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -264,7 +265,10 @@ call timer_start(3000, "SetBackgroundMode", {"repeat": -1})
 " Knowledge Base
 """""""""""""""""""""""
 " load some part only for kb
-autocmd BufNewFile,BufRead,BufEnter ~/kb/* call Load_kb_settings()
+augroup KbGroup
+  autocmd!
+  autocmd BufNewFile,BufRead,BufEnter ~/kb/* call Load_kb_settings()
+augroup END
 
 " https://coreyja.com/vim-spelling-suggestions-fzf/
 function! FzfSpellSink(word)
@@ -300,81 +304,78 @@ endfunction
 
 function! Load_kb_settings()
   " create new note
-  map <leader>n :call New_note()<cr>
-  map <leader>т :call New_note()<cr>
+  nnoremap <buffer> <leader>n :call New_note()<cr>
+  nnoremap <buffer> <leader>т :call New_note()<cr>
 
   " allow to use gf for links
-  set suffixesadd=.md
-  set path+=~/kb
+  setlocal suffixesadd=.md
+  setlocal path+=~/kb
 
-  " don't try to save NERDTree buffer
-  autocmd TextChanged,TextChangedI *
-    \ if &buftype ==# '' || &buftype == 'acwrite' |
-    \     silent write |
-    \ endif
+  " save buffer when typing
+  autocmd KbGroup TextChanged,TextChangedI * silent write
 
   " open current file in obsidian
-  map <leader>o :silent !open 'obsidian://%:p'<cr>
-  map <leader>щ :silent !open 'obsidian://%:p'<cr>
+  nnoremap <buffer> <leader>o :silent !open 'obsidian://%:p'<cr>
+  nnoremap <buffer> <leader>щ :silent !open 'obsidian://%:p'<cr>
 
   " open graph in obsidian
-  map <leader>g :silent !~/kb/scripts/graph.js<cr>
-  map <leader>п :silent !~/kb/scripts/graph.js<cr>
+  nnoremap <buffer> <leader>g :silent !~/kb/scripts/graph.js<cr>
+  nnoremap <buffer> <leader>п :silent !~/kb/scripts/graph.js<cr>
 
   " encrypt notes
-  map <leader>l :!~/kb/scripts/encrypt.py<cr>
-  map <leader>д :!~/kb/scripts/encrypt.py<cr>
+  nnoremap <buffer> <leader>l :!~/kb/scripts/encrypt.py<cr>
+  nnoremap <buffer> <leader>д :!~/kb/scripts/encrypt.py<cr>
 
   " decrypt notes
-  map <leader>u :!~/kb/scripts/decrypt.py<cr>:e ~/kb/daily-notes/current-period.md<cr>
-  map <leader>г :!~kb/scripts/decrypt.py<cr>:e ~/kb/daily-notes/current-period.md<cr>
+  nnoremap <buffer> <leader>u :!~/kb/scripts/decrypt.py<cr>:e ~/kb/daily-notes/current-period.md<cr>
+  nnoremap <buffer> <leader>г :!~kb/scripts/decrypt.py<cr>:e ~/kb/daily-notes/current-period.md<cr>
 
   " save current file commit and push changes
-  map <leader>p :Prettier<cr>:!~/kb/scripts/save.py<cr>
-  map <leader>з :Prettier<cr>:!~/kb/scripts/save.py<cr>
+  nnoremap <buffer> <leader>p :Prettier<cr>:!~/kb/scripts/save.py<cr>
+  nnoremap <buffer> <leader>з :Prettier<cr>:!~/kb/scripts/save.py<cr>
 
   " insert `## year-month-day` in the top of file and start typing
-  map <leader>d ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
-  map <leader>в ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
+  nnoremap <buffer> <leader>d ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
+  nnoremap <buffer> <leader>в ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
 
   " insert `- year-month-day - ` in the end of file and start typing
-  map <leader>h Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
-  map <leader>р Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
+  nnoremap <buffer> <leader>h Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
+  nnoremap <buffer> <leader>р Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
 
   " insert h3 and start typing
-  map <leader>3 i###<space>
+  nnoremap <buffer> <leader>3 i###<space>
 
   " insert h4 and start typing
-  map <leader>4 i####<space>
+  nnoremap <buffer> <leader>4 i####<space>
 
   " allow to use Cyrillic chars
-  set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+  setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
   " set spelling
-  set spell spelllang=uk,en
+  setlocal spell spelllang=uk,en
 
   " highlight spell error with red
   hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
-  autocmd ColorScheme * hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
+  autocmd HighlightGroup ColorScheme * hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
 
   " find suggestion for word under cursor
-  map <leader>f :call FzfSpell()<CR>
-  map <leader>а :call FzfSpell()<CR>
+  nnoremap <buffer> <leader>f :call FzfSpell()<CR>
+  nnoremap <buffer> <leader>а :call FzfSpell()<CR>
 
   " insert line below cursor
-  map <leader>що o<esc>
+  nnoremap <buffer> <leader>що o<esc>
   " insert line above cursor
-  map <leader>щл O<esc>
+  nnoremap <buffer> <leader>щл O<esc>
 
-  map <leader>й :Prettier<cr>:q<cr>
-  map <leader>q :Prettier<cr>:q<cr>
-  map <leader>w :Prettier<cr>
-  map <leader>ц :Prettier<cr>
-  map <leader>іа :Files<CR>
-  map <leader>іи :Buffers<CR>
-  map <leader>ід :Lines<CR>
-  map <leader>іь :Marks<CR>
-  map <leader>ір :History<CR>
-  map <leader>іс :Commits<CR>
+  nnoremap <buffer> <leader>й :Prettier<cr>:q<cr>
+  nnoremap <buffer> <leader>q :Prettier<cr>:q<cr>
+  nnoremap <buffer> <leader>w :Prettier<cr>
+  nnoremap <buffer> <leader>ц :Prettier<cr>
+  nnoremap <buffer> <leader>іа :Files<CR>
+  nnoremap <buffer> <leader>іи :Buffers<CR>
+  nnoremap <buffer> <leader>ід :Lines<CR>
+  nnoremap <buffer> <leader>іь :Marks<CR>
+  nnoremap <buffer> <leader>ір :History<CR>
+  nnoremap <buffer> <leader>іс :Commits<CR>
 
 endfunction

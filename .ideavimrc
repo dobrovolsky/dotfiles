@@ -79,6 +79,9 @@ nnoremap <Leader>ss <Plug>(easymotion-f)
 set ideastatusicon=gray
 set ideamarks
 
+" emulate part of tpope/vim-vinegar
+map - <Action>(ShowNavBar)
+
 " https://youtrack.jetbrains.com/issue/VIM-2169
 " jump betwen 2 last buffers
 nnoremap <leader><leader> <c-s-6>
@@ -93,6 +96,7 @@ map <leader>sh <Action>(RecentFiles)
 map <Leader>sr <Action>(FindInPath)
 map <leader>sc <Action>(Vcs.ShowTabbedFileHistory)
 
+" hotkeys for frequent  actions
 map <leader>su <Action>(FindUsages)
 
 map <leader>ff <Action>(ShowIntentionActions)
@@ -103,7 +107,6 @@ map <leader>rr <Action>(Run)
 map <leader>dd <Action>(Debug)
 map <leader>bb <Action>(ToggleLineBreakpoint)
 map <leader>aa <Action>(Annotate)
-map <leader>jj <Action>(ShowNavBar)
 
 " use idea's back forward instead of vim emulated
 map <c-o> <Action>(Back)

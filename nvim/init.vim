@@ -31,6 +31,8 @@ Plug 'prettier/vim-prettier', {
 Plug 'easymotion/vim-easymotion'
 " easier word surrounding
 Plug 'tpope/vim-surround'
+" better navigation with netrw
+Plug 'tpope/vim-vinegar'
 " git support
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'

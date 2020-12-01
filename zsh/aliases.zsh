@@ -27,6 +27,8 @@ alias y="youtube-dl"
 
 alias c="bat"
 
+alias sn="~/kb/scripts/save.py"
+
 # GIT
 alias g='git'
 alias ga='git add'

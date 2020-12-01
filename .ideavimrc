@@ -25,6 +25,11 @@ set showmode
 " keep context on scrolling
 set scrolloff=5
 
+" Disable default mappings
+let g:EasyMotion_do_mapping = 0
+" keep cursor column when JK motion
+let g:EasyMotion_startofline=0
+
 """""""""""""""""""""""
 " MAPPINGS
 """""""""""""""""""""""
@@ -45,9 +50,6 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
-" clear highlights on search
-nnoremap <CR> :noh<CR>
-
 " move by line for long lines
 nnoremap j gj
 nnoremap k gk
@@ -58,10 +60,9 @@ nnoremap Q @@
 " don't lose selection when indenting
 vnoremap < <gv
 vnoremap > >gv
-vnoremap = =gv
 
 " With a map leader it's possible to do extra key combinations
-" " like <leader>w saves the current file
+" like <leader>w saves the current file
 let mapleader = " "
 
 " insert line below cursor
@@ -69,9 +70,21 @@ nnoremap <leader>oj o<esc>
 " insert line above cursor
 nnoremap <leader>ok O<esc>
 
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `ss{char}{label}`
-nnoremap <Leader>ss <Plug>(easymotion-f)
+" clear highlights on search
+nnoremap <leader>nn :noh<CR>
+
+" find n chars bellow and buttom
+map <Leader>/ <Plug>(easymotion-sn)
+" find a char bellow and buttom
+map <Leader>ss <Plug>(easymotion-s)
+" find 2 chars bellow and buttom
+map <Leader>ss <Plug>(easymotion-s2)
+" find in current line
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>h <Plug>(easymotion-linebackward)
+" go to line even if numbers is not displayed
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 """""""""""""""""""""""
 " Ideavim specific

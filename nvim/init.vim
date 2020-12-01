@@ -130,6 +130,11 @@ let g:vim_markdown_folding_disabled = 1
 let g:EasyMotion_do_mapping = 0
 " Turn on case-insensitive feature
 let g:EasyMotion_smartcase = 1
+" Jump to first match by Enter or Space
+let g:EasyMotion_enter_jump_first = 1
+let g:EasyMotion_space_jump_first = 1
+" keep cursor column when JK motion
+let g:EasyMotion_startofline=0
 
 """""""""""""""""""""""
 " vim-airline
@@ -174,9 +179,6 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
-" clear highlights on search
-nnoremap <CR> :noh<CR>
-
 " move by line for long lines
 nnoremap j gj
 nnoremap k gk
@@ -193,7 +195,7 @@ vnoremap = =gv
 nnoremap q: :q
 
 " With a map leader it's possible to do extra key combinations
-" " like <leader>w saves the current file
+" like <leader>w saves the current file
 let mapleader = " "
 
 " insert line below cursor
@@ -201,13 +203,21 @@ nnoremap <leader>oj o<esc>
 " insert line above cursor
 nnoremap <leader>ok O<esc>
 
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `ss{char}{label}`
-nnoremap <Leader>ss <Plug>(easymotion-f)
-" or
-" `ss{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nnoremap <Leader>ss <Plug>(easymotion-f2)
+" clear highlights on search
+nnoremap <leader>nn :noh<CR>
+
+" find n chars bellow and buttom
+map <Leader>/ <Plug>(easymotion-sn)
+" find a char bellow and buttom
+map <Leader>ss <Plug>(easymotion-s)
+" find 2 chars bellow and buttom
+map <Leader>ss <Plug>(easymotion-s2)
+" find in current line
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>h <Plug>(easymotion-linebackward)
+" go to line even if numbers is not displayed
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 " jump betwen 2 last buffers
 nnoremap <leader><leader> <c-^>
@@ -238,8 +248,8 @@ nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>es :source $MYVIMRC<cr>:nohl<cr>
 
 " quick open of kb
-nnoremap <leader>k :Files ~/kb<cr>
-nnoremap <leader>л :Files ~/kb<cr>
+nnoremap <leader>b :Files ~/kb<cr>
+nnoremap <leader>и :Files ~/kb<cr>
 
 " allow using tab for completion
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -349,6 +359,10 @@ function! Load_kb_settings()
 
   " insert h4 and start typing
   nnoremap <buffer> <leader>4 i####<space>
+
+  " (i)nsert i(m)age
+  nnoremap <buffer> <leader>im o![]()<esc>i
+  nnoremap <buffer> <leader>шь o![]()<esc>i
 
   " allow to use Cyrillic chars
   setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>

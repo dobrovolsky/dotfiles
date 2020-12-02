@@ -25,7 +25,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'plasticboy/vim-markdown'
 " file prettier
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install'
+  \ 'do': 'yarn install'
   \ }
 " better file navigation
 Plug 'easymotion/vim-easymotion'
@@ -335,8 +335,8 @@ function! Load_kb_settings()
   nnoremap <buffer> <leader>п :silent !~/kb/scripts/graph.js<cr>
 
   " encrypt notes
-  nnoremap <buffer> <leader>l :!~/kb/scripts/encrypt.py<cr>
-  nnoremap <buffer> <leader>д :!~/kb/scripts/encrypt.py<cr>
+  nnoremap <buffer> <leader>U :!~/kb/scripts/encrypt.py<cr>
+  nnoremap <buffer> <leader>Г :!~/kb/scripts/encrypt.py<cr>
 
   " decrypt notes
   nnoremap <buffer> <leader>u :!~/kb/scripts/decrypt.py<cr>:e ~/kb/daily-notes/current-period.md<cr>

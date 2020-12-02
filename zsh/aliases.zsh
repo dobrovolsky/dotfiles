@@ -12,8 +12,6 @@ fi
 alias ts="date -u -r"
 # Get current time in timestamp
 alias tsn="date +%s"
-# make notes
-alias n="open 'notion://www.notion.so/e398ce19ebc8457c8bbd8187cc9f46e4?v=75cddc846deb4e449e5cb91e8bb6470b'"
 # check weather
 alias weather="curl 'wttr.in/Kiev?2Q'"
 # usually useful in some dialogs ¯\_(ツ)_/¯

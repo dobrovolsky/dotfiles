@@ -11,4 +11,4 @@ pyenv rehash
 ~/.pyenv/shims/poetry config virtualenvs.in-project true
 
 # add completions
-~/.pyenv/shims/poetry completions zsh > ~/.dotfiles/python/_poetry	
+~/.pyenv/shims/poetry completions zsh > ~/.dotfiles/python/_poetry

@@ -49,6 +49,8 @@ syntax on
 " show line numbers
 set number
 set relativenumber
+" set tabs to have 2 spaces
+set ts=2
 " indent when moving to the next line while writing code
 set autoindent
 " expand tabs into spaces

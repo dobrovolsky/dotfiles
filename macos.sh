@@ -44,6 +44,9 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
+# Press and hold key to repeat
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 # Hot corners
 # Possible values:
 #  0: no-op

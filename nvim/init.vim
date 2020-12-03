@@ -194,6 +194,9 @@ vnoremap = =gv
 " Common typo
 nnoremap q: :q
 
+" control is to far away
+inoremap <C-e> <C-o>
+
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = " "

@@ -41,3 +41,4 @@ cask "spotify"
 cask "telegram"
 cask "toggl-track"
 cask "transmission"
+mas "Monosnap", id: 540348655

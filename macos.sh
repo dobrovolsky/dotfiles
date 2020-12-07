@@ -82,6 +82,11 @@ open "${HOME}/.dotfiles/iterm/white.itermcolors"
 open "${HOME}/.dotfiles/iterm/gruvbox-light.itermcolors"
 open "${HOME}/.dotfiles/iterm/gruvbox-dark.itermcolors"
 
+# Install corectly https://github.com/whomwah/qlstephen#permissions-quarantine
+xattr -cr ~/Library/QuickLook/QLStephen.qlgenerator
+qlmanage -r
+qlmanage -r cache
+
 killall Dock &> /dev/null
 killall Finder &> /dev/null
 killall Transmission &> /dev/null

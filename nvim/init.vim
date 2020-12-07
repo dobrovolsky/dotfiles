@@ -137,7 +137,6 @@ let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_space_jump_first = 1
 " keep cursor column when JK motion
 let g:EasyMotion_startofline=0
-
 """""""""""""""""""""""
 " vim-airline
 """""""""""""""""""""""
@@ -161,6 +160,11 @@ function! s:goyo_enter()
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
+"""""""""""""""""""""""
+" vim-prettier
+"""""""""""""""""""""""
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#trailing_comma = 'all'
 """""""""""""""""""""""
 " MAPPINGS
 """""""""""""""""""""""
@@ -375,6 +379,10 @@ function! Load_kb_settings()
   " set spelling
   setlocal spell spelllang=uk,en
 
+  nnoremap о gj
+  nnoremap л gk
+
+
   " highlight spell error with red
   hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
   autocmd HighlightGroup ColorScheme * hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
@@ -398,5 +406,4 @@ function! Load_kb_settings()
   nnoremap <buffer> <leader>іь :Marks<CR>
   nnoremap <buffer> <leader>ір :History<CR>
   nnoremap <buffer> <leader>іс :Commits<CR>
-
 endfunction

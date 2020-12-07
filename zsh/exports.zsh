@@ -9,6 +9,8 @@ PATH="$PATH:$(go env GOPATH)/bin"
 
 export PATH
 
+export EDITOR="nvim"
+
 if [[ "$(uname)" == "Darwin" ]]; then
   export OS="Mac"
 

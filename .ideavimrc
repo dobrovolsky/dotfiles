@@ -112,16 +112,23 @@ map <leader>sh <Action>(RecentFiles)
 map <Leader>sr <Action>(FindInPath)
 map <leader>sc <Action>(Vcs.ShowTabbedFileHistory)
 
-" hotkeys for frequent  actions
+" hotkeys for frequent actions
 map <leader>su <Action>(FindUsages)
 
 map <leader>ff <Action>(ShowIntentionActions)
 map <leader>fd <Action>(ShowErrorDescription)
+map <leader>fn <action>(SelectInProjectView)
 
 map <leader>re <Action>(RenameElement)
 map <leader>rr <Action>(Run)
-map <leader>dd <Action>(Debug)
-map <leader>bb <Action>(ToggleLineBreakpoint)
+map <leader>rf <Action>(RunClass)
+
+map <leader>ds <Action>(Debug)
+map <leader>df <Action>(DebugClass)
+map <leader>dr <Action>(Resume)
+map <leader>dc <Action>(Stop)
+map <leader>db <Action>(ToggleLineBreakpoint)
+
 map <leader>aa <Action>(Annotate)
 
 " use idea's back forward instead of vim emulated
@@ -130,3 +137,8 @@ map <c-i> <Action>(Forward)
 
 map <leader>q <Action>(CloseContent)
 map <leader>w <Action>(Tool_External Tools_black)
+
+map [s <Action>(GoToNextError)
+map zf <Action>(ShowIntentionActions)
+map zi <Action>(ShowErrorDescription)
+

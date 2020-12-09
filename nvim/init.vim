@@ -388,8 +388,8 @@ function! Load_kb_settings()
   autocmd HighlightGroup ColorScheme * hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
 
   " find suggestion for word under cursor
-  nnoremap <buffer> <leader>f :call FzfSpell()<CR>
-  nnoremap <buffer> <leader>а :call FzfSpell()<CR>
+  nnoremap <buffer> zf :call FzfSpell()<CR>
+  nnoremap <buffer> яа :call FzfSpell()<CR>
 
   " insert line below cursor
   nnoremap <buffer> <leader>що o<esc>

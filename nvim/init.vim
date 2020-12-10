@@ -175,6 +175,7 @@ nnoremap * *zz
 nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
+nnoremap G Gzz
 
 " copy from cursor to end of line
 nnoremap Y y$
@@ -242,8 +243,6 @@ nnoremap <leader>sm :Marks<CR>
 nnoremap <leader>sh :History<CR>
 nnoremap <leader>sc :Commits<CR>
 nnoremap <leader>sr :Rg<CR>
-" show NERDTree
-nnoremap <leader>1 :NERDTreeToggle<CR>
 " (t)oggle (d)iff
 nnoremap <leader>td :GitGutterToggle<cr>
 " (t)oggle (u)undo

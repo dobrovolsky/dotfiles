@@ -136,7 +136,7 @@
         :w-mode
         [:u [:launch-app "Bitwarden"]]
         [:i [:launch-app "PyCharm"]]
-        [:o [:launch-app "Google Chrome"]]
+        [:o [:launch-app "NetNewsWire"]]
         [:j [:launch-app "Brave Browser"]]
         [:k [:launch-app "Spotify"]]
         [:l [:launch-app "Telegram"]]

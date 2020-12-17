@@ -146,7 +146,10 @@ map <c-i> <Action>(Forward)
 map <leader>q <Action>(CloseContent)
 map <leader>w <Action>(Tool_External Tools_black)
 
-map [s <Action>(GoToNextError)
+map ]s <Action>(GotoNextError)zz
+map [s <Action>(GotoPreviousError)zz
+map ]f <Action>(MethodDown)zz
+map [f <Action>(MethodUp)zz
 map zf <Action>(ShowIntentionActions)
 map zi <Action>(ShowErrorDescription)
 

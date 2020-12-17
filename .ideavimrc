@@ -3,7 +3,6 @@
 """""""""""""""""""""""
 set surround
 set highlightedyank
-set easymotion
 
 " use system clipboard
 set clipboard+=unnamed
@@ -65,6 +64,9 @@ vnoremap > >gv
 " control is to far away
 inoremap <C-e> <C-o>
 
+" clear highlights on search
+nnoremap \ :noh<CR>
+
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = " "
@@ -95,6 +97,9 @@ map <Leader>k <Plug>(easymotion-k)
 """""""""""""""""""""""
 set ideastatusicon=gray
 set ideamarks
+
+" mapleader should be before easymotion https://github.com/AlexPl292/IdeaVim-EasyMotion#mapleader-mapping
+set easymotion
 
 " emulate part of tpope/vim-vinegar
 map - <Action>(ShowNavBar)

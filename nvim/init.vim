@@ -204,6 +204,9 @@ nnoremap q: :q
 " control is to far away
 inoremap <C-e> <C-o>
 
+" clear highlights on search
+nnoremap \ :noh<CR>
+
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = " "
@@ -212,9 +215,6 @@ let mapleader = " "
 nnoremap <leader>oj o<esc>
 " insert line above cursor
 nnoremap <leader>ok O<esc>
-
-" clear highlights on search
-nnoremap <leader>nn :noh<CR>
 
 " find n chars bellow and buttom
 map <Leader>/ <Plug>(easymotion-sn)
@@ -323,16 +323,30 @@ function! New_note()
 endfunction
 
 function! Load_kb_settings()
-  " create new note
-  nnoremap <buffer> <leader>n :call New_note()<cr>
-  nnoremap <buffer> <leader>т :call New_note()<cr>
-
   " allow to use gf for links
   setlocal suffixesadd=.md
   setlocal path+=~/kb
 
   " save buffer when typing
   autocmd KbGroup TextChanged,TextChangedI * silent write
+
+  " allow to use Cyrillic chars
+  setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+
+  " set spelling
+  setlocal spell spelllang=uk,en
+
+  " highlight spell error with red
+  hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
+  autocmd HighlightGroup ColorScheme * hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
+
+  " find suggestion for word under cursor
+  nnoremap <buffer> zf :call FzfSpell()<CR>
+  nnoremap <buffer> яа :call FzfSpell()<CR>
+
+  " create new note
+  nnoremap <buffer> <leader>n :call New_note()<cr>
+  nnoremap <buffer> <leader>т :call New_note()<cr>
 
   " open current file in obsidian
   nnoremap <buffer> <leader>o :silent !open 'obsidian://%:p'<cr>
@@ -362,43 +376,34 @@ function! Load_kb_settings()
   nnoremap <buffer> <leader>h Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
   nnoremap <buffer> <leader>р Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
 
-  " insert h3 and start typing
-  nnoremap <buffer> <leader>3 i###<space>
-
-  " insert h4 and start typing
-  nnoremap <buffer> <leader>4 i####<space>
-
   " (i)nsert i(m)age
   nnoremap <buffer> <leader>im o![]()<esc>i
   nnoremap <buffer> <leader>шь o![]()<esc>i
 
-  " allow to use Cyrillic chars
-  setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+  " insert h3 and start typing
+  nnoremap <buffer> <leader>3 i###<space>
+  " insert h4 and start typing
+  nnoremap <buffer> <leader>4 i####<space>
 
-  " set spelling
-  setlocal spell spelllang=uk,en
+  " insert line below cursor for Cyrillic
+  nnoremap <buffer> <leader>що o<esc>
+  " insert line above cursor for Cyrillic
+  nnoremap <buffer> <leader>щл O<esc>
 
+  " treat 'go to definition' as 'go to file' for [[note]]
+  nnoremap <buffer> gd gf
+  nnoremap <buffer> пв gf
+
+  " move by line for long lines for Cyrillic
   nnoremap о gj
   nnoremap л gk
 
-
-  " highlight spell error with red
-  hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
-  autocmd HighlightGroup ColorScheme * hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
-
-  " find suggestion for word under cursor
-  nnoremap <buffer> zf :call FzfSpell()<CR>
-  nnoremap <buffer> яа :call FzfSpell()<CR>
-
-  " insert line below cursor
-  nnoremap <buffer> <leader>що o<esc>
-  " insert line above cursor
-  nnoremap <buffer> <leader>щл O<esc>
-
+  " use prettier for w and q
   nnoremap <buffer> <leader>й :Prettier<cr>:q<cr>
   nnoremap <buffer> <leader>q :Prettier<cr>:q<cr>
   nnoremap <buffer> <leader>w :Prettier<cr>
   nnoremap <buffer> <leader>ц :Prettier<cr>
+  " (s)earch (c)ommnad for Cyrillic
   nnoremap <buffer> <leader>іа :Files<CR>
   nnoremap <buffer> <leader>іи :Buffers<CR>
   nnoremap <buffer> <leader>ід :Lines<CR>

@@ -328,7 +328,7 @@ function! Load_kb_settings()
   setlocal path+=~/kb
 
   " save buffer when typing
-  autocmd KbGroup TextChanged,TextChangedI * silent write
+  autocmd KbGroup TextChanged,TextChangedI *.md silent write
 
   " allow to use Cyrillic chars
   setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>

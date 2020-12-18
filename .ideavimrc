@@ -76,9 +76,6 @@ nnoremap <leader>oj o<esc>
 " insert line above cursor
 nnoremap <leader>ok O<esc>
 
-" clear highlights on search
-nnoremap <leader>nn :noh<CR>
-
 " find n chars bellow and buttom
 map <Leader>/ <Plug>(easymotion-sn)
 " find a char bellow and buttom

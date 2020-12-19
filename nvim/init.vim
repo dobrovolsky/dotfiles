@@ -212,9 +212,14 @@ nnoremap \ :noh<CR>
 let mapleader = " "
 
 " insert line below cursor
-nnoremap <leader>oj o<esc>
+nnoremap <leader>ij o<esc>
 " insert line above cursor
-nnoremap <leader>ok O<esc>
+nnoremap <leader>ik O<esc>
+
+" copy buffer
+nnoremap <leader>by ggVGy
+" replace buffer with clipboard
+nnoremap <leader>bp ggVGp
 
 " find n chars bellow and buttom
 map <Leader>/ <Plug>(easymotion-sn)

@@ -72,9 +72,14 @@ nnoremap \ :noh<CR>
 let mapleader = " "
 
 " insert line below cursor
-nnoremap <leader>oj o<esc>
+nnoremap <leader>ij o<esc>
 " insert line above cursor
-nnoremap <leader>ok O<esc>
+nnoremap <leader>ik O<esc>
+
+" copy buffer
+nnoremap <leader>by ggVGy
+" replace buffer with clipboard
+nnoremap <leader>bp ggVGp
 
 " find n chars bellow and buttom
 map <Leader>/ <Plug>(easymotion-sn)
@@ -106,47 +111,77 @@ map - <Action>(ShowNavBar)
 nnoremap <leader><leader> <c-s-6>
 
 " use similar bindings as for nvim
+map <leader>q <Action>(CloseContent)
+map <leader>w <Action>(Tool_External Tools_black)
+
+map <leader>sf <Action>(GotoFile)
+map <leader>sm <Action>(ShowBookmarks)
+map <leader>sh <Action>(RecentFiles)
+map <leader>sc <Action>(Vcs.ShowTabbedFileHistory)
+map <Leader>sr <Action>(FindInPath)
+
 map <leader>tu <Action>(LocalHistory.ShowHistory)
 map <leader>tf <Action>(ToggleDistractionFreeMode)
+""""""""""""""""""""""""""""""""""""""""""""
+" toggle show indent guide
+map <leader>ti <Action>(EditorToggleShowIndentLines)
 
-map <leader>sm <Action>(ShowBookmarks)
-map <leader>sf <Action>(GotoFile)
-map <leader>sh <Action>(RecentFiles)
-map <Leader>sr <Action>(FindInPath)
-map <leader>sc <Action>(Vcs.ShowTabbedFileHistory)
-
-" hotkeys for frequent actions
-map <leader>sbc <Action>(Vcs.ShowHistoryForBlock)
+" show git history for block of code
+map <leader>sg <Action>(Vcs.ShowHistoryForBlock)
+" find usage
 map <leader>su <Action>(FindUsages)
 
+" show file in navigation tab
 map <leader>fn <action>(SelectInProjectView)
+" show file structure
+map <leader>fs <Action>(FileStructurePopup)
 
+" rename element
 map <leader>re <Action>(RenameElement)
+
+" run code
 map <leader>rs <Action>(Run)
+" run current file
 map <leader>rf <Action>(RunClass)
+" select config and run
 map <leader>rc <Action>(ChooseRunConfiguration)
 
+" start debug
 map <leader>ds <Action>(Debug)
+" debug current fine
 map <leader>df <Action>(DebugClass)
+" select config and debug
 map <leader>dc <Action>(ChooseDebugConfiguration)
+" resume paused debugger
 map <leader>dr <Action>(Resume)
+" add breakpoint
 map <leader>db <Action>(ToggleLineBreakpoint)
 
+" stop run or debug
 map <leader>cc <Action>(Stop)
+" comment line
+map <leader>cl <Action>(CommentByLineComment)
 
+" annotate code with git blame
 map <leader>aa <Action>(Annotate)
 
 " use idea's back forward instead of vim emulated
 map <c-o> <Action>(Back)
 map <c-i> <Action>(Forward)
 
-map <leader>q <Action>(CloseContent)
-map <leader>w <Action>(Tool_External Tools_black)
-
+" go to errors like in vim spell checker
 map ]s <Action>(GotoNextError)zz
 map [s <Action>(GotoPreviousError)zz
+
+" go to next/previous git changes in file
+map [d zz<Action>(VcsShowPrevChangeMarker)
+map ]d zz<Action>(VcsShowNextChangeMarker)
+
+" navigate method and function
 map ]f <Action>(MethodDown)zz
 map [f <Action>(MethodUp)zz
-map zf <Action>(ShowIntentionActions)
-map zi <Action>(ShowErrorDescription)
 
+" fix an error
+map zf <Action>(ShowIntentionActions)
+" show error info
+map zi <Action>(ShowErrorDescription)

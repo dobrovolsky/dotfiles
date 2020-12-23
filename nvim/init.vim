@@ -137,6 +137,8 @@ let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_space_jump_first = 1
 " keep cursor column when JK motion
 let g:EasyMotion_startofline=0
+" use only keys from list
+let g:EasyMotion_keys = 'asdfghjklqwertyuiopzxcvbnm'
 """""""""""""""""""""""
 " vim-airline
 """""""""""""""""""""""
@@ -221,12 +223,8 @@ nnoremap <leader>by ggVGy
 " replace buffer with clipboard
 nnoremap <leader>bp ggVGp
 
-" find n chars bellow and buttom
-map <Leader>/ <Plug>(easymotion-sn)
-" find a char bellow and buttom
-map <Leader>ss <Plug>(easymotion-s)
-" find 2 chars bellow and buttom
-map <Leader>ss <Plug>(easymotion-s2)
+" easy navigate to all word beginigns in two directions
+map <Leader>ss <Plug>(easymotion-bd-w)
 " find in current line
 map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>h <Plug>(easymotion-linebackward)

@@ -23,6 +23,8 @@ set showcmd
 set showmode
 " keep context on scrolling
 set scrolloff=5
+" get more time to press keybinding
+set timeoutlen=1500
 
 " Disable default mappings
 let g:EasyMotion_do_mapping = 0
@@ -124,6 +126,7 @@ map <leader>ti <Action>(EditorToggleShowIndentLines)
 
 " show git history for block of code
 map <leader>sg <Action>(Vcs.ShowHistoryForBlock)
+map <leader>so <Action>(GotoClass)
 " find usage
 map <leader>su <Action>(FindUsages)
 

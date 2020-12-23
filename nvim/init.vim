@@ -80,6 +80,8 @@ set backspace=indent,eol,start
 set colorcolumn=80,120
 " keep context on scrolling
 set scrolloff=5
+" get more time to press keybinding
+set timeoutlen=1500
 " don't show mode Airline deals with that
 set noshowmode
 " use 1 option for autocomplete
@@ -104,13 +106,6 @@ augroup END
 " Git gutter
 """"""""""""""
 let g:gitgutter_enabled=1
-""""""""""""""""
-" NERDTRee
-""""""""""""""""
-" enable NEDRTRee by default
-" autocmd vimenter * NERDTree
-" how hidden files
-let NERDTreeShowHidden=1
 """""""""""""""""""""""
 " vim-indent-guides
 """""""""""""""""""""""
@@ -138,7 +133,8 @@ let g:EasyMotion_space_jump_first = 1
 " keep cursor column when JK motion
 let g:EasyMotion_startofline=0
 " use only keys from list
-let g:EasyMotion_keys = 'asdfghjklqwertyuiopzxcvbnm'
+" let g:EasyMotion_keys='asdfghjklqwertyuiopzxcvbnm' " is set in KbGroup
+
 """""""""""""""""""""""
 " vim-airline
 """""""""""""""""""""""
@@ -259,8 +255,8 @@ nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>es :source $MYVIMRC<cr>:nohl<cr>
 
 " quick open of kb
-nnoremap <leader>b :Files ~/kb<cr>
-nnoremap <leader>и :Files ~/kb<cr>
+nnoremap <leader>bb :Files ~/kb<cr>
+nnoremap <leader>ии :Files ~/kb<cr>
 
 " allow using tab for completion
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -290,7 +286,10 @@ call timer_start(3000, "SetBackgroundMode", {"repeat": -1})
 " load some part only for kb
 augroup KbGroup
   autocmd!
-  autocmd BufNewFile,BufRead,BufEnter ~/kb/* call Load_kb_settings()
+  autocmd BufNewFile,BufRead,BufEnter ~/kb/*.md call Load_kb_settings()
+  " Should rest Cyrillic keys to english for buffers on change to keep English
+  " for not *md files, but for *md in kb will be set Cyrillic keys
+  autocmd BufEnter let g:EasyMotion_keys='asdfghjklqwertyuiopzxcvbnm'
 augroup END
 
 " https://coreyja.com/vim-spelling-suggestions-fzf/
@@ -335,6 +334,7 @@ function! Load_kb_settings()
 
   " allow to use Cyrillic chars
   setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+  let g:EasyMotion_keys = 'фівапролдйцукенгшщзячсмить'
 
   " set spelling
   setlocal spell spelllang=uk,en
@@ -398,8 +398,15 @@ function! Load_kb_settings()
   nnoremap <buffer> пв gf
 
   " move by line for long lines for Cyrillic
-  nnoremap о gj
-  nnoremap л gk
+  nnoremap <buffer> о gj
+  nnoremap <buffer> л gk
+
+  " Cyrillic for easymotion
+  map <buffer> <Leader>іі <Plug>(easymotion-bd-w)
+  map <buffer> <Leader>д <Plug>(easymotion-lineforward)
+  map <buffer> <Leader>р <Plug>(easymotion-linebackward)
+  map <buffer> <Leader>о <Plug>(easymotion-j)
+  map <buffer> <Leader>л <Plug>(easymotion-k)
 
   " use prettier for w and q
   nnoremap <buffer> <leader>й :Prettier<cr>:q<cr>

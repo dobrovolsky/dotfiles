@@ -134,7 +134,6 @@ let g:EasyMotion_space_jump_first = 1
 let g:EasyMotion_startofline=0
 " use only keys from list
 " let g:EasyMotion_keys='asdfghjklqwertyuiopzxcvbnm' " is set in KbGroup
-
 """""""""""""""""""""""
 " vim-airline
 """""""""""""""""""""""
@@ -194,13 +193,9 @@ nnoremap Q @@
 " don't lose selection when indenting
 vnoremap < <gv
 vnoremap > >gv
-vnoremap = =gv
 
 " Common typo
 nnoremap q: :q
-
-" control is to far away
-inoremap <C-e> <C-o>
 
 " clear highlights on search
 nnoremap \ :noh<CR>
@@ -256,7 +251,7 @@ nnoremap <leader>es :source $MYVIMRC<cr>:nohl<cr>
 
 " quick open of kb
 nnoremap <leader>bb :Files ~/kb<cr>
-nnoremap <leader>ии :Files ~/kb<cr>
+nmap <leader>ии <leader>bb
 
 " allow using tab for completion
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -287,10 +282,96 @@ call timer_start(3000, "SetBackgroundMode", {"repeat": -1})
 augroup KbGroup
   autocmd!
   autocmd BufNewFile,BufRead,BufEnter ~/kb/*.md call Load_kb_settings()
-  " Should rest Cyrillic keys to english for buffers on change to keep English
+  " Should reset Cyrillic keys to english on buffer change to keep English
   " for not *md files, but for *md in kb will be set Cyrillic keys
   autocmd BufEnter let g:EasyMotion_keys='asdfghjklqwertyuiopzxcvbnm'
 augroup END
+
+function! Load_kb_settings()
+  " allow to use gf for links
+  setlocal suffixesadd=.md
+  setlocal path+=~/kb
+
+  " save buffer when typing
+  autocmd KbGroup TextChanged,TextChangedI *.md silent write
+
+  " set spelling
+  setlocal spell spelllang=uk,en
+
+  " highlight spell error with red
+  hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
+  autocmd HighlightGroup ColorScheme * hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
+
+  " find suggestion for word under cursor
+  nnoremap <buffer> zf :call FzfSpell()<CR>
+  " create new note
+  nnoremap <buffer> <leader>n :call New_note()<cr>
+  " open current file in obsidian
+  nnoremap <buffer> <leader>o :silent !open 'obsidian://%:p'<cr>
+  " open graph in obsidian
+  nnoremap <buffer> <leader>g :silent !~/kb/scripts/graph.js<cr>
+  " encrypt notes
+  nnoremap <buffer> <leader>U :!~/kb/scripts/encrypt.py<cr>
+  " decrypt notes
+  nnoremap <buffer> <leader>u :!~/kb/scripts/decrypt.py<cr>:e ~/kb/daily-notes/current-period.md<cr>
+  " save current file commit and push changes
+  nnoremap <buffer> <leader>p :Prettier<cr>:!~/kb/scripts/save.py<cr>
+  " insert `## year-month-day` in the top of file and start typing
+  nnoremap <buffer> <leader>d ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
+  " insert `- year-month-day - ` in the end of file and start typing
+  nnoremap <buffer> <leader>h Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
+  " (i)nsert i(m)age
+  nnoremap <buffer> <leader>im o![]()<esc>i
+  " insert h3 and start typing
+  nnoremap <buffer> <leader>3 i###<space>
+  " insert h4 and start typing
+  nnoremap <buffer> <leader>4 i####<space>
+  " treat 'go to definition' as 'go to file' for [[note]]
+  nnoremap <buffer> gd gf
+  " use prettier for w and q
+  nnoremap <buffer> <leader>q :Prettier<cr>:q<cr>
+  nnoremap <buffer> <leader>w :Prettier<cr>
+
+  " allow to use Cyrillic chars
+  setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+  let g:EasyMotion_keys = 'фівапролдйцукенгшщзячсмить'
+
+  " allow to use Cyrillic some for keybinding
+  nmap <buffer> яа zf
+  nmap <buffer> о j
+  nmap <buffer> л k
+  nmap <buffer> пв gd
+  nmap <buffer> ]і ]s
+  nmap <buffer> [і [s
+
+  nmap <buffer> <leader>т <leader>n
+  nmap <buffer> <leader>щ <leader>o
+  nmap <buffer> <leader>п <leader>g
+  nmap <buffer> <leader>Г <leader>U
+  nmap <buffer> <leader>г <leader>u
+  nmap <buffer> <leader>з <leader>p
+  nmap <buffer> <leader>в <leader>d
+  nmap <buffer> <leader>р <leader>h
+  nmap <buffer> <leader>шь <leader>im
+  nmap <buffer> <leader>що <leader>ij
+  nmap <buffer> <leader>щл <leader>ik
+
+  map <buffer> <Leader>іі <leader>ss
+  map <buffer> <Leader>д <leader>l
+  map <buffer> <Leader>р <leader>h
+  map <buffer> <Leader>о <leader>j
+  map <buffer> <Leader>л <leader>k
+
+  nmap <buffer> <leader>ц <leader>w
+  nmap <buffer> <leader>й <leader>q
+
+  nmap <buffer> <leader>іа <leader>sf
+  nmap <buffer> <leader>іи <leader>sb
+  nmap <buffer> <leader>ід <leader>sl
+  nmap <buffer> <leader>іь <leader>sm
+  nmap <buffer> <leader>ір <leader>sh
+  nmap <buffer> <leader>іс <leader>sc
+endfunction
 
 " https://coreyja.com/vim-spelling-suggestions-fzf/
 function! FzfSpellSink(word)
@@ -301,7 +382,6 @@ function! FzfSpell()
   let suggestions = spellsuggest(expand("<cword>"))
   return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'window': {'width': 0.5, 'height': 0.5} })
 endfunction
-
 
 " slugify note for filename
 function! Sluggify(text)
@@ -324,100 +404,3 @@ function! New_note()
    endif
 endfunction
 
-function! Load_kb_settings()
-  " allow to use gf for links
-  setlocal suffixesadd=.md
-  setlocal path+=~/kb
-
-  " save buffer when typing
-  autocmd KbGroup TextChanged,TextChangedI *.md silent write
-
-  " allow to use Cyrillic chars
-  setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
-  let g:EasyMotion_keys = 'фівапролдйцукенгшщзячсмить'
-
-  " set spelling
-  setlocal spell spelllang=uk,en
-
-  " highlight spell error with red
-  hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
-  autocmd HighlightGroup ColorScheme * hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
-
-  " find suggestion for word under cursor
-  nnoremap <buffer> zf :call FzfSpell()<CR>
-  nnoremap <buffer> яа :call FzfSpell()<CR>
-
-  " create new note
-  nnoremap <buffer> <leader>n :call New_note()<cr>
-  nnoremap <buffer> <leader>т :call New_note()<cr>
-
-  " open current file in obsidian
-  nnoremap <buffer> <leader>o :silent !open 'obsidian://%:p'<cr>
-  nnoremap <buffer> <leader>щ :silent !open 'obsidian://%:p'<cr>
-
-  " open graph in obsidian
-  nnoremap <buffer> <leader>g :silent !~/kb/scripts/graph.js<cr>
-  nnoremap <buffer> <leader>п :silent !~/kb/scripts/graph.js<cr>
-
-  " encrypt notes
-  nnoremap <buffer> <leader>U :!~/kb/scripts/encrypt.py<cr>
-  nnoremap <buffer> <leader>Г :!~/kb/scripts/encrypt.py<cr>
-
-  " decrypt notes
-  nnoremap <buffer> <leader>u :!~/kb/scripts/decrypt.py<cr>:e ~/kb/daily-notes/current-period.md<cr>
-  nnoremap <buffer> <leader>г :!~kb/scripts/decrypt.py<cr>:e ~/kb/daily-notes/current-period.md<cr>
-
-  " save current file commit and push changes
-  nnoremap <buffer> <leader>p :Prettier<cr>:!~/kb/scripts/save.py<cr>
-  nnoremap <buffer> <leader>з :Prettier<cr>:!~/kb/scripts/save.py<cr>
-
-  " insert `## year-month-day` in the top of file and start typing
-  nnoremap <buffer> <leader>d ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
-  nnoremap <buffer> <leader>в ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
-
-  " insert `- year-month-day - ` in the end of file and start typing
-  nnoremap <buffer> <leader>h Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
-  nnoremap <buffer> <leader>р Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
-
-  " (i)nsert i(m)age
-  nnoremap <buffer> <leader>im o![]()<esc>i
-  nnoremap <buffer> <leader>шь o![]()<esc>i
-
-  " insert h3 and start typing
-  nnoremap <buffer> <leader>3 i###<space>
-  " insert h4 and start typing
-  nnoremap <buffer> <leader>4 i####<space>
-
-  " insert line below cursor for Cyrillic
-  nnoremap <buffer> <leader>що o<esc>
-  " insert line above cursor for Cyrillic
-  nnoremap <buffer> <leader>щл O<esc>
-
-  " treat 'go to definition' as 'go to file' for [[note]]
-  nnoremap <buffer> gd gf
-  nnoremap <buffer> пв gf
-
-  " move by line for long lines for Cyrillic
-  nnoremap <buffer> о gj
-  nnoremap <buffer> л gk
-
-  " Cyrillic for easymotion
-  map <buffer> <Leader>іі <Plug>(easymotion-bd-w)
-  map <buffer> <Leader>д <Plug>(easymotion-lineforward)
-  map <buffer> <Leader>р <Plug>(easymotion-linebackward)
-  map <buffer> <Leader>о <Plug>(easymotion-j)
-  map <buffer> <Leader>л <Plug>(easymotion-k)
-
-  " use prettier for w and q
-  nnoremap <buffer> <leader>й :Prettier<cr>:q<cr>
-  nnoremap <buffer> <leader>q :Prettier<cr>:q<cr>
-  nnoremap <buffer> <leader>w :Prettier<cr>
-  nnoremap <buffer> <leader>ц :Prettier<cr>
-  " (s)earch (c)ommnad for Cyrillic
-  nnoremap <buffer> <leader>іа :Files<CR>
-  nnoremap <buffer> <leader>іи :Buffers<CR>
-  nnoremap <buffer> <leader>ід :Lines<CR>
-  nnoremap <buffer> <leader>іь :Marks<CR>
-  nnoremap <buffer> <leader>ір :History<CR>
-  nnoremap <buffer> <leader>іс :Commits<CR>
-endfunction

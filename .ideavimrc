@@ -63,9 +63,6 @@ nnoremap Q @@
 vnoremap < <gv
 vnoremap > >gv
 
-" control is to far away
-inoremap <C-e> <C-o>
-
 " clear highlights on search
 nnoremap \ :noh<CR>
 

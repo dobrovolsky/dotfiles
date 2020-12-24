@@ -102,10 +102,13 @@ augroup HighlightGroup
   autocmd BufWinLeave * call clearmatches()
 augroup END
 
+" use pyenv version (needed for some GUI applications: Vimr)
+let g:python3_host_prog = '~/.pyenv/shims/python'
 """"""""""""""
 " Git gutter
 """"""""""""""
-let g:gitgutter_enabled=1
+let g:gitgutter_enabled = 1
+let g:gitgutter_map_keys = 0
 """""""""""""""""""""""
 " vim-indent-guides
 """""""""""""""""""""""
@@ -223,6 +226,9 @@ map <Leader>h <Plug>(easymotion-linebackward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+nmap ]d <Plug>(GitGutterNextHunk)
+nmap [d <Plug>(GitGutterPrevHunk)
+
 " jump betwen 2 last buffers
 nnoremap <leader><leader> <c-^>
 
@@ -252,6 +258,10 @@ nnoremap <leader>es :source $MYVIMRC<cr>:nohl<cr>
 " quick open of kb
 nnoremap <leader>bb :Files ~/kb<cr>
 nmap <leader>ии <leader>bb
+
+" quick open of kb
+nnoremap <leader>u :call Open_daily_note()<cr>
+nmap <leader>г <leader>u
 
 " allow using tab for completion
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -312,14 +322,12 @@ function! Load_kb_settings()
   nnoremap <buffer> <leader>g :silent !~/kb/scripts/graph.js<cr>
   " encrypt notes
   nnoremap <buffer> <leader>U :!~/kb/scripts/encrypt.py<cr>
-  " decrypt notes
-  nnoremap <buffer> <leader>u :!~/kb/scripts/decrypt.py<cr>:e ~/kb/daily-notes/current-period.md<cr>
   " save current file commit and push changes
   nnoremap <buffer> <leader>p :Prettier<cr>:!~/kb/scripts/save.py<cr>
   " insert `## year-month-day` in the top of file and start typing
   nnoremap <buffer> <leader>d ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
   " insert `- year-month-day - ` in the end of file and start typing
-  nnoremap <buffer> <leader>h Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
+  nnoremap <buffer> <leader>ih Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
   " (i)nsert i(m)age
   nnoremap <buffer> <leader>im o![]()<esc>i
   " insert h3 and start typing
@@ -351,7 +359,6 @@ function! Load_kb_settings()
   nmap <buffer> <leader>г <leader>u
   nmap <buffer> <leader>з <leader>p
   nmap <buffer> <leader>в <leader>d
-  nmap <buffer> <leader>р <leader>h
   nmap <buffer> <leader>шь <leader>im
   nmap <buffer> <leader>що <leader>ij
   nmap <buffer> <leader>щл <leader>ik
@@ -404,3 +411,8 @@ function! New_note()
    endif
 endfunction
 
+" decrypt and open daily note in kb
+function! Open_daily_note()
+  exec "silent :!~/kb/scripts/decrypt.py"
+  exec "e ~/kb/daily-notes/current-period.md"
+endfunction

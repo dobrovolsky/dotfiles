@@ -105,6 +105,10 @@ map - <Action>(ShowNavBar)
 " jump betwen 2 last buffers
 nnoremap <leader><leader> <c-s-6>
 
+" go to next/previous git changes in file
+map [d <Action>(VcsShowPrevChangeMarker)
+map ]d <Action>(VcsShowNextChangeMarker)
+
 " use similar bindings as for nvim
 map <leader>q <Action>(CloseContent)
 map <leader>w <Action>(Tool_External Tools_black)
@@ -161,21 +165,19 @@ map <leader>cl <Action>(CommentByLineComment)
 " annotate code with git blame
 map <leader>aa <Action>(Annotate)
 
+map <leader>io <Action>(OptimizeImports)
+
 " use idea's back forward instead of vim emulated
 map <c-o> <Action>(Back)
 map <c-i> <Action>(Forward)
 
 " go to errors like in vim spell checker
-map ]s <Action>(GotoNextError)zz
-map [s <Action>(GotoPreviousError)zz
-
-" go to next/previous git changes in file
-map [d zz<Action>(VcsShowPrevChangeMarker)
-map ]d zz<Action>(VcsShowNextChangeMarker)
+map ]s <Action>(GotoNextError)
+map [s <Action>(GotoPreviousError)
 
 " navigate method and function
-map ]f <Action>(MethodDown)zz
-map [f <Action>(MethodUp)zz
+map ]f <Action>(MethodDown)
+map [f <Action>(MethodUp)
 
 " fix an error
 map zf <Action>(ShowIntentionActions)

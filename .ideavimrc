@@ -167,6 +167,9 @@ map <leader>aa <Action>(Annotate)
 
 map <leader>io <Action>(OptimizeImports)
 
+" use https://github.com/szymonprz/idea-cheatsh-plugin
+map <leader>K <Action>(FindSnippet)
+
 " use idea's back forward instead of vim emulated
 map <c-o> <Action>(Back)
 map <c-i> <Action>(Forward)

@@ -49,6 +49,7 @@
     - [bash ./node/install.sh, Installing NodeJS and required packages]
     - [bash ./go/install.sh, Installing Golang required packages]
     - [goku, Generate karabiner config]
+    - [curl https://cht.sh/:cht.sh > ~/.dotfiles/bin/cht && chmod +x ~/.dotfiles/bin/cht, Install cht.sh]
 
 # Knowledge base custom completion
 - link:

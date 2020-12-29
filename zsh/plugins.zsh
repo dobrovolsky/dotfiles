@@ -24,6 +24,6 @@ antigen bundle changyuheng/fz
 antigen bundle rupa/z
 antigen bundle sobolevn/wakatime-zsh-plugin
 
-antigen bundle --loc=~/dotfiles/python/_poetry
+antigen bundle --loc=~/.dotfiles/python/_poetry
 
 antigen apply

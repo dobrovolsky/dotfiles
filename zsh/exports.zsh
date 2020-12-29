@@ -31,6 +31,9 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # use custom settings for bat
 export BAT_CONFIG_PATH=$HOME/.bat.conf
 
+# custom settings for cht.sh
+export CHTSH_CONF=$HOME/.dotfiles/cht.conf
+
 # don't start tmux in ide and ssh terminals
 if [ "$TERMINAL_EMULATOR" = "JetBrains-JediTerm" ] ||
    [ -n "$SSH_CONNECTION" ]; then

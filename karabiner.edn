@@ -145,8 +145,7 @@
       :rules [
         :q-mode
         [:j [:launch-app "Iterm"]]
-        [:k "/usr/local/bin/vimr --nvim -c ':Files ~/kb'"]
-        [:l "/usr/local/bin/vimr --nvim -c ':call Open_daily_note()'"]
+        [:k "open obsidian://vault/kb"]
         ; [:l [:charm-project "~/projects/ref/jupyter-notebook"]]
         ; [:semicolon [:charm-project "~/projects/ref/jupyterhub-fork"]]
         [:u [:open "https://www.notion.so/Home-a569abf38d4b4d7a83c6875c999a6bbf"]]

@@ -102,8 +102,6 @@ augroup HighlightGroup
   autocmd BufWinLeave * call clearmatches()
 augroup END
 
-" use pyenv version (needed for some GUI applications: Vimr)
-let g:python3_host_prog = '~/.pyenv/shims/python'
 """"""""""""""
 " Git gutter
 """"""""""""""
@@ -360,6 +358,7 @@ function! Load_kb_settings()
   nmap <buffer> <leader>з <leader>p
   nmap <buffer> <leader>в <leader>d
   nmap <buffer> <leader>шь <leader>im
+  nmap <buffer> <leader>шт <leader>in
   nmap <buffer> <leader>що <leader>ij
   nmap <buffer> <leader>щл <leader>ik
 

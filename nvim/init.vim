@@ -86,6 +86,10 @@ set timeoutlen=1500
 set noshowmode
 " use 1 option for autocomplete
 set completeopt+=noinsert
+" save undo trees in files
+set undofile
+" number of undo saved
+set undolevels=10000
 " prettier's doc says to add it
 packloadall
 
@@ -224,8 +228,13 @@ map <Leader>h <Plug>(easymotion-linebackward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+" move to next/previos changed line with git
 nmap ]d <Plug>(GitGutterNextHunk)
 nmap [d <Plug>(GitGutterPrevHunk)
+
+" move to next/previos method
+nmap ]f ]m
+nmap [f [m
 
 " jump betwen 2 last buffers
 nnoremap <leader><leader> <c-^>
@@ -282,7 +291,6 @@ endfunction
 call SetBackgroundMode()
 call timer_start(3000, "SetBackgroundMode", {"repeat": -1})
 
-
 """""""""""""""""""""""
 " Knowledge Base
 """""""""""""""""""""""
@@ -292,7 +300,7 @@ augroup KbGroup
   autocmd BufNewFile,BufRead,BufEnter ~/kb/*.md call Load_kb_settings()
   " Should reset Cyrillic keys to english on buffer change to keep English
   " for not *md files, but for *md in kb will be set Cyrillic keys
-  autocmd BufEnter let g:EasyMotion_keys='asdfghjklqwertyuiopzxcvbnm'
+  autocmd BufEnter * let g:EasyMotion_keys='asdfghjklqwertyuiopzxcvbnm'
 augroup END
 
 function! Load_kb_settings()
@@ -340,7 +348,7 @@ function! Load_kb_settings()
 
   " allow to use Cyrillic chars
   setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
-  let g:EasyMotion_keys = 'фівапролдйцукенгшщзячсмить'
+  autocmd KbGroup BufEnter *.md let g:EasyMotion_keys = 'фівапролдйцукенгшщзячсмить'
 
   " allow to use Cyrillic some for keybinding
   nmap <buffer> яа zf

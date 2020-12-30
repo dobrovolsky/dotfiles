@@ -161,6 +161,8 @@ map <leader>db <Action>(ToggleLineBreakpoint)
 map <leader>cc <Action>(Stop)
 " comment line
 map <leader>cl <Action>(CommentByLineComment)
+" clear all breakpoint
+map <leader>cb <Action>(Debugger.RemoveAllBreakpoints)
 
 " annotate code with git blame
 map <leader>aa <Action>(Annotate)

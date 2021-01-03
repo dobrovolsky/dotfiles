@@ -263,7 +263,7 @@ nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>es :source $MYVIMRC<cr>:nohl<cr>
 
 " quick open of kb
-nnoremap <leader>bb :Files ~/kb<cr>
+nnoremap <leader>bb :w<cr>:Files ~/kb<cr>
 nmap <leader>ии <leader>bb
 
 " quick open of kb
@@ -308,9 +308,6 @@ function! Load_kb_settings()
   setlocal suffixesadd=.md
   setlocal path+=~/kb
 
-  " save buffer when typing
-  autocmd KbGroup TextChanged,TextChangedI *.md silent write
-
   " set spelling
   setlocal spell spelllang=uk,en
 
@@ -343,8 +340,8 @@ function! Load_kb_settings()
   " treat 'go to definition' as 'go to file' for [[note]]
   nnoremap <buffer> gd gf
   " use prettier for w and q
-  nnoremap <buffer> <leader>q :Prettier<cr>:q<cr>
-  nnoremap <buffer> <leader>w :Prettier<cr>
+  nnoremap <buffer> <leader>q :w<cr>:Prettier<cr>:q<cr>
+  nnoremap <buffer> <leader>w :w<cr>:Prettier<cr>
 
   " allow to use Cyrillic chars
   setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
@@ -367,6 +364,7 @@ function! Load_kb_settings()
   nmap <buffer> <leader>в <leader>d
   nmap <buffer> <leader>шь <leader>im
   nmap <buffer> <leader>шр <leader>ih
+
   nmap <buffer> <leader>що <leader>ij
   nmap <buffer> <leader>щл <leader>ik
 

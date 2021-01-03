@@ -29,7 +29,7 @@
     ~/.tmux/plugins/tpm:
         create: true
         path: deps/tpm
-    ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch/theme_switcher.py:
+    ~/Library/Application Support/iTerm2/Scripts/AutoLaunch/theme_switcher.py:
         create: true
         path: iterm/theme_switcher.py
 

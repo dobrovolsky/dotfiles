@@ -365,8 +365,8 @@ function! Load_kb_settings()
   nmap <buffer> <leader>шь <leader>im
   nmap <buffer> <leader>шр <leader>ih
 
-  nmap <buffer> <leader>що <leader>ij
-  nmap <buffer> <leader>щл <leader>ik
+  nmap <buffer> <leader>шо <leader>ij
+  nmap <buffer> <leader>шл <leader>ik
 
   map <buffer> <Leader>іі <leader>ss
   map <buffer> <Leader>д <leader>l

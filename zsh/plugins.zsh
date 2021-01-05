@@ -24,6 +24,13 @@ antigen bundle changyuheng/fz
 antigen bundle rupa/z
 antigen bundle sobolevn/wakatime-zsh-plugin
 
-antigen bundle --loc=~/.dotfiles/python/_poetry
+antigen bundle ~/.dotfiles/zsh/plugins/evalcache --loc=evalcache.plugin.zsh
 
 antigen apply
+
+# init nodenv (should run nodenv rehash when installing cli)
+_evalcache nodenv init --no-rehash - zsh
+
+# init pyenv (should run pyenv rehash when installing cli)
+_evalcache pyenv init --no-rehash - zsh
+_evalcache pyenv virtualenv-init - zsh

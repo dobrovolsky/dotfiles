@@ -106,6 +106,9 @@ augroup HighlightGroup
   autocmd BufWinLeave * call clearmatches()
 augroup END
 
+" always use global interpreter, usually virtualenv doesn't contain pynvim lib
+let g:python3_host_prog = '~/.pyenv/shims/python'
+
 """"""""""""""
 " Git gutter
 """"""""""""""

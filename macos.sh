@@ -20,6 +20,9 @@ defaults write com.apple.dashboard mcx-disabled -bool true
 # Disable startup noise:
 sudo nvram SystemAudioVolume=%01
 
+# Use same PATH for shell and GUI applications
+sudo launchctl config user path "$HOME/bin:/usr/local/bin:$HOME/.dotfiles/bin:$HOME/.pyenv/bin:$HOME/go/bin:$PATH"
+
 # Keep folders on top when sorting by name:
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
@@ -69,7 +72,6 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # Bottom right screen corner → Desktop
 defaults write com.apple.dock wvous-br-corner -int 4
 defaults write com.apple.dock wvous-br-modifier -int 0
-
 
 # Transmission.app
 # Hide the donate message

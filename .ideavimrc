@@ -79,6 +79,8 @@ nnoremap <leader>ik O<esc>
 nnoremap <leader>by ggVGy
 " replace buffer with clipboard
 nnoremap <leader>bp ggVGp
+" clear buffer
+nnoremap <leader>bc ggVGd
 
 " easy navigate to all word beginigns in two directions
 map <Leader>ss <Plug>(easymotion-bd-w)

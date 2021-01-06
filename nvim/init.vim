@@ -221,6 +221,8 @@ nnoremap <leader>ik O<esc>
 nnoremap <leader>by ggVGy
 " replace buffer with clipboard
 nnoremap <leader>bp ggVGp
+" clear buffer
+nnoremap <leader>bc ggVGd
 
 " easy navigate to all word beginigns in two directions
 map <Leader>ss <Plug>(easymotion-bd-w)
@@ -335,7 +337,7 @@ function! Load_kb_settings()
   " insert `- year-month-day - ` in the end of file and start typing
   nnoremap <buffer> <leader>ih Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
   " (i)nsert i(m)age
-  nnoremap <buffer> <leader>im o![]()<esc>i
+  nnoremap <buffer> <leader>im o![]()<esc>hp
   " insert h3 and start typing
   nnoremap <buffer> <leader>3 i###<space>
   " insert h4 and start typing

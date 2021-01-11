@@ -72,8 +72,7 @@ set incsearch
 set ignorecase
 " searches are case sensative only when term has at least one capital
 set smartcase
-" allow to navigate edited buffers without saving, just keep them in
-" background
+" allow to navigate edited buffers without saving, just keep them in background
 set hidden
 " use system clipboard
 set clipboard+=unnamed
@@ -198,21 +197,19 @@ nnoremap <C-l> <C-W>l
 nnoremap j gj
 nnoremap k gk
 
-" Run last macro with Q
+" run last macro with Q
 nnoremap Q @@
 
 " don't lose selection when indenting
 vnoremap < <gv
 vnoremap > >gv
 
-" Common typo
+" common typo
 nnoremap q: :q
 
 " clear highlights on search
 nnoremap \ :noh<CR>
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
 let mapleader = " "
 
 " insert line below cursor
@@ -226,6 +223,12 @@ nnoremap <leader>by ggVGy
 nnoremap <leader>bp ggVGp
 " clear buffer
 nnoremap <leader>bc ggVGd
+
+" replace current word last stored in register
+nnoremap <leader>rw viwp
+
+" delete without storing in register
+noremap <leader>dd "_dd
 
 " easy navigate to all word beginigns in two directions
 map <Leader>ss <Plug>(easymotion-bd-w)

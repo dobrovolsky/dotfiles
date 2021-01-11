@@ -82,6 +82,12 @@ nnoremap <leader>bp ggVGp
 " clear buffer
 nnoremap <leader>bc ggVGd
 
+" replace current word last stored in register
+nnoremap <leader>rw viwp
+
+" delete without storing in register
+noremap <leader>dd "_dd
+
 " easy navigate to all word beginigns in two directions
 map <Leader>ss <Plug>(easymotion-bd-w)
 " find in current line

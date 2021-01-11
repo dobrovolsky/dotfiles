@@ -72,6 +72,9 @@ set incsearch
 set ignorecase
 " searches are case sensative only when term has at least one capital
 set smartcase
+" allow to navigate edited buffers without saving, just keep them in
+" background
+set hidden
 " use system clipboard
 set clipboard+=unnamed
 " make backspace work like most other programs
@@ -268,7 +271,7 @@ nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>es :source $MYVIMRC<cr>:nohl<cr>
 
 " quick open of kb
-nnoremap <leader>bb :w<cr>:Files ~/kb<cr>
+nnoremap <leader>bb <cr>:Files ~/kb<cr>
 nmap <leader>ии <leader>bb
 
 " quick open of kb
@@ -331,7 +334,7 @@ function! Load_kb_settings()
   " encrypt notes
   nnoremap <buffer> <leader>U :!~/kb/scripts/encrypt.py<cr>
   " save current file commit and push changes
-  nnoremap <buffer> <leader>p :Prettier<cr>:!~/kb/scripts/save.py<cr>
+  nmap <buffer> <leader>p !~/kb/scripts/save.py<cr>
   " insert `## year-month-day` in the top of file and start typing
   nnoremap <buffer> <leader>d ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
   " insert `- year-month-day - ` in the end of file and start typing
@@ -345,8 +348,8 @@ function! Load_kb_settings()
   " treat 'go to definition' as 'go to file' for [[note]]
   nnoremap <buffer> gd gf
   " use prettier for w and q
-  nnoremap <buffer> <leader>q :w<cr>:Prettier<cr>:q<cr>
-  nnoremap <buffer> <leader>w :w<cr>:Prettier<cr>
+  nnoremap <buffer> <leader>q :Prettier<cr>:wq<cr>
+  nnoremap <buffer> <leader>w :Prettier<cr>:w<cr>
 
   " allow to use Cyrillic chars
   setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>

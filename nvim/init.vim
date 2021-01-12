@@ -340,8 +340,11 @@ function! Load_kb_settings()
   nmap <buffer> <leader>p !~/kb/scripts/save.py<cr>
   " insert `## year-month-day` in the top of file and start typing
   nnoremap <buffer> <leader>d ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
+  " insert datetime or date
+  nnoremap <buffer> <leader>it "=strftime("%Y-%m-%d %H:%M")<cr>p
+  nnoremap <buffer> <leader>id "=strftime("%Y-%m-%d")<cr>p
   " insert `- year-month-day - ` in the end of file and start typing
-  nnoremap <buffer> <leader>ih Go<esc>i- <C-c>"=strftime("%Y-%m-%d")<cr>pA -<space>
+  nmap <buffer> <leader>ih Go<esc>i- <esc><leader>idA -<space>
   " (i)nsert i(m)age
   nnoremap <buffer> <leader>im o![]()<esc>hp
   " insert h3 and start typing
@@ -375,6 +378,8 @@ function! Load_kb_settings()
   nmap <buffer> <leader>в <leader>d
   nmap <buffer> <leader>шь <leader>im
   nmap <buffer> <leader>шр <leader>ih
+  nmap <buffer> <leader>ше <leader>it
+  nmap <buffer> <leader>шв <leader>id
 
   nmap <buffer> <leader>шо <leader>ij
   nmap <buffer> <leader>шл <leader>ik

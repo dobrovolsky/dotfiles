@@ -64,11 +64,6 @@ port() {
   lsof -n -i ":$@" | grep LISTEN
 }
 
-# get 2fa code and copy to clipboard
-2f() {
-  2fa $(2fa -list | fzf ) | pbcopy
-}
-
 # load dark or light config for tmux
 _load_theme() {
   if [ "$1" != "Dark" ]; then

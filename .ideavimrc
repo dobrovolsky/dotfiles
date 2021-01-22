@@ -135,9 +135,12 @@ map <leader>ti <Action>(EditorToggleShowIndentLines)
 
 " show git history for block of code
 map <leader>sg <Action>(Vcs.ShowHistoryForBlock)
+" find class
 map <leader>so <Action>(GotoClass)
 " find usage
 map <leader>su <Action>(FindUsages)
+" find everyevere
+map <leader>sa <Action>(SearchEverywhere)
 
 " show file in navigation tab
 map <leader>fn <action>(SelectInProjectView)

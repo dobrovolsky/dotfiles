@@ -35,6 +35,9 @@ HISTFILE=~/.zsh_history
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=248"
 
+# use different cursor styles for different modes in shell
+VI_MODE_SET_CURSOR=true
+
 # show stash icon
 zstyle :prompt:pure:git:stash show yes
 

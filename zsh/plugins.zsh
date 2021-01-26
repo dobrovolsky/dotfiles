@@ -13,7 +13,7 @@ antigen bundle httpie
 antigen bundle vi-mode
 
 antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+antigen bundle sindresorhus/pure --branch=main
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions

@@ -10,6 +10,7 @@ brew "fzf"
 brew "golang"
 brew "gpgme"
 brew "htop"
+brew "imgur-screenshot"
 brew "neovim", args: ["HEAD"]
 brew "nodenv"
 brew "pgcli"

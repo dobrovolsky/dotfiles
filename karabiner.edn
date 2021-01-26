@@ -151,6 +151,8 @@
         [:u [:open "https://www.notion.so/Home-a569abf38d4b4d7a83c6875c999a6bbf"]]
         [:i [:open "https://docs.google.com/spreadsheets/d/1lya8s1rvHx5AkheZU3eYrgD7irRkJK0NuIsVA-mKeoY/edit#gid=358988098"]]
         [:o [:open "https://monkeytype.com/"]]
+        [:4 "imgur-screenshot -l true"]
+        [:5 "imgur-screenshot -l true -w"]
     ]}
     {:des "z-mode"
       :rules [

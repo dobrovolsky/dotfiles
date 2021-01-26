@@ -139,8 +139,10 @@ map <leader>sg <Action>(Vcs.ShowHistoryForBlock)
 map <leader>so <Action>(GotoClass)
 " find usage
 map <leader>su <Action>(FindUsages)
-" find everyevere
+" find everywhere
 map <leader>sa <Action>(SearchEverywhere)
+" find breakpoints
+map <leader>sb <Action>(ViewBreakpoints)
 
 " show file in navigation tab
 map <leader>fn <action>(SelectInProjectView)

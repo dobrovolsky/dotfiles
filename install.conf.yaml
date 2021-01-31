@@ -23,6 +23,9 @@
     ~/.config/karabiner.edn:
         create: true
         path: karabiner.edn
+    ~/.config/htop/htoprc:
+        create: true
+        path: htoprc
     ~/.local/share/nvim/site/autoload/plug.vim:
         create: true
         path: deps/vim-plug/plug.vim

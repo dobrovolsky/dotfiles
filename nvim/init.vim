@@ -356,6 +356,8 @@ function! Load_kb_settings()
   " use prettier for w and q
   nnoremap <buffer> <leader>q :Prettier<cr>:wq<cr>
   nnoremap <buffer> <leader>w :Prettier<cr>:w<cr>
+  " find all todo in files
+  nnoremap <buffer> <leader>sd :Rg \[( \|x)\]<cr>
 
   " allow to use Cyrillic chars
   setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
@@ -383,6 +385,8 @@ function! Load_kb_settings()
 
   nmap <buffer> <leader>шо <leader>ij
   nmap <buffer> <leader>шл <leader>ik
+
+  nmap <buffer> <leader>ів <leader>sd
 
   map <buffer> <Leader>іі <leader>ss
   map <buffer> <Leader>д <leader>l

@@ -23,6 +23,7 @@ antigen bundle MichaelAquilina/zsh-auto-notify
 antigen bundle changyuheng/fz
 antigen bundle rupa/z
 antigen bundle sobolevn/wakatime-zsh-plugin
+antigen bundle hlissner/zsh-autopair
 
 antigen bundle ~/.dotfiles/zsh/plugins/evalcache --loc=evalcache.plugin.zsh
 

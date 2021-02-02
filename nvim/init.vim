@@ -339,7 +339,7 @@ function! Load_kb_settings()
   " save current file commit and push changes
   nmap <buffer> <leader>p !~/kb/scripts/save.py<cr>
   " insert `## year-month-day` in the top of file and start typing
-  nnoremap <buffer> <leader>d ggjo## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
+  nnoremap <buffer> <leader>d Go<cr>## <C-c>"=strftime("%Y-%m-%d")<cr>po<cr>
   " insert datetime or date
   nnoremap <buffer> <leader>it "=strftime("%Y-%m-%d %H:%M")<cr>p
   nnoremap <buffer> <leader>id "=strftime("%Y-%m-%d")<cr>p
@@ -357,7 +357,7 @@ function! Load_kb_settings()
   nnoremap <buffer> <leader>q :Prettier<cr>:wq<cr>
   nnoremap <buffer> <leader>w :Prettier<cr>:w<cr>
   " find all todo in files
-  nnoremap <buffer> <leader>sd :Rg \[( \|x)\]<cr>
+  nnoremap <buffer> <leader>std :Rg \[( \|x)\]<cr>
 
   " allow to use Cyrillic chars
   setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
@@ -386,7 +386,7 @@ function! Load_kb_settings()
   nmap <buffer> <leader>шо <leader>ij
   nmap <buffer> <leader>шл <leader>ik
 
-  nmap <buffer> <leader>ів <leader>sd
+  nmap <buffer> <leader>іев <leader>std
 
   map <buffer> <Leader>іі <leader>ss
   map <buffer> <Leader>д <leader>l

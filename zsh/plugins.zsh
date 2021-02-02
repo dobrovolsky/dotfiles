@@ -15,6 +15,7 @@ antigen bundle vi-mode
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure --branch=main
 
+antigen bundle Aloxaf/fzf-tab
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle lukechilds/zsh-better-npm-completion

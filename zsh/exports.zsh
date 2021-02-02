@@ -32,6 +32,14 @@ fi
 # allow JetBrains' IDEAs to access history
 HISTFILE=~/.zsh_history
 
+HISTFILESIZE=50000
+# write to the history file immediately, not when the shell exits.
+setopt INC_APPEND_HISTORY
+# share history between all sessions.
+setopt SHARE_HISTORY
+# do not record an event starting with a space.
+setopt HIST_IGNORE_SPACE
+
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=248"
 
@@ -43,3 +51,8 @@ zstyle :prompt:pure:git:stash show yes
 
 # used for poetry completion
 fpath+=~/.dotfiles/python
+
+# accept with completion with space for fzf-tab
+zstyle ':fzf-tab:*' fzf-bindings 'space:accept'
+# execute a command right after pressing enter for fzf-tab
+zstyle ':fzf-tab:*' accept-line enter

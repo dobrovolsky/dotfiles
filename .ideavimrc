@@ -144,7 +144,7 @@ map <leader>sa <Action>(SearchEverywhere)
 " find breakpoints
 map <leader>sb <Action>(ViewBreakpoints)
 " find todo
-map <leader>sd <Action>(ActivateTODOToolWindow)
+map <leader>std <Action>(ActivateTODOToolWindow)
 " find problems
 map <leader>sp <Action>(ActivateProblemsViewToolWindow)
 

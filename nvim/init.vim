@@ -358,6 +358,9 @@ function! Load_kb_settings()
   nnoremap <buffer> <leader>w :Prettier<cr>:w<cr>
   " find all todo in files
   nnoremap <buffer> <leader>std :Rg \[( \|x)\]<cr>
+  " find all baclkinks
+  nnoremap <buffer> <leader>bl :exec "Rg \\[\\[".expand('%:t:r')."\\]\\]"<cr>
+
 
   " allow to use Cyrillic chars
   setlocal langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
@@ -387,6 +390,8 @@ function! Load_kb_settings()
   nmap <buffer> <leader>шл <leader>ik
 
   nmap <buffer> <leader>іев <leader>std
+
+  nmap <buffer> <leader>ид <leader>bl
 
   map <buffer> <Leader>іі <leader>ss
   map <buffer> <Leader>д <leader>l

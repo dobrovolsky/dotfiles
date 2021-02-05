@@ -162,6 +162,8 @@ map <leader>rs <Action>(Run)
 map <leader>rf <Action>(RunClass)
 " select config and run
 map <leader>rc <Action>(ChooseRunConfiguration)
+" run code with coverage
+map <leader>rv <Action>(Coverage)
 
 " start debug
 map <leader>ds <Action>(Debug)

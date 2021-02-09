@@ -38,6 +38,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " navidate undo history
 Plug 'mbbill/undotree'
+" insert pair chars automatically
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -111,6 +113,9 @@ augroup END
 " always use global interpreter, usually virtualenv doesn't contain pynvim lib
 let g:python3_host_prog = '~/.pyenv/shims/python'
 
+let $FZF_DEFAULT_OPTS='--reverse'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+
 """"""""""""""
 " Git gutter
 """"""""""""""
@@ -130,6 +135,7 @@ let g:deoplete#enable_at_startup = 1
 " vim-markdown
 """""""""""""""""""""""
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_new_list_item_indent = 0
 """""""""""""""""""""""
 " vim-easymotion
 """""""""""""""""""""""
@@ -308,7 +314,7 @@ call timer_start(3000, "SetBackgroundMode", {"repeat": -1})
 " load some part only for kb
 augroup KbGroup
   autocmd!
-  autocmd BufNewFile,BufRead,BufEnter ~/kb/*.md call Load_kb_settings()
+  autocmd BufNewFile,BufRead,BufEnter */kb/*.md call Load_kb_settings()
   " Should reset Cyrillic keys to english on buffer change to keep English
   " for not *md files, but for *md in kb will be set Cyrillic keys
   autocmd BufEnter * let g:EasyMotion_keys='asdfghjklqwertyuiopzxcvbnm'
@@ -360,6 +366,8 @@ function! Load_kb_settings()
   nnoremap <buffer> <leader>std :Rg \[( \|x)\]<cr>
   " find all baclkinks
   nnoremap <buffer> <leader>bl :exec "Rg \\[\\[".expand('%:t:r')."\\]\\]"<cr>
+  " open file as mind map in browser
+  nnoremap <buffer> <leader>mm :exec "silent !markmap ".expand('%:t')." -o /tmp/map.html"<cr>
 
 
   " allow to use Cyrillic chars
@@ -392,6 +400,8 @@ function! Load_kb_settings()
   nmap <buffer> <leader>іев <leader>std
 
   nmap <buffer> <leader>ид <leader>bl
+
+  nmap <buffer> <leader>ьь <leader>mm
 
   map <buffer> <Leader>іі <leader>ss
   map <buffer> <Leader>д <leader>l

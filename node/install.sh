@@ -5,3 +5,7 @@ nodenv global "${NODE_VERSION}"
 npm install -g yarn
 
 nodenv rehash
+
+yarn global add markmap-cli
+
+nodenv rehash

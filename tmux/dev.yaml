@@ -1,0 +1,8 @@
+session_name: dev servers
+windows:
+- window_name: dev
+  layout: tiled
+  panes:
+    - cd ~/projects/xcm-client && npm run start:user
+    - cd ~/projects/xcm-client && npm run start:admin
+    - cd ~/projects/xcm-public-api && npm run start:dev

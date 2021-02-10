@@ -29,16 +29,21 @@ else
     ZSH_TMUX_AUTOSTART=true
 fi
 
-# allow JetBrains' IDEAs to access history
-HISTFILE=~/.zsh_history
-
-HISTFILESIZE=50000
-# write to the history file immediately, not when the shell exits.
-setopt INC_APPEND_HISTORY
+# history file
+export HISTFILE=~/Google\ Drive/blob/.zsh_history
+# set history size
+export HISTSIZE=1000000
+export SAVEHIST=1000000
 # share history between all sessions.
 setopt SHARE_HISTORY
 # do not record an event starting with a space.
 setopt HIST_IGNORE_SPACE
+# append into history file
+setopt INC_APPEND_HISTORY
+# save only one command if 2 common are same and consistent
+setopt HIST_IGNORE_DUPS
+# add timestamp for each entry
+setopt EXTENDED_HISTORY
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=248"

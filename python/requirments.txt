@@ -4,6 +4,6 @@ ipython
 litecli
 poetry
 pynvim
+tmuxp
 wakatime
 youtube-dl
-

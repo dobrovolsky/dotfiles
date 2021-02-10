@@ -367,7 +367,7 @@ function! Load_kb_settings()
   " find all baclkinks
   nnoremap <buffer> <leader>bl :exec "Rg \\[\\[".expand('%:t:r')."\\]\\]"<cr>
   " open file as mind map in browser
-  nnoremap <buffer> <leader>mm :exec "silent !markmap ".expand('%:t')." -o /tmp/map.html"<cr>
+  nnoremap <buffer> <leader>fs :exec "silent !markmap ".expand('%:t')." -o /tmp/map.html"<cr>
 
 
   " allow to use Cyrillic chars
@@ -401,7 +401,7 @@ function! Load_kb_settings()
 
   nmap <buffer> <leader>ид <leader>bl
 
-  nmap <buffer> <leader>ьь <leader>mm
+  nmap <buffer> <leader>аі <leader>fs
 
   map <buffer> <Leader>іі <leader>ss
   map <buffer> <Leader>д <leader>l

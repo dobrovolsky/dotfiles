@@ -119,7 +119,7 @@ map ]d <Action>(VcsShowNextChangeMarker)
 
 " use similar bindings as for nvim
 map <leader>q <Action>(CloseContent)
-map <leader>w <Action>(Tool_External Tools_black)
+map <leader>w <Action>(ReformatCode)
 
 map <leader>sf <Action>(GotoFile)
 map <leader>sm <Action>(ShowBookmarks)
@@ -186,6 +186,7 @@ map <leader>cb <Action>(Debugger.RemoveAllBreakpoints)
 " annotate code with git blame
 map <leader>aa <Action>(Annotate)
 
+map <leader>pp <Action>(Tool_External Tools_black)
 map <leader>io <Action>(OptimizeImports)
 
 " use https://github.com/szymonprz/idea-cheatsh-plugin

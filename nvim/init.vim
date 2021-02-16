@@ -61,6 +61,8 @@ set expandtab
 set shiftwidth=2
 " show the matching part of the pair for [] {} and ()
 set showmatch
+" do not wrap long lines
+set nowrap
 " set 24-bit RGB color
 set termguicolors
 colorscheme gruvbox

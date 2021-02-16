@@ -45,6 +45,9 @@ setopt HIST_IGNORE_DUPS
 # add timestamp for each entry
 setopt EXTENDED_HISTORY
 
+# turn off all beeps
+unsetopt BEEP
+
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=248"
 

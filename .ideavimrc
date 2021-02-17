@@ -102,6 +102,7 @@ map <Leader>k <Plug>(easymotion-k)
 """""""""""""""""""""""
 set ideastatusicon=gray
 set ideamarks
+set NERDTree
 
 " mapleader should be before easymotion https://github.com/AlexPl292/IdeaVim-EasyMotion#mapleader-mapping
 set easymotion

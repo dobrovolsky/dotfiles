@@ -188,7 +188,7 @@ map <leader>cb <Action>(Debugger.RemoveAllBreakpoints)
 map <leader>aa <Action>(Annotate)
 
 map <leader>pp <Action>(Tool_External Tools_black)
-map <leader>io <Action>(OptimizeImports)
+map <leader>oi <Action>(OptimizeImports)
 
 " use https://github.com/szymonprz/idea-cheatsh-plugin
 map <leader>K <Action>(FindSnippet)

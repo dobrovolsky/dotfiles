@@ -3,12 +3,14 @@ from pathlib import Path
 
 from deoplete.base.source import Base
 
+NOTES_DIR = os.path.join(Path.home(), "kb")
+
 class Source(Base):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.name = "wiki_files"
         self.mark = "[KB]"
-        self.min_pattern_length = 0
+        self.min_pattern_length = 1
         self.rank = 500
         self.filetypes = ["markdown"]
 
@@ -18,7 +20,6 @@ class Source(Base):
         return pos if pos < 0 else pos + 2
 
     def gather_candidates(self, context):
-        NOTES_DIR = os.path.join(Path.home(), "kb")
         contents = []
         for file_name in filter(
             lambda x: x.endswith(".md"),

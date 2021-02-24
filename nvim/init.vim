@@ -339,9 +339,9 @@ function! Load_kb_settings()
   " create new note
   nnoremap <buffer> <leader>n :call New_note()<cr>
   " open current file in obsidian
-  nnoremap <buffer> <leader>o :silent !open 'obsidian://%:p'<cr>
+  nnoremap <buffer> <leader>oo :silent !open 'obsidian://open?vault=kb&file=%:t'<cr>
   " open graph in obsidian
-  nnoremap <buffer> <leader>g :silent !~/kb/scripts/graph.js<cr>
+  nnoremap <buffer> <leader>og :silent !~/kb/scripts/graph.js<cr>
   " encrypt notes
   nnoremap <buffer> <leader>U :!~/kb/scripts/encrypt.py<cr>
   " save current file commit and push changes

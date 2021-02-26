@@ -134,14 +134,19 @@ map <leader>tf <Action>(ToggleDistractionFreeMode)
 " toggle show indent guide
 map <leader>ti <Action>(EditorToggleShowIndentLines)
 
+" open task description
+map <leader>td <Action>(tasks.show.task.description)
+" task switch
+map <leader>ts <Action>(tasks.switch)
+" open task in browser
+map <leader>to <Action>(tasks.open.in.browser)
+
 " show git history for block of code
 map <leader>sg <Action>(Vcs.ShowHistoryForBlock)
 " find class
 map <leader>so <Action>(GotoClass)
 " find usage
 map <leader>su <Action>(FindUsages)
-" find everywhere
-map <leader>sa <Action>(SearchEverywhere)
 " find breakpoints
 map <leader>sb <Action>(ViewBreakpoints)
 " find todo

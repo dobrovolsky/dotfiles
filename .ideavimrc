@@ -118,6 +118,10 @@ nnoremap <leader><leader> <c-s-6>
 map [d <Action>(VcsShowPrevChangeMarker)
 map ]d <Action>(VcsShowNextChangeMarker)
 
+" editing ideavimrc
+map <leader>ev :e ~/.ideavimrc<cr>
+map <leader>es <Action>(IdeaVim.ReloadVimRc.reload)
+
 " use similar bindings as for nvim
 map <leader>q <Action>(CloseContent)
 map <leader>w <Action>(ReformatCode)
@@ -188,12 +192,17 @@ map <leader>cc <Action>(Stop)
 map <leader>cl <Action>(CommentByLineComment)
 " clear all breakpoint
 map <leader>cb <Action>(Debugger.RemoveAllBreakpoints)
+" copy path to current cursor position
+map <leader>cp <Action>(CopyReference)
 
 " annotate code with git blame
 map <leader>aa <Action>(Annotate)
 
 map <leader>pp <Action>(Tool_External Tools_black)
 map <leader>oi <Action>(OptimizeImports)
+
+" open shared note between all projects and IDEs
+map <leader>oo :e ~/kb/scratch.md<cr>
 
 " use https://github.com/szymonprz/idea-cheatsh-plugin
 map <leader>K <Action>(FindSnippet)
